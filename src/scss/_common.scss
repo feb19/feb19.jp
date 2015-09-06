@@ -1,0 +1,106 @@
+html {
+	height: 100%;
+}
+body {
+    font-family: "EB Garamond", "游明朝体", "Yu Mincho", "YuMin-Medium", YuMincho, serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+	height: 100%;
+	
+    padding: 30px;
+    color: black;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    content: ".";  /* 新しいコンテンツ */
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden; /* 非表示に */
+}
+.wrapper {
+	width: 940px;
+	margin: 0 auto;
+	position: relative;
+	min-height: 100%;
+}
+.gnav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+	li {
+		display: inline-block;
+		float: left;
+		text-align: right;
+		margin: 0 20px 0 0;
+		
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+a {
+	color: #494949;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+p {
+	font-size: 16px;
+	font-weight: normal;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	
+}
+li {
+	font-size: 14px;
+	font-weight: normal;
+}
+header {
+    margin: 0 0 40px 0;
+    
+	h1 {
+		font-size: 20px;
+		font-weight: normal;
+	}
+	h2 {
+		font-size: 10px;
+		font-weight: normal;
+	}
+	
+}
+section {
+	padding-bottom: 250px;
+	
+	h2 {
+		font-size: 12px;
+		font-weight: normal;
+	}
+	
+}
+footer {
+	display: -webkit-flex;
+	display: flex;
+    margin: 40px 0 0 0;
+    position:absolute;
+	bottom:0;
+	width: 100%;
+	height: 220px;
+	
+	h2 {
+		font-size: 12px;
+		font-weight: normal;
+	}
+	.grid {
+		-webkit-flex: 1;
+		flex: 1;
+	}
+}
