@@ -15,6 +15,9 @@ body {
   color: black;
   box-sizing: border-box; }
 
+pre {
+  font-family: 'Source Code Pro', monospace; }
+
 #container {
   position: fixed;
   top: 0;
@@ -75,8 +78,58 @@ header {
     font-size: 10px;
     font-weight: normal; }
 
+.breadcrumb {
+  margin: 0 0 40px 0;
+  font-size: 10px;
+  letter-spacing: .5px;
+  line-height: 15px;
+  list-style: none; }
+  .breadcrumb:after {
+    content: ".";
+    /* 新しいコンテンツ */
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    /* 非表示に */ }
+  .breadcrumb li {
+    padding: 0 0 0 0;
+    display: block;
+    float: left; }
+    .breadcrumb li:after {
+      content: " » ";
+      float: left;
+      padding: 0 8px;
+      display: block; }
+    .breadcrumb li:first-child:after {
+      display: none; }
+
 section {
-  padding-bottom: 250px; }
+  margin: 40px 0 0 0; }
+  section:last-child {
+    padding-bottom: 250px; }
+  section.gridsystem {
+    display: -webkit-flex;
+    display: flex; }
+    section.gridsystem .titlegrid {
+      -webkit-flex: 1;
+      flex: 1; }
+    section.gridsystem .contentgrid {
+      -webkit-flex: 2;
+      flex: 2; }
+  section .snippets-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    /* Safari */
+    flex-wrap: wrap; }
+    section .snippets-container .grid {
+      -webkit-flex: 1;
+      flex: 1; }
+  section h1 {
+    font-size: 48px;
+    font-weight: normal;
+    margin: 0 0 10px 0; }
   section h2 {
     font-size: 12px;
     font-weight: normal; }
@@ -95,3 +148,51 @@ footer {
   footer .grid {
     -webkit-flex: 1;
     flex: 1; }
+
+@media screen and (max-width: 760px) {
+  .gnav {
+    position: relative;
+    padding: 20px 0 40px 0; }
+  .gnav, footer {
+    position: relative;
+    display: block; }
+  header {
+    margin: 0 0 20px; }
+  .wrapper {
+    width: 100%; }
+  footer {
+    position: relative;
+    display: block;
+    border-top: 1px dashed black;
+    padding: 40px 0 0 0; }
+    footer .grid {
+      width: 50%;
+      float: left; }
+  .breadcrumb {
+    line-height: 24px; }
+  .tags {
+    text-align: right;
+    margin: 10px 0 40px 0; }
+  section {
+    padding-bottom: 0; }
+    section h1 {
+      font-size: 28px;
+      line-height: 36px;
+      margin: 0 0 40px 0; }
+    section p {
+      font-size: 14px; }
+    section img {
+      width: 100%; }
+    section .snippets-container {
+      display: block; }
+    section li {
+      line-height: 24px; }
+    section h2 {
+      background-color: black;
+      line-height: 1px;
+      margin: 40px 0; }
+      section h2 span {
+        background-color: white;
+        padding: 0 10px 0 0; }
+    section.gridsystem {
+      display: block; } }
