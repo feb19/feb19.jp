@@ -2,38 +2,171 @@
 <html lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width" id="viewport" />
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <meta property="og:title" content="<?php wp_title( '｜', true, 'right' ); ?>">
+        <meta property="og:site_name" content="snippets.feb19.jp">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+        <meta property="og:locale" content="ja_JP">
+        <meta property="og:image" content="<?php echo esc_url( home_url( '/' ) ); ?>images/feb19.png">
+        <meta property="og:description" content="JavaScript(HTML5)/Objective-C(iOS)/Java(Android)/C#(WinRT,Windows8) 他、ウェブサービス、アプリ開発のチュートリアルメモ。">
+<!--         <title>snippets.feb19.jp ｜ THE_PROGRAMING_TIPS_AND_CODING_MEMOS</title> -->
+        <title><?php wp_title( '｜', true, 'right' ); ?></title>
+        
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@feb19">
+        <meta name="twitter:creator" content="@feb19">
+        <meta name="twitter:title" content="<?php wp_title( '｜', true, 'right' ); ?>">
+        <meta name="twitter:image" content="http://snippets.feb19.jp/images/feb19.png">
+        
+        <link rel="apple-touch-icon-precomposed" href="http://snippets.feb19.jp/images/feb19.png">
+        <meta name="apple-mobile-web-app-title" content="snippets" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="shortcut icon" href="http://snippets.feb19.jp/favicon.ico">
+        <link rel="icon" href="http://snippets.feb19.jp/favicon.ico">
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+        
+        <link rel="alternate" type="application/rss+xml" title="snippets.feb19.jp &raquo; フィード" href="http://snippets.feb19.jp/?feed=rss2" />
+        <link rel="alternate" type="application/rss+xml" title="snippets.feb19.jp &raquo; コメントフィード" href="http://snippets.feb19.jp/?feed=comments-rss2" />
+        
+        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://snippets.feb19.jp/xmlrpc.php?rsd" />
+        <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://snippets.feb19.jp/wp-includes/wlwmanifest.xml" /> 
+        <link rel='canonical' href='http://snippets.feb19.jp/' />
+        <link rel='shortlink' href='http://snippets.feb19.jp/' />
+        
+        <link href='http://fonts.googleapis.com/css?family=EB+Garamond|Inconsolata' rel='stylesheet' type='text/css'>
+        <link href="http://snippets.feb19.jp/google-code-prettify/prettify.css" rel="stylesheet">
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://snippets.feb19.jp/google-code-prettify/prettify.js"></script>
+
 		<meta name="format-detection" content="telephone=no" />
-		<title>Snippets - feb19.jp</title>
-		<link rel="stylesheet" href="/css/application.css">
-		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="http://feb19.jp/css/application.css">
+		<link rel="stylesheet" href="http://feb19.jp/css/font-awesome.min.css">
 	</head>
 	
-	<body>
+    <body <?php body_class(); ?>>
+    	<div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id; js.async = true;
+          js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=293830440656612";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        
 		<div class="wrapper">
 			<header>
-				<h1><a href="/">feb19.jp</a></h1>
+				<h1><a href="http://feb19.jp" rel="home">feb19.jp</a></h1>
 				<h2>
 					Nobuhiro Takahashi<br>
 					Designer / Engineer
 				</h2>
 			</header>
 			<ul class="gnav">
-				<li><a href="/about">About</a></li>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="/snippets">Snippets</a></li>
-				<li><a href="/apps">Apps</a></li>
+				<li><a href="http://feb19.jp/about">About</a></li>
+				<li><a href="http://feb19.jp/blog">Blog</a></li>
+				<li><a href="http://snippets.feb19.jp/">Snippets</a></li>
+				<li><a href="http://feb19.jp/apps">Apps</a></li>
 				<li><a href="http://meditation-records.com">Music</a></li>
 			</ul>
 			
-			<ul class="breadcrumb">
-				<li><a href="/"><i class="fa fa-home"></i></a></li>
-				<li><a href="/snippets">Snippets</a></li>
+			<ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://feb19.jp" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
+				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://snippets.feb19.jp/" itemprop="url"><span itemprop="title">Snippets</span></a></li>
 			</ul>
+			
 			<div class="content">
 				<section>
+    				<!--
 					<div class="snippets-container">
-						<div class="grid">
+						<div class="snippets-grid">
+							<h2>
+    							<span>JavaScript</span>
+    							<span class="accordionicon plus"><i class="fa fa-plus-circle"></i></span>
+    							<span class="accordionicon minus"><i class="fa fa-minus-circle"></i></span>
+    				        </h2>
+							<h3>Preparation</h3>
+							<ul>
+								<li><a href="http://snippets.feb19.jp/?p=113">開発環境</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=93">サンプルの実行方法</a></li>
+							</ul>
+							<h3>Basic</h3>
+							<ul>
+								<li><a href="http://snippets.feb19.jp/?p=167">デバッグコンソールにトレース出力</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=215">テキストを画面に表示</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=220">画像を画面に表示</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=225">図形を描画</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=232">ボタンのクリックと反応</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=236">ダイアログの表示</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=240">データを記憶する</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=243">タイマーを実行</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=423">ブラウザを開く</a></li>
+							</ul>
+							<h3>Advanced</h3>
+							<ul>
+								<li><a href="http://snippets.feb19.jp/?p=434">DOMContentLoaded (IE 対応)</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=438">スマホデバイスの判別</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1383">Scroll To Top</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=938">UserAgent 判別</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=420">時計</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=247">文字実体参照に変換</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1100">Ajax</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=796">Twitter ボタンの設置</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=803">Facebook いいねボタンの設置</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=801">はてブボタンの設置</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=805">Pocket ボタンの設置</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=810">Google+1 ボタンの設置</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1268">はじめての jQuery</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=824">Grunt 導入</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=826">Bower 導入</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=828">Yeoman 導入</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=836">Middleman 導入</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=860">AngularJS 導入</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1327">AngularJS テンプレート文法</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1368">AngularJS で共通コンポーネントの HTML を directive から呼び出す</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1406">AngularJS で truncate フィルター (何文字以上は「...」表示)</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=848">Tupai.js 導入</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1562">HTML タグにクラスを追加、削除、存在確認、トグル</a></li>
+					
+					
+							</ul>
+						</div>
+						<div class="snippets-grid">
+							<h2><span>Swift</span>
+    							<span class="accordionicon plus"><i class="fa fa-plus-circle"></i></span>
+    							<span class="accordionicon minus"><i class="fa fa-minus-circle"></i></span>
+    				        </h2>
+							<h3>Basic</h3>
+							<ul>
+								<li><a href="http://snippets.feb19.jp/?p=1429">基本構文</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1538">ツイートする</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1541">UITextField で Return キーを押された時にテキスト入力キーボードを閉じる</a></li>
+								<li><a href="http://snippets.feb19.jp/?p=1544">Storyboard で画面遷移後の UIViewController にパラメータを渡す</a></li>
+							</ul>
+							<h3>Basic</h3>
+							<ul>
+								<li><a href="http://snippets.feb19.jp/?p=1566">はじめての Realm</a></li>
+							</ul>
+						</div>
+						<div class="snippets-grid">
+							<h2><span>Ruby/Rails</span>
+    							<span class="accordionicon plus"><i class="fa fa-plus-circle"></i></span>
+    							<span class="accordionicon minus"><i class="fa fa-minus-circle"></i></span>
+    				        </h2>
+						</div>
+						<div class="snippets-grid">
+							<h2><span>Terminal</span>
+    							<span class="accordionicon plus"><i class="fa fa-plus-circle"></i></span>
+    							<span class="accordionicon minus"><i class="fa fa-minus-circle"></i></span>
+    				        </h2>
+						</div>
+					</div>
+					
+					<div class="snippets-container">
+						<div class="snippets-grid">
 							<h2><span>JavaScript</span></h2>
 							<h3>Preparation</h3>
 							<ul>
@@ -81,7 +214,7 @@
 					
 							</ul>
 						</div>
-						<div class="grid">
+						<div class="snippets-grid">
 							<h2>Swift</h2>
 							<h3>Basic</h3>
 							<ul>
@@ -95,27 +228,30 @@
 								<li><a href="http://snippets.feb19.jp/?p=1566">はじめての Realm</a></li>
 							</ul>
 						</div>
-						<div class="grid">
+						<div class="snippets-grid">
 							<h2>Ruby/Rails</h2>
 						</div>
-						<div class="grid">
+						<div class="snippets-grid">
 							<h2>Terminal</h2>
 						</div>
-						<div class="grid">
+						<div class="snippets-grid">
 							<h2>JavaScript</h2>
 						</div>
 					</div>
+					
+				-->
 				</section>
+				
 			</div>
 			
 			<footer>
 				<div class="grid">
 					<h2>Menu</h2>
 					<ul>
-						<li><a href="/about">About</a></li>
-						<li><a href="/blog">Blog</a></li>
+						<li><a href="http://feb19.jp/about">About</a></li>
+						<li><a href="http://feb19.jp/blog">Blog</a></li>
 						<li><a href="http://snippets.feb19.jp">Snippets</a></li>
-						<li><a href="/apps">Apps</a></li>
+						<li><a href="http://feb19.jp/apps">Apps</a></li>
 						<li><a href="http://meditation-records.com">Music</a></li>
 					</ul>
 				</div>
@@ -146,4 +282,50 @@
 			</footer>
 		</div>
 	</body>
+<script>
+( function() {
+    document.addEventListener('DOMContentLoaded', function() {
+    	var buttons;
+    	buttons = document.getElementsByTagName( 'h2' );
+    	if ( ! buttons )
+    		return;
+        for (var i = 0; i < buttons.length; i++) {
+        	buttons[i].addEventListener('click', function(e) {
+        		if (this.parentNode.className.indexOf("open") == -1) {
+            		this.parentNode.className = "snippets-grid open";
+        		} else {
+            		this.parentNode.className = "snippets-grid";
+        		}
+        	}, false);
+        }
+	}, false);
+} )();
+</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<script>
+$(function() {
+	prettyPrint();
+});
+</script>
+<script type="text/javascript">
+    window.___gcfg = {lang: 'ja'};
+    
+    (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37411643-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </html>

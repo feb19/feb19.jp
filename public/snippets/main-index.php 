@@ -1,0 +1,112 @@
+<div class="snippets-container">
+    <div class="snippets-grid" id="javascript">
+        <?php get_template_part('entries','javascript'); ?>
+    </div>
+    <div class="snippets-grid" id="swift">
+        <?php get_template_part('entries','swift'); ?>
+    </div>
+    <div class="snippets-grid" id="ruby">
+        <?php get_template_part('entries','ruby'); ?>
+    </div>
+    <div class="snippets-grid" id="terminal">
+        <?php get_template_part('entries','terminal'); ?>
+    </div>
+</div>
+<div class="snippets-container">
+    <div class="snippets-grid" id="objective-c">
+        <?php get_template_part('entries','objectivec'); ?>
+    </div>
+    <div class="snippets-grid" id="java">
+        <?php get_template_part('entries','java'); ?>
+    </div>
+    <div class="snippets-grid" id="aws">
+        <?php get_template_part('entries','aws'); ?>
+    </div>
+    <div class="snippets-grid" id="git">
+        <?php get_template_part('entries','git'); ?>
+    </div>
+</div>
+<div class="snippets-container">
+    <div class="snippets-grid" id="sass">
+        <?php get_template_part('entries','sass'); ?>
+    </div>
+    <div class="snippets-grid" id="nodejs">
+        <?php get_template_part('entries','nodejs'); ?>
+    </div>
+    <div class="snippets-grid" id="perl">
+        <?php get_template_part('entries','perl'); ?>
+    </div>
+    <div class="snippets-grid" id="php">
+        <?php get_template_part('entries','php'); ?>
+    </div>
+</div>
+<div class="snippets-container">
+    <div class="snippets-grid" id="mysql">
+        <?php get_template_part('entries','mysql'); ?>
+    </div>
+    <div class="snippets-grid" id="sqlite">
+        <?php get_template_part('entries','sqlite'); ?>
+    </div>
+    <div class="snippets-grid" id="mongo">
+        <?php get_template_part('entries','mongo'); ?>
+    </div>
+    <div class="snippets-grid" id="memcached">
+        <?php get_template_part('entries','memcached'); ?>
+    </div>
+</div>
+<div class="snippets-container">
+    <div class="snippets-grid" id="redis">
+        <?php get_template_part('entries','redis'); ?>
+    </div>
+    <div class="snippets-grid" id="coffeescript">
+        <?php get_template_part('entries','coffeescript'); ?>
+    </div>
+    <div class="snippets-grid" id="typescript">
+        <?php get_template_part('entries','typescript'); ?>
+    </div>
+    <div class="snippets-grid" id="dena-jsx">
+        <?php get_template_part('entries','denajsx'); ?>
+    </div>
+</div>
+<div class="snippets-container">
+    <div class="snippets-grid" id="haxe">
+        <?php get_template_part('entries','haxe'); ?>
+    </div>
+    <div class="snippets-grid" id="dart">
+        <?php get_template_part('entries','dart'); ?>
+    </div>
+    <div class="snippets-grid" id="csharp">
+        <?php get_template_part('entries','csharp'); ?>
+    </div>
+    <div class="snippets-grid" id="cocos2dx">
+        <?php get_template_part('entries','cocos2dx'); ?>
+    </div>
+</div>
+<div class="snippets-container">
+    <div class="snippets-grid" id="actionscript">
+        <?php get_template_part('entries','actionscript3'); ?>
+    </div>
+    <div class="snippets-grid" id="openframeworks">
+        <?php get_template_part('entries','openframeworks'); ?>
+    </div>
+    <div class="snippets-grid" id="centos">
+        <?php get_template_part('entries','centos'); ?>
+    </div>
+    <div class="snippets-grid" id="adobe-jsx">
+        <?php get_template_part('entries','adobejsx'); ?>
+    </div>
+</div>
+<div class="snippets-container">
+    <div class="snippets-grid" id="nginx">
+        <?php get_template_part('entries','nginx'); ?>
+    </div>
+    <div class="snippets-grid" id="philipshue">
+        <?php get_template_part('entries','philipshue'); ?>
+    </div>
+    <div class="snippets-grid" id="design">
+        <?php get_template_part('entries','design'); ?>
+    </div>
+    <div class="snippets-grid" id="about">
+        <?php get_template_part('entries','about'); ?>
+    </div>
+</div>

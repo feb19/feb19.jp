@@ -15,9 +15,6 @@ body {
   color: black;
   box-sizing: border-box; }
 
-pre {
-  font-family: 'Source Code Pro', monospace; }
-
 #container {
   position: fixed;
   top: 0;
@@ -96,12 +93,12 @@ header {
     padding: 0 0 0 0;
     display: block;
     float: left; }
-    .breadcrumb li:after {
+    .breadcrumb li:before {
       content: " » ";
       float: left;
       padding: 0 8px;
       display: block; }
-    .breadcrumb li:first-child:after {
+    .breadcrumb li:first-child:before {
       display: none; }
 
 section {
@@ -117,22 +114,51 @@ section {
     section.gridsystem .contentgrid {
       -webkit-flex: 2;
       flex: 2; }
-  section .snippets-container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    /* Safari */
-    flex-wrap: wrap; }
-    section .snippets-container .grid {
-      -webkit-flex: 1;
-      flex: 1; }
+  section .snippets-container h2 {
+    font-size: 20px; }
+  section .snippets-container .snippets-grid {
+    display: block;
+    float: left;
+    width: 25%; }
+  section .snippets-container:after {
+    content: ".";
+    /* 新しいコンテンツ */
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    /* 非表示に */ }
   section h1 {
     font-size: 48px;
     font-weight: normal;
-    margin: 0 0 10px 0; }
+    margin: 0 0 40px 0;
+    line-height: 74px; }
+  section .tags {
+    text-align: right;
+    margin: 10px 0 40px 0; }
   section h2 {
     font-size: 12px;
     font-weight: normal; }
+  section h3 {
+    font-size: 14px; }
+
+pre {
+  font-family: 'Inconsolata', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px; }
+  pre li {
+    font-size: 12px; }
+
+.accordionicon {
+  display: none;
+  float: right;
+  margin: -5px 0 0 0;
+  padding: 0 0 0 10px; }
+  .accordionicon i {
+    font-size: 12px; }
 
 footer {
   display: -webkit-flex;
@@ -149,6 +175,14 @@ footer {
     -webkit-flex: 1;
     flex: 1; }
 
+#post-2 .entry-header {
+  display: none; }
+
+#social-container > div {
+  float: left;
+  display: inline-block;
+  padding: 0 10px 0 0; }
+
 @media screen and (max-width: 760px) {
   .gnav {
     position: relative;
@@ -164,17 +198,25 @@ footer {
     position: relative;
     display: block;
     border-top: 1px dashed black;
-    padding: 40px 0 0 0; }
+    padding: 40px 0 0 0;
+    height: auto; }
     footer .grid {
       width: 50%;
       float: left; }
+    footer:after {
+      content: ".";
+      /* 新しいコンテンツ */
+      display: block;
+      clear: both;
+      height: 0;
+      visibility: hidden;
+      /* 非表示に */ }
   .breadcrumb {
     line-height: 24px; }
-  .tags {
-    text-align: right;
-    margin: 10px 0 40px 0; }
   section {
     padding-bottom: 0; }
+    section:last-child {
+      padding-bottom: 0; }
     section h1 {
       font-size: 28px;
       line-height: 36px;
@@ -182,9 +224,36 @@ footer {
     section p {
       font-size: 14px; }
     section img {
-      width: 100%; }
+      max-width: 100%;
+      height: auto; }
     section .snippets-container {
       display: block; }
+      section .snippets-container .snippets-grid {
+        display: block;
+        float: none;
+        width: auto; }
+        section .snippets-container .snippets-grid h2 {
+          cursor: pointer; }
+        section .snippets-container .snippets-grid h3 {
+          display: none; }
+        section .snippets-container .snippets-grid ul {
+          display: none; }
+        section .snippets-container .snippets-grid .accordionicon.minus {
+          display: none; }
+        section .snippets-container .snippets-grid .accordionicon.plus {
+          display: inline; }
+        section .snippets-container .snippets-grid.open h3 {
+          display: block; }
+        section .snippets-container .snippets-grid.open ul {
+          display: block; }
+        section .snippets-container .snippets-grid.open .accordionicon.minus {
+          display: inline; }
+        section .snippets-container .snippets-grid.open .accordionicon.plus {
+          display: none; }
+      section .snippets-container:after {
+        content: none;
+        clear: none;
+        height: auto; }
     section li {
       line-height: 24px; }
     section h2 {

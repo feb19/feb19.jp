@@ -21,7 +21,7 @@
 		<meta property="og:description" content="nobuhiro takahashi - Designer / Engineer" />
 		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
 		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
-        <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=EB+Garamond|Inconsolata' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/application.css">
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<link rel="alternate" type="application/atom+xml" title="Atom" href="<$MTBlogURL$>atom.xml" />
@@ -53,9 +53,9 @@
 				<li><a href="http://meditation-records.com">Music</a></li>
 			</ul>
 			
-			<ul class="breadcrumb">
-				<li><a href="/"><i class="fa fa-home"></i></a></li>
-				<li><a href="/blog">Blog</a></li>
+			<ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
+				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/blog" itemprop="url"><span itemprop="title">Blog</span></a></li>
 			</ul>
 			
 			<div class="content">

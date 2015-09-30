@@ -15,9 +15,6 @@ body {
     color: black;
     box-sizing: border-box;
 }
-pre {
-	font-family: 'Source Code Pro', monospace;
-}
 #container {
 	position: fixed;
     top: 0;
@@ -93,12 +90,11 @@ header {
     line-height: 15px;
     list-style: none;
     &:after {
-	    
-    content: ".";  /* 新しいコンテンツ */
-    display: block;
-    clear: both;
-    height: 0;
-    visibility: hidden; /* 非表示に */
+        content: ".";  /* 新しいコンテンツ */
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden; /* 非表示に */
     
     }
 	li {
@@ -106,7 +102,7 @@ header {
 		display: block;
 		float: left;
 		
-		&:after {
+		&:before {
 			content: " » ";
 			float: left;
 			padding: 0 8px;
@@ -115,7 +111,7 @@ header {
 // 			height: 15px;
 		}
 		&:first-child {
-			&:after {
+			&:before {
 				display: none;
 			}
 		}
@@ -140,27 +136,62 @@ section {
 		}
 	}
 	.snippets-container {
-		display: -webkit-flex;
-		display: flex;
-		-webkit-flex-wrap: wrap; /* Safari */
-		flex-wrap:         wrap;
-		.grid {
-			-webkit-flex: 1;
-			flex: 1;
-		}
+    	h2 {
+        	font-size:20px;
+        	
+    	}
+    	.snippets-grid {
+        	display: block;
+        	float: left;
+        	width: 25%;
+        	
+    	}
+    	
+    	&:after {
+            content: ".";  /* 新しいコンテンツ */
+            display: block;
+            clear: both;
+            height: 0;
+            visibility: hidden; /* 非表示に */
+    	}
 	}
-
 	h1 {
 		font-size: 48px;
 		font-weight: normal;
-	    margin: 0 0 10px 0;
+	    margin: 0 0 40px 0;
+	    line-height: 74px;
 	}
+    .tags {
+    	text-align: right;
+    	margin: 10px 0 40px 0;
+    }
 	h2 {
 		font-size: 12px;
 		font-weight: normal;
 	}
-	
-	
+	h3 {
+        font-size: 14px;
+    }
+}
+pre {
+	font-family: 'Inconsolata', monospace;
+	font-size:12px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px;
+    li {
+        font-size: 12px;
+    }
+}
+.accordionicon {
+    display: none;
+    float: right;
+    margin: -5px 0 0 0;
+    padding: 0 0 0 10px;
+    i {
+        font-size: 12px;
+    }
 }
 footer {
 	display: -webkit-flex;
@@ -180,11 +211,15 @@ footer {
 		flex: 1;
 	}
 }
-
-
+#post-2 .entry-header { display: none; }
+#social-container > div {
+    float: left;
+    display: inline-block;
+    padding: 0 10px 0 0;
+}
 
 @media screen and (max-width:760px) {
-	
+
 .gnav {
 	position: relative;
     padding: 20px 0 40px 0;
@@ -204,20 +239,27 @@ footer {
 	display: block;
 	border-top: 1px dashed black;
 	padding: 40px 0 0 0;
+	height: auto;
 	.grid {
 		width: 50%;
 		float: left;
+	}
+	&:after {
+        content: ".";  /* 新しいコンテンツ */
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden; /* 非表示に */
 	}
 }
 .breadcrumb {
 	line-height: 24px;
 }
-.tags {
-	text-align: right;
-	margin: 10px 0 40px 0;
-}
 section {
 	padding-bottom: 0;
+	&:last-child {
+		padding-bottom: 0;
+	}
 	h1 {
 		font-size: 28px;
 		line-height: 36px;
@@ -227,11 +269,56 @@ section {
 		font-size: 14px;
 	}
 	img {
-		width: 100%;
-		
+		max-width: 100%;
+		height: auto;
 	}
 	.snippets-container {
 		display: block;
+		
+		
+    	.snippets-grid {
+        	display: block;
+        	float: none;
+        	width: auto;
+        	h2 {
+            	cursor: pointer;
+        	}
+        	h3 {
+            	display: none;
+        	}
+        	ul {
+            	display: none;
+        	}
+        	.accordionicon {
+            	&.minus {
+                	display: none;
+            	}
+            	&.plus {
+                	display: inline;
+            	}
+        	}
+        	&.open {
+            	h3 {
+                	display: block;
+            	}
+            	ul {
+                	display: block;
+            	}
+            	.accordionicon {
+                	&.minus {
+                    	display: inline;
+                	}
+                	&.plus {
+                    	display: none;
+                	}
+            	}
+        	}
+    	}
+    	&:after {
+        	content: none;
+        	clear: none;
+        	height: auto;
+    	}
 	}
 	li {
 	    line-height: 24px;
@@ -250,5 +337,6 @@ section {
 		
 	}
 }
+
 
 }
