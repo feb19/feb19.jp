@@ -1,0 +1,1287 @@
+<!doctype html>
+<html lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width" id="viewport" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>Material Color - feb19.jp</title>
+		<meta name="author" content="Nobuhiro Takahashi" />
+		<meta name="copyright" content="Copyright (C) Nobuhiro Takahashi" />
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/icon-precomposed.png">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta property="og:title" content="Notes Quiz - feb19.jp">
+		<meta property="og:type" content="product">
+		<meta property="og:description" content="楽譜が読めるようになるトレーニングアプリ">
+		<meta property="og:url" content="http://feb19.jp/apps/notes/">
+		<meta property="og:image" content="http://feb19.jp/apps/notes/images/ogp.png">
+		<meta property="og:site_name" content="Notes Quiz">
+		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
+		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=EB+Garamond|Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/css/application.css">
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@feb19" />
+		<meta name="twitter:title" content="Notes Quiz - feb19.jp" />
+		<meta name="twitter:description" content="Notes Quiz - feb19.jp" />
+		<meta name="twitter:image" content="http://feb19.jp/apps/notes/images/ogp.png" />
+		<meta name="twitter:url" content="http://feb19.jp/apps/notes/" />
+		
+		<meta name="keywords" content="ピアノ, 楽譜, 譜読み, 初見, 練習, アプリ, iPhone, 楽器, 五線譜, 音符, 無料">
+		<meta name="description" content="楽譜が読めるようになるトレーニングアプリ">
+		
+		<style>
+		.primary-colors-container { width: 560px; height: 560px; position: relative; }
+		.accent-colors-container  { width: 320px; height: 320px; position: relative; }
+		.material-colors { -webkit-transform-origin: 10px 0; transform-origin: 10px 0; position: absolute; top: 50%; left: 50%; }
+    	.material-colors:nth-child(1)  { -webkit-transform: rotate(-90deg)  translateY(60px); transform: rotate(-90deg)  translateY(60px); }
+    	.material-colors:nth-child(2)  { -webkit-transform: rotate(-70deg)  translateY(60px); transform: rotate(-70deg)  translateY(60px); }
+    	.material-colors:nth-child(3)  { -webkit-transform: rotate(-50deg)  translateY(60px); transform: rotate(-50deg)  translateY(60px); }
+    	.material-colors:nth-child(4)  { -webkit-transform: rotate(-30deg)  translateY(60px); transform: rotate(-30deg)  translateY(60px); }
+    	.material-colors:nth-child(5)  { -webkit-transform: rotate(-10deg)  translateY(60px); transform: rotate(-10deg)  translateY(60px); }
+    	.material-colors:nth-child(6)  { -webkit-transform: rotate(10deg)   translateY(60px); transform: rotate(10deg)   translateY(60px); }
+    	.material-colors:nth-child(7)  { -webkit-transform: rotate(30deg)   translateY(60px); transform: rotate(30deg)   translateY(60px); }
+    	.material-colors:nth-child(8)  { -webkit-transform: rotate(50deg)   translateY(60px); transform: rotate(50deg)   translateY(60px); }
+    	.material-colors:nth-child(9)  { -webkit-transform: rotate(70deg)   translateY(60px); transform: rotate(70deg)   translateY(60px); }
+    	.material-colors:nth-child(10) { -webkit-transform: rotate(90deg)   translateY(60px); transform: rotate(90deg)   translateY(60px); }
+    	.material-colors:nth-child(11) { -webkit-transform: rotate(110deg)  translateY(60px); transform: rotate(110deg)  translateY(60px); }
+    	.material-colors:nth-child(12) { -webkit-transform: rotate(130deg)  translateY(60px); transform: rotate(130deg)  translateY(60px); }
+    	.material-colors:nth-child(13) { -webkit-transform: rotate(150deg)  translateY(60px); transform: rotate(150deg)  translateY(60px); }
+    	.material-colors:nth-child(14) { -webkit-transform: rotate(170deg)  translateY(60px); transform: rotate(170deg)  translateY(60px); }
+    	.material-colors:nth-child(15) { -webkit-transform: rotate(-170deg) translateY(60px); transform: rotate(-170deg) translateY(60px); }
+    	.material-colors:nth-child(16) { -webkit-transform: rotate(-150deg) translateY(60px); transform: rotate(-150deg) translateY(60px); }
+    	.material-colors:nth-child(17) { -webkit-transform: rotate(-130deg) translateY(60px); transform: rotate(-130deg) translateY(60px); }
+    	.material-colors:nth-child(18) { -webkit-transform: rotate(-110deg) translateY(60px); transform: rotate(-110deg) translateY(60px); }
+    	.material-colors .colorsample {
+        	width: 20px;
+        	height: 20px;
+        	border: 2px solid rgba(255, 255, 255, 0);
+        	cursor: pointer;
+        	font-size: 9px;
+        	box-sizing: border-box;
+    	}
+    	.material-colors .colorsample:hover { border: 2px solid grey; }
+    	.material-colors .colorsample.selected { border: 2px solid black; }
+    	
+    	.primary-colors0 .color50  { background-color: #FFEBEE; }
+    	.primary-colors0 .color100 { background-color: #FFCDD2; }
+    	.primary-colors0 .color200 { background-color: #EF9A9A; }
+    	.primary-colors0 .color300 { background-color: #E57373; }
+    	.primary-colors0 .color400 { background-color: #EF5350; }
+    	.primary-colors0 .color500 { background-color: #F44336; }
+    	.primary-colors0 .color600 { background-color: #E53935; }
+    	.primary-colors0 .color700 { background-color: #D32F2F; }
+    	.primary-colors0 .color800 { background-color: #C62828; }
+    	.primary-colors0 .color900 { background-color: #B71C1C; }
+    	
+    	.primary-colors1 .color50  { background-color: #FCE4EC; }
+    	.primary-colors1 .color100 { background-color: #F8BBD0; }
+    	.primary-colors1 .color200 { background-color: #F48FB1; }
+    	.primary-colors1 .color300 { background-color: #F06292; }
+    	.primary-colors1 .color400 { background-color: #EC407A; }
+    	.primary-colors1 .color500 { background-color: #E91E63; }
+    	.primary-colors1 .color600 { background-color: #D81B60; }
+    	.primary-colors1 .color700 { background-color: #C2185B; }
+    	.primary-colors1 .color800 { background-color: #AD1457; }
+    	.primary-colors1 .color900 { background-color: #880E4F; }
+    	
+    	.primary-colors2 .color50  { background-color: #F3E5F5; }
+    	.primary-colors2 .color100 { background-color: #E1BEE7; }
+    	.primary-colors2 .color200 { background-color: #CE93D8; }
+    	.primary-colors2 .color300 { background-color: #BA68C8; }
+    	.primary-colors2 .color400 { background-color: #AB47BC; }
+    	.primary-colors2 .color500 { background-color: #9C27B0; }
+    	.primary-colors2 .color600 { background-color: #8E24AA; }
+    	.primary-colors2 .color700 { background-color: #7B1FA2; }
+    	.primary-colors2 .color800 { background-color: #6A1B9A; }
+    	.primary-colors2 .color900 { background-color: #4A148C; }
+    	
+    	.primary-colors3 .color50  { background-color: #EDE7F6; }
+    	.primary-colors3 .color100 { background-color: #D1C4E9; }
+    	.primary-colors3 .color200 { background-color: #B39DDB; }
+    	.primary-colors3 .color300 { background-color: #9575CD; }
+    	.primary-colors3 .color400 { background-color: #7E57C2; }
+    	.primary-colors3 .color500 { background-color: #673AB7; }
+    	.primary-colors3 .color600 { background-color: #5E35B1; }
+    	.primary-colors3 .color700 { background-color: #512DA8; }
+    	.primary-colors3 .color800 { background-color: #4527A0; }
+    	.primary-colors3 .color900 { background-color: #311B92; }
+    	
+    	.primary-colors4 .color50  { background-color: #E8EAF6; }
+    	.primary-colors4 .color100 { background-color: #C5CAE9; }
+    	.primary-colors4 .color200 { background-color: #9FA8DA; }
+    	.primary-colors4 .color300 { background-color: #7986CB; }
+    	.primary-colors4 .color400 { background-color: #5C6BC0; }
+    	.primary-colors4 .color500 { background-color: #3F51B5; }
+    	.primary-colors4 .color600 { background-color: #3949AB; }
+    	.primary-colors4 .color700 { background-color: #303F9F; }
+    	.primary-colors4 .color800 { background-color: #283593; }
+    	.primary-colors4 .color900 { background-color: #1A237E; }
+    	
+    	.primary-colors5 .color50  { background-color: #E3F2FD; }
+    	.primary-colors5 .color100 { background-color: #BBDEFB; }
+    	.primary-colors5 .color200 { background-color: #90CAF9; }
+    	.primary-colors5 .color300 { background-color: #64B5F6; }
+    	.primary-colors5 .color400 { background-color: #42A5F5; }
+    	.primary-colors5 .color500 { background-color: #2196F3; }
+    	.primary-colors5 .color600 { background-color: #1E88E5; }
+    	.primary-colors5 .color700 { background-color: #1976D2; }
+    	.primary-colors5 .color800 { background-color: #1565C0; }
+    	.primary-colors5 .color900 { background-color: #0D47A1; }
+    	
+    	.primary-colors6 .color50  { background-color: #E1F5FE; }
+    	.primary-colors6 .color100 { background-color: #B3E5FC; }
+    	.primary-colors6 .color200 { background-color: #81D4FA; }
+    	.primary-colors6 .color300 { background-color: #4FC3F7; }
+    	.primary-colors6 .color400 { background-color: #29B6F6; }
+    	.primary-colors6 .color500 { background-color: #03A9F4; }
+    	.primary-colors6 .color600 { background-color: #039BE5; }
+    	.primary-colors6 .color700 { background-color: #0288D1; }
+    	.primary-colors6 .color800 { background-color: #0277BD; }
+    	.primary-colors6 .color900 { background-color: #01579B; }
+    	
+    	.primary-colors7 .color50  { background-color: #E0F7FA; }
+    	.primary-colors7 .color100 { background-color: #B2EBF2; }
+    	.primary-colors7 .color200 { background-color: #80DEEA; }
+    	.primary-colors7 .color300 { background-color: #4DD0E1; }
+    	.primary-colors7 .color400 { background-color: #26C6DA; }
+    	.primary-colors7 .color500 { background-color: #00BCD4; }
+    	.primary-colors7 .color600 { background-color: #00ACC1; }
+    	.primary-colors7 .color700 { background-color: #0097A7; }
+    	.primary-colors7 .color800 { background-color: #00838F; }
+    	.primary-colors7 .color900 { background-color: #006064; }
+    	
+    	.primary-colors8 .color50  { background-color: #E0F2F1; }
+    	.primary-colors8 .color100 { background-color: #B2DFDB; }
+    	.primary-colors8 .color200 { background-color: #80CBC4; }
+    	.primary-colors8 .color300 { background-color: #4DB6AC; }
+    	.primary-colors8 .color400 { background-color: #26A69A; }
+    	.primary-colors8 .color500 { background-color: #009688; }
+    	.primary-colors8 .color600 { background-color: #00897B; }
+    	.primary-colors8 .color700 { background-color: #00796B; }
+    	.primary-colors8 .color800 { background-color: #00695C; }
+    	.primary-colors8 .color900 { background-color: #004D40; }
+    	
+    	.primary-colors9 .color50  { background-color: #E8F5E9; }
+    	.primary-colors9 .color100 { background-color: #C8E6C9; }
+    	.primary-colors9 .color200 { background-color: #A5D6A7; }
+    	.primary-colors9 .color300 { background-color: #81C784; }
+    	.primary-colors9 .color400 { background-color: #66BB6A; }
+    	.primary-colors9 .color500 { background-color: #4CAF50; }
+    	.primary-colors9 .color600 { background-color: #43A047; }
+    	.primary-colors9 .color700 { background-color: #388E3C; }
+    	.primary-colors9 .color800 { background-color: #2E7D32; }
+    	.primary-colors9 .color900 { background-color: #1B5E20; }
+    	
+    	.primary-colors10 .color50  { background-color: #F1F8E9; }
+    	.primary-colors10 .color100 { background-color: #DCEDC8; }
+    	.primary-colors10 .color200 { background-color: #C5E1A5; }
+    	.primary-colors10 .color300 { background-color: #AED581; }
+    	.primary-colors10 .color400 { background-color: #9CCC65; }
+    	.primary-colors10 .color500 { background-color: #8BC34A; }
+    	.primary-colors10 .color600 { background-color: #7CB342; }
+    	.primary-colors10 .color700 { background-color: #689F38; }
+    	.primary-colors10 .color800 { background-color: #558B2F; }
+    	.primary-colors10 .color900 { background-color: #33691E; }
+    	
+    	.primary-colors11 .color50  { background-color: #F9FBE7; }
+    	.primary-colors11 .color100 { background-color: #F0F4C3; }
+    	.primary-colors11 .color200 { background-color: #E6EE9C; }
+    	.primary-colors11 .color300 { background-color: #DCE775; }
+    	.primary-colors11 .color400 { background-color: #D4E157; }
+    	.primary-colors11 .color500 { background-color: #CDDC39; }
+    	.primary-colors11 .color600 { background-color: #C0CA33; }
+    	.primary-colors11 .color700 { background-color: #AFB42B; }
+    	.primary-colors11 .color800 { background-color: #9E9D24; }
+    	.primary-colors11 .color900 { background-color: #827717; }
+    	
+    	.primary-colors12 .color50  { background-color: #FFFDE7; }
+    	.primary-colors12 .color100 { background-color: #FFF9C4; }
+    	.primary-colors12 .color200 { background-color: #FFF9C4; }
+    	.primary-colors12 .color300 { background-color: #FFF176; }
+    	.primary-colors12 .color400 { background-color: #FFEE58; }
+    	.primary-colors12 .color500 { background-color: #FFEB3B; }
+    	.primary-colors12 .color600 { background-color: #FDD835; }
+    	.primary-colors12 .color700 { background-color: #FBC02D; }
+    	.primary-colors12 .color800 { background-color: #F9A825; }
+    	.primary-colors12 .color900 { background-color: #F57F17; }
+    	
+    	.primary-colors13 .color50  { background-color: #FFF8E1; }
+    	.primary-colors13 .color100 { background-color: #FFECB3; }
+    	.primary-colors13 .color200 { background-color: #FFE082; }
+    	.primary-colors13 .color300 { background-color: #FFD54F; }
+    	.primary-colors13 .color400 { background-color: #FFCA28; }
+    	.primary-colors13 .color500 { background-color: #FFC107; }
+    	.primary-colors13 .color600 { background-color: #FFB300; }
+    	.primary-colors13 .color700 { background-color: #FFA000; }
+    	.primary-colors13 .color800 { background-color: #FF8F00; }
+    	.primary-colors13 .color900 { background-color: #FF6F00; }
+    	
+    	.primary-colors14 .color50  { background-color: #FFF3E0; }
+    	.primary-colors14 .color100 { background-color: #FFE0B2; }
+    	.primary-colors14 .color200 { background-color: #FFCC80; }
+    	.primary-colors14 .color300 { background-color: #FFB74D; }
+    	.primary-colors14 .color400 { background-color: #FFA726; }
+    	.primary-colors14 .color500 { background-color: #FF9800; }
+    	.primary-colors14 .color600 { background-color: #FB8C00; }
+    	.primary-colors14 .color700 { background-color: #F57C00; }
+    	.primary-colors14 .color800 { background-color: #EF6C00; }
+    	.primary-colors14 .color900 { background-color: #E65100; }
+    	
+    	.primary-colors15 .color50  { background-color: #FBE9E7; }
+    	.primary-colors15 .color100 { background-color: #FFCCBC; }
+    	.primary-colors15 .color200 { background-color: #FFAB91; }
+    	.primary-colors15 .color300 { background-color: #FF8A65; }
+    	.primary-colors15 .color400 { background-color: #FF7043; }
+    	.primary-colors15 .color500 { background-color: #FF5722; }
+    	.primary-colors15 .color600 { background-color: #F4511E; }
+    	.primary-colors15 .color700 { background-color: #E64A19; }
+    	.primary-colors15 .color800 { background-color: #D84315; }
+    	.primary-colors15 .color900 { background-color: #BF360C; }
+    	
+    	.primary-colors16 .color50  { background-color: #EFEBE9; }
+    	.primary-colors16 .color100 { background-color: #D7CCC8; }
+    	.primary-colors16 .color200 { background-color: #BCAAA4; }
+    	.primary-colors16 .color300 { background-color: #A1887F; }
+    	.primary-colors16 .color400 { background-color: #8D6E63; }
+    	.primary-colors16 .color500 { background-color: #795548; }
+    	.primary-colors16 .color600 { background-color: #6D4C41; }
+    	.primary-colors16 .color700 { background-color: #5D4037; }
+    	.primary-colors16 .color800 { background-color: #4E342E; }
+    	.primary-colors16 .color900 { background-color: #3E2723; }
+    	
+    	.primary-colors17 .color50  { background-color: #ECEFF1; }
+    	.primary-colors17 .color100 { background-color: #CFD8DC; }
+    	.primary-colors17 .color200 { background-color: #B0BEC5; }
+    	.primary-colors17 .color300 { background-color: #90A4AE; }
+    	.primary-colors17 .color400 { background-color: #78909C; }
+    	.primary-colors17 .color500 { background-color: #607D8B; }
+    	.primary-colors17 .color600 { background-color: #546E7A; }
+    	.primary-colors17 .color700 { background-color: #455A64; }
+    	.primary-colors17 .color800 { background-color: #37474F; }
+    	.primary-colors17 .color900 { background-color: #263238; }
+    	
+    	.accent-colors0 .colorA100 { background-color: #FF8A80; }
+    	.accent-colors0 .colorA200 { background-color: #FF5252; }
+    	.accent-colors0 .colorA400 { background-color: #FF1744; }
+    	.accent-colors0 .colorA700 { background-color: #D50000; }
+    	
+    	.accent-colors1 .colorA100 { background-color: #FF80AB; }
+    	.accent-colors1 .colorA200 { background-color: #FF4081; }
+    	.accent-colors1 .colorA400 { background-color: #F50057; }
+    	.accent-colors1 .colorA700 { background-color: #C51162; }
+    	
+    	.accent-colors2 .colorA100 { background-color: #EA80FC; }
+    	.accent-colors2 .colorA200 { background-color: #E040FB; }
+    	.accent-colors2 .colorA400 { background-color: #D500F9; }
+    	.accent-colors2 .colorA700 { background-color: #AA00FF; }
+    	
+    	.accent-colors3 .colorA100 { background-color: #B388FF; }
+    	.accent-colors3 .colorA200 { background-color: #7C4DFF; }
+    	.accent-colors3 .colorA400 { background-color: #651FFF; }
+    	.accent-colors3 .colorA700 { background-color: #6200EA; }
+    	
+    	.accent-colors4 .colorA100 { background-color: #8C9EFF; }
+    	.accent-colors4 .colorA200 { background-color: #536DFE; }
+    	.accent-colors4 .colorA400 { background-color: #3D5AFE; }
+    	.accent-colors4 .colorA700 { background-color: #304FFE; }
+    	
+    	.accent-colors5 .colorA100 { background-color: #82B1FF; }
+    	.accent-colors5 .colorA200 { background-color: #448AFF; }
+    	.accent-colors5 .colorA400 { background-color: #2979FF; }
+    	.accent-colors5 .colorA700 { background-color: #2962FF; }
+    	
+    	.accent-colors6 .colorA100 { background-color: #80D8FF; }
+    	.accent-colors6 .colorA200 { background-color: #40C4FF; }
+    	.accent-colors6 .colorA400 { background-color: #00B0FF; }
+    	.accent-colors6 .colorA700 { background-color: #0091EA; }
+    	
+    	.accent-colors7 .colorA100 { background-color: #84FFFF; }
+    	.accent-colors7 .colorA200 { background-color: #18FFFF; }
+    	.accent-colors7 .colorA400 { background-color: #00E5FF; }
+    	.accent-colors7 .colorA700 { background-color: #00B8D4; }
+    	
+    	.accent-colors8 .colorA100 { background-color: #A7FFEB; }
+    	.accent-colors8 .colorA200 { background-color: #64FFDA; }
+    	.accent-colors8 .colorA400 { background-color: #1DE9B6; }
+    	.accent-colors8 .colorA700 { background-color: #00BFA5; }
+    	
+    	.accent-colors9 .colorA100 { background-color: #B9F6CA; }
+    	.accent-colors9 .colorA200 { background-color: #69F0AE; }
+    	.accent-colors9 .colorA400 { background-color: #00E676; }
+    	.accent-colors9 .colorA700 { background-color: #00C853; }
+    	
+    	
+    	.accent-colors10 .colorA100 { background-color: #CCFF90; }
+    	.accent-colors10 .colorA200 { background-color: #B2FF59; }
+    	.accent-colors10 .colorA400 { background-color: #76FF03; }
+    	.accent-colors10 .colorA700 { background-color: #64DD17; }
+    	
+    	.accent-colors11 .colorA100 { background-color: #F4FF81; }
+    	.accent-colors11 .colorA200 { background-color: #EEFF41; }
+    	.accent-colors11 .colorA400 { background-color: #C6FF00; }
+    	.accent-colors11 .colorA700 { background-color: #AEEA00; }
+    	
+    	.accent-colors12 .colorA100 { background-color: #FFFF8D; }
+    	.accent-colors12 .colorA200 { background-color: #FFFF00; }
+    	.accent-colors12 .colorA400 { background-color: #FFEA00; }
+    	.accent-colors12 .colorA700 { background-color: #FFD600; }
+    	
+    	.accent-colors13 .colorA100 { background-color: #FFE57F; }
+    	.accent-colors13 .colorA200 { background-color: #FFD740; }
+    	.accent-colors13 .colorA400 { background-color: #FFC400; }
+    	.accent-colors13 .colorA700 { background-color: #FFAB00; }
+    	
+    	.accent-colors14 .colorA100 { background-color: #FFD180; }
+    	.accent-colors14 .colorA200 { background-color: #FFAB40; }
+    	.accent-colors14 .colorA400 { background-color: #FF9100; }
+    	.accent-colors14 .colorA700 { background-color: #FF6D00; }
+    	
+    	.accent-colors15 .colorA100 { background-color: #FF9E80; }
+    	.accent-colors15 .colorA200 { background-color: #FF6E40; }
+    	.accent-colors15 .colorA400 { background-color: #FF3D00; }
+    	.accent-colors15 .colorA700 { background-color: #DD2C00; }
+    	
+    	.color { overflow: hidden; }
+    	.colorchip { width: 14px; float: right; margin: 4px 20px 0 0; min-height: 14px; }
+    	.colorlabel { width: 60%; float: left; }
+    	.colorcode { width: 20%; float: right; text-align: right; margin: 0 4px 0 0; font-size: 9px; line-height: 21px; }
+    	
+    	.screen {
+        	margin: 0 20px 20px 0;
+    	}
+    	.screen {
+            box-shadow: 0 3px 10px rgba(0,0,0,0.23),0 3px 10px rgba(0,0,0,0.16);
+            color: rgba(0,0,0,0.84);
+            font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+    	}
+    	.screen-status {
+    	    background: #7b1fa2;
+            -webkit-transition: background-color 100ms linear;
+	        transition: background-color 100ms linear;
+	        height: 25px;
+    	}
+    	.screen-toolbar {
+            -webkit-transition: background-color 100ms linear;
+            transition: background-color 100ms linear;
+            height: 240px;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            background: #9c27b0;
+            color: white;
+    	}
+    	.screen-toolbar-heading1 {
+        	font-size: 36px;
+        }
+    	.screen-toolbar-heading2 {
+            margin: 0;
+            line-height: 1.5;
+            padding-top: 5px;
+            font-size: 16px;
+        }
+    	.screen-toolbar-nav {
+        	position: relative;
+        }
+    	.screen-toolbar-nav-menu {
+        	position: absolute;
+        	left: 20px;
+            top: 20px;
+            font-size: 26px;
+            cursor: pointer;
+        }
+    	.screen-toolbar-nav-morevert {
+        	position: absolute;
+        	top: 20px;
+            right: 12px;
+            font-size: 26px;
+            cursor: pointer;
+        }
+    	.screen-toolbar-heading {
+        	padding: 85px 20px 0 75px;
+    	}
+    	.screen-toolbar-button {
+    	    position: absolute;
+            cursor: pointer;
+            background-color: #f44336;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.23),0 3px 10px rgba(0,0,0,0.16);
+            outline: 0 !important;
+            border-radius: 100%;
+            font-size: 26px;
+            -webkit-transition: background-color 100ms linear;
+            transition: background-color 100ms linear;
+            height: 56px;
+            line-height: 26px;
+            width: 56px;
+            text-align: center;
+            padding: 15px;
+            bottom: -25px;
+            right: 25px;
+            -webkit-transition: all 200ms ease;
+            transition: all 200ms ease;
+            box-sizing: border-box;
+    	}
+    	.screen-body {
+            padding: 8px 0 0 0;
+            border-left: 1px solid #DCDCDC;
+            border-right: 1px solid #DCDCDC;
+            background: #FAFAFA;
+            -webkit-transition: background-color 100ms linear;
+	        transition: background-color 100ms linear;
+    	}
+    	.screen-body-cell-icon {
+            color: #737373;
+            font-size: 28px;
+            padding: 8px 14px;
+            float: left;
+            margin-right: 20px;
+    	}
+    	.screen-body-cell-label {
+    	    color: #212121;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 0;
+            margin: 0;
+    	}
+    	.screen-body-cell-sublabel {
+    	    color: #737373;
+            font-style: normal;
+            font-size: 15px;
+            font-weight: 400;
+            padding: 0;
+            margin: 0;
+    	}
+    	.screen-body-cell {
+    	    padding: 16px 0;
+            border-bottom: 1px solid #DADADA;
+            list-style: none;
+    	}
+		</style>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1><a href="/">feb19.jp</a></h1>
+				<h2>
+					Nobuhiro Takahashi<br>
+					Designer / Engineer
+				</h2>
+			</header>
+			<ul class="gnav">
+				<li><a href="/about">About</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="http://snippets.feb19.jp">Snippets</a></li>
+				<li><a href="/apps">Apps</a></li>
+				<li><a href="http://meditation-records.com">Music</a></li>
+			</ul>
+			
+			<ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
+				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/apps" itemprop="url"><span itemprop="title">Apps</span></a></li>
+				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Material Color Generator</span></li>
+			</ul>
+			
+			<div class="content">
+				<section class="gridsystem">
+					<div class="titlegrid">
+    					<div class="screen">
+        					<div class="screen-status" id="screen-status" style="background-color: #5D4037;"></div>
+        					<div class="screen-toolbar" id="screen-toolbar" style="background-color: #795548;">
+            					<div class="screen-toolbar-nav">
+                					<div class="screen-toolbar-nav-menu"><i class="material-icons">menu</i></div>
+                					<div class="screen-toolbar-nav-morevert"><i class="material-icons">more_vert</i></div>
+            					</div>
+            					<div class="screen-toolbar-heading">
+                					<div class="screen-toolbar-heading1">Preview</div>
+                					<div class="screen-toolbar-heading2" id="screen-toolbar-heading2">Material Color Generator</div>
+            					</div>
+            					<div class="screen-toolbar-button" id="screen-toolbar-button" style="background-color: #69F0AE;"><i class="material-icons">star</i></div>
+        					</div>
+        					<div class="screen-body" id="screen-body">
+            					<div class="screen-body-cell">
+                					<div class="screen-body-cell-icon" id="screen-secondary-text" style="color: #737373;"><i class="material-icons">label</i></div>
+                					<div class="screen-body-cell-label" id="screen-primary-text" style="color: #212121;">Primary Text</div>
+                					<div class="screen-body-cell-sublabel" id="screen-secondary-text" style="color: #737373;">Secondary Text</div>
+            					</div>
+            					<div class="screen-body-cell" id="screen-disabled-text">
+                					<div class="screen-body-cell-icon" style="color: #9B9B9B;"><i class="material-icons">schedule</i></div>
+                					<div class="screen-body-cell-label" style="color: #9B9B9B;">Disabled Text</div>
+                					<div class="screen-body-cell-sublabel" style="color: #9B9B9B;">Secondary Text</div>
+            					</div>
+        					</div>
+    					</div>
+    					<h2>
+        					<span>palette</span>
+    					</h2>
+						<div id="palette-lpc" class="color clearfix">
+    						<div class="colorchip" style="background-color: #D7CCC8"></div>
+    						<div class="colorlabel">Light Primary Color</div>
+    						<div class="colorcode">#D7CCC8</div>
+						</div>
+						<div id="palette-pc" class="color clearfix">
+    						<div class="colorchip" style="background-color: #795548"></div>
+    						<div class="colorlabel">Primary Color</div>
+    						<div class="colorcode">#795548</div>
+						</div>
+						<div id="palette-dpc" class="color clearfix">
+    						<div class="colorchip" style="background-color: #5D4037"></div>
+    						<div class="colorlabel">Dark Primary Color</div>
+    						<div class="colorcode">#5D4037</div>
+						</div>
+						<div id="palette-ac" class="color clearfix">
+    						<div class="colorchip" style="background-color: #69F0AE"></div>
+    						<div class="colorlabel">Accent Color</div>
+    						<div class="colorcode">#69F0AE</div>
+						</div>
+						<div id="palette-ti" class="color clearfix">
+    						<div class="colorchip" style="background-color: #FFFFFF"></div>
+    						<div class="colorlabel">Text / Icons</div>
+    						<div class="colorcode">#FFFFFF</div>
+						</div>
+						<div id="palette-pt" class="color clearfix">
+    						<div class="colorchip" style="background-color: #212121"></div>
+    						<div class="colorlabel">Primary Text</div>
+    						<div class="colorcode">#212121</div>
+						</div>
+						<div id="palette-st" class="color clearfix">
+    						<div class="colorchip" style="background-color: #737373"></div>
+    						<div class="colorlabel">Secondary Text</div>
+    						<div class="colorcode">#737373</div>
+						</div>
+						<div id="palette-dt" class="color clearfix">
+    						<div class="colorchip" style="background-color: #9B9B9B"></div>
+    						<div class="colorlabel">Disabled Text</div>
+    						<div class="colorcode">#9B9B9B</div>
+						</div>
+						<div id="palette-dc" class="color clearfix">
+    						<div class="colorchip" style="background-color: #DBDBDB"></div>
+    						<div class="colorlabel">Divider Color</div>
+    						<div class="colorcode">#DBDBDB</div>
+						</div>
+						<div id="palette-sb" class="color clearfix">
+    						<div class="colorchip" style="background-color: #FAFAFA"></div>
+    						<div class="colorlabel">Background</div>
+    						<div class="colorcode">#FAFAFA</div>
+						</div>
+					</div>
+					
+					<div class="contentgrid">
+            			<h2><span>1. Themes</span></h2>
+            			<p>
+                			<input type="radio" name="theme" id="theme-light" value="light" checked> <label for="theme-light">Light</label>
+            			</p>
+            			<p>
+                			<input type="radio" name="theme" id="theme-dark" value="dark"> <label for="theme-dark">Dark</label>
+            			</p>
+            			<h2><span>2. Primary Color</span></h2>
+            			<div class="primary-colors-container">
+                			<div class="material-colors primary-colors0">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors1">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors2">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors3">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors4">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors5">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors6">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors7">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors8">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors9">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors10">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors11">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors12">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors13">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors14">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors15">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors16">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+                			<div class="material-colors primary-colors17">
+                    			<div class="colorsample color50">50</div>
+                    			<div class="colorsample color100">100</div>
+                    			<div class="colorsample color200">200</div>
+                    			<div class="colorsample color300">300</div>
+                    			<div class="colorsample color400">400</div>
+                    			<div class="colorsample color500">500</div>
+                    			<div class="colorsample color600">600</div>
+                    			<div class="colorsample color700">700</div>
+                    			<div class="colorsample color800">800</div>
+                    			<div class="colorsample color900">900</div>
+                			</div>
+            			</div>
+            			
+            			<h2><span>3. Accent Color</span></h2>
+            			<div class="accent-colors-container">
+                			<div class="material-colors accent-colors0">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors1">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors2">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors3">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors4">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors5">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors6">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors7">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors8">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors9">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors10">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors11">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors12">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors13">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors14">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+                			<div class="material-colors accent-colors15">
+                    			<div class="colorsample colorA100">A100</div>
+                    			<div class="colorsample colorA200">A200</div>
+                    			<div class="colorsample colorA400">A400</div>
+                    			<div class="colorsample colorA700">A700</div>
+                			</div>
+            			</div>
+            			<h2><span>4. Text Color</span></h2>
+            			<p>
+                			<input type="radio" name="primary-text" id="text-white" value="white" checked> <label for="text-white">White</label>
+            			</p>
+            			<p>
+                			<input type="radio" name="primary-text" id="text-black" value="black"> <label for="text-black">Black</label>
+            			</p>
+					</div>
+				</section>
+			</div>
+			
+			<footer>
+				<div class="grid">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="/about">About</a></li>
+						<li><a href="/blog">Blog</a></li>
+						<li><a href="http://snippets.feb19.jp">Snippets</a></li>
+						<li><a href="/apps">Apps</a></li>
+						<li><a href="http://meditation-records.com">Music</a></li>
+					</ul>
+				</div>
+				<div class="grid">
+					<h2>Works</h2>
+					<ul>
+						<li><a href="http://moshapp.me">Mosh!</a></li>
+						<li><a href="http://freepianoscore.com/">Free Piano Score</a></li>
+						<li><a href="http://feb19.jp/apps/notes/">Notes Quiz</a></li>
+						<li><a href="http://nobuhirotakahashi.com/trackname/">TrackName for iTunes</a></li>
+						<li><a href="http://feb19.jp/pp/">points-pointz</a></li>
+						<li><a href="http://meditation-records.com/meditation">Meditation</a></li>
+					</ul>
+				</div>
+				<div class="grid">
+					<h2>SNS</h2>
+					<ul>
+						<li><a href="https://twitter.com/feb19" target="_blank">Twitter</a></li>
+						<li><a href="https://github.com/feb19/" target="_blank">GitHub</a></li>
+						<li><a href="https://instagram.com/feb19/" target="_blank">Instagram</a></li>
+						<li><a href="https://jp.pinterest.com/feb19nt/" target="_blank">Pinterest</a></li>
+						<li><a href="http://qiita.com/feb19" target="_blank">Qiita</a></li>
+						<li><a href="https://vine.co/feb19" target="_blank">Vine</a></li>
+						<li><a href="https://itunes.apple.com/jp/artist/nobuhiro-takahashi/id433066240" target="_blank">iTunes</a></li>
+						<li><a href="https://soundcloud.com/nobuhiro-takahashi" target="_blank">Soundcloud</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+		<script>
+		Element.prototype.hasClassName = function(a) {
+            return RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)").test(this.className);
+        };
+        Element.prototype.addClassName = function(a) {
+            if (this.hasClassName(a)) {
+                return false;
+            } else {
+                this.className = [this.className, a].join(" ");
+                return true;
+            }
+        };
+        Element.prototype.removeClassName = function(a) {
+            if (this.hasClassName(a)) {
+                this.className = this.className.replace(RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)", "g"), " ");
+                return true;
+            } else {
+                return false;
+            }
+        };
+        </script>
+		<script>
+(function() {
+    var list, master, result;
+    result = {
+        'primary_color': '#795548',
+        'light_primary_color': '#D7CCC8',
+        'dark_primary_color': '#5D4037',
+        'accent_color': '#69F0AE',
+        'text_icon': '#FFFFFF',
+        'primary_text': '#212121',
+        'secondary_text': '#737373',
+        'disabled_text': '#9B9B9B',
+        'divider_color': '#DBDBDB',
+        'screen_body': '#FAFAFA',
+        'first_color_hue': 16,
+        'first_color_level': 500,
+        'second_color_hue': 9,
+        'second_color_level': 200
+    };
+    
+    function hex2Dis(n) {
+        if (n.length < 2) {
+            return "0" + n;
+        } else {
+            return n;
+        }
+    };
+    function hexColor(rgbColor) {
+        var rgb = rgbColor.match(/[0-9]+/g);
+        console.log(rgb);
+        var hex = "#" + hex2Dis(parseInt(rgb[0], 10).toString(16)) + hex2Dis(parseInt(rgb[1], 10).toString(16)) + hex2Dis(parseInt(rgb[2], 10).toString(16));
+        return hex.toUpperCase();
+    };
+    function saveResult() {
+        localStorage['mcg_primary_color']       = result['primary_color'];
+        localStorage['mcg_light_primary_color'] = result['light_primary_color'];
+        localStorage['mcg_dark_primary_color']  = result['dark_primary_color'];
+        localStorage['mcg_accent_color']        = result['accent_color'];
+        localStorage['mcg_text_icon']           = result['text_icon'];
+        localStorage['mcg_primary_text']        = result['primary_text'];
+        localStorage['mcg_secondary_text']      = result['secondary_text'];
+        localStorage['mcg_disabled_text']       = result['disabled_text'];
+        localStorage['mcg_divider_color']       = result['divider_color'];
+        localStorage['mcg_screen_body']         = result['screen_body'];
+        localStorage['mcg_first_color_hue']     = result['first_color_hue'];
+        localStorage['mcg_first_color_level']   = result['first_color_level'];
+        localStorage['mcg_second_color_hue']    = result['second_color_hue'];
+        localStorage['mcg_second_color_level']  = result['second_color_level'];
+    };
+    function loadResult() {
+        if (typeof localStorage['mcg_primary_color'] == 'undefined') {
+            saveResult();
+        } else {
+            result['primary_color'] = localStorage['mcg_primary_color'];
+            result['light_primary_color'] = localStorage['mcg_light_primary_color'];
+            result['dark_primary_color'] = localStorage['mcg_dark_primary_color'];
+            result['accent_color'] = localStorage['mcg_accent_color'];
+            result['text_icon'] = localStorage['mcg_text_icon'];
+            result['primary_text'] = localStorage['mcg_primary_text'];
+            result['secondary_text'] = localStorage['mcg_secondary_text'];
+            result['disabled_text'] = localStorage['mcg_disabled_text'];
+            result['divider_color'] = localStorage['mcg_divider_color'];
+            result['screen_body'] = localStorage['mcg_screen_body'];
+            result['first_color_hue'] = localStorage['mcg_first_color_hue'];
+            result['first_color_level'] = localStorage['mcg_first_color_level'];
+            result['second_color_hue'] = localStorage['mcg_second_color_hue'];
+            result['second_color_level'] = localStorage['mcg_second_color_level'];
+        }
+        updateResult();
+        updateView();
+    };
+    function updateView() {
+        var themes = document.getElementsByName('theme');
+        if (result['primary_text'] == '#212121') {
+            themes[0].checked = true;
+        } else {
+            themes[1].checked = true;
+        }
+        
+        var texts = document.getElementsByName('primary-text');
+        if (result['text_icon'] == '#FFFFFF') {
+            texts[0].checked = true;
+        } else {
+            texts[1].checked = true;
+        }
+        
+        console.log(result['first_color_hue']);
+        console.log('.primary-colors' + result['first_color_hue'] + ' .color' + result['first_color_level']);
+        var f = document.querySelector('.primary-colors' + result['first_color_hue'] + ' .color' + result['first_color_level']);
+        var s = document.querySelector('.accent-colors' + result['second_color_hue'] + ' .colorA' + result['second_color_level']);
+        f.addClassName('selected');
+        s.addClassName('selected');
+    };
+    function checkTheme() {
+        var val = '';
+        var themes = document.getElementsByName('theme');
+        var that = this;
+        for (i = 0; i < themes.length; i++) {
+            if (themes[i].checked) {
+                val = themes[i].value;
+            }
+        }
+        console.log(val);
+        
+        if (val == 'light') {
+            result['primary_text']   = '#212121';
+            result['secondary_text'] = '#737373';
+            result['disabled_text']  = '#9B9B9B';
+            result['divider_color']  = '#DBDBDB';
+            result['screen_body']    = '#FAFAFA';
+        } else {
+            result['primary_text']   = '#FFFFFF';
+            result['secondary_text'] = '#BCBCBC';
+            result['disabled_text']  = '#646464';
+            result['divider_color']  = '#3C3C3C';
+            result['screen_body']    = '#303030';
+        }
+        updateResult();
+        saveResult();
+    };
+    function checkPrimaryColor(sender) {
+        var primaryColors = document.querySelector('.primary-colors-container').querySelectorAll('.colorsample');
+        for (i = 0; i < primaryColors.length; i++) {
+            primaryColors[i].removeClassName('selected');
+        }
+        sender.addClassName('selected');
+        var level = parseInt(sender.className.match(/[0-9]+/g), 10);
+        var value = parseInt(sender.parentNode.className.match(/[0-9]+/g), 10);
+        console.log(level);
+        console.log(value);
+        result['first_color_hue'] = value;
+        result['first_color_level'] = level;
+        
+        var lightSender = sender.parentNode.querySelector('.color' + (level <= 200 ? 50 : 100));
+        var darkSender = sender.parentNode.querySelector('.color' + (level >= 700 ? 900 : (level >= 600) ? 800 : 700));
+        
+        console.log(window.getComputedStyle(sender, null).getPropertyValue('background-color'));
+        result['primary_color'] = hexColor(window.getComputedStyle(sender, null).getPropertyValue('background-color'));
+        result['light_primary_color'] = hexColor(window.getComputedStyle(lightSender, null).getPropertyValue('background-color'));
+        result['dark_primary_color'] = hexColor(window.getComputedStyle(darkSender, null).getPropertyValue('background-color'));
+        updateResult();
+        saveResult();
+    };
+    function checkAccentColor(sender) {
+        var accentColors = document.querySelector('.accent-colors-container').querySelectorAll('.colorsample');
+        for (i = 0; i < accentColors.length; i++) {
+            accentColors[i].removeClassName('selected');
+        }
+        sender.addClassName('selected');
+        var level = parseInt(sender.className.match(/[0-9]+/g), 10);
+        var value = parseInt(sender.parentNode.className.match(/[0-9]+/g), 10);
+        console.log(level);
+        console.log(value);
+        result['second_color_hue'] = value;
+        result['second_color_level'] = level;
+        result['accent_color'] = hexColor(window.getComputedStyle(sender, null).getPropertyValue('background-color'));
+        updateResult();
+        saveResult();
+    };
+    function checkPrimaryText() {
+        var val = '';
+        var primaryTexts = document.getElementsByName('primary-text');
+        var that = this;
+        for (i = 0; i < primaryTexts.length; i++) {
+            if (primaryTexts[i].checked) {
+                val = primaryTexts[i].value;
+            }
+        }
+        if (val == 'white') { result['text_icon'] = '#FFFFFF'; }
+        else { result['text_icon'] = '#212121'; }
+        updateResult();
+        saveResult();
+    };
+    function updateResult() {
+        var i;
+        list['text_icon']['chipDOM'].style.backgroundColor = result['text_icon'];
+        list['text_icon']['codeDOM'].innerHTML = result['text_icon'];
+        list['text_icon']['previewDOM'].style.color = result['text_icon'];
+        
+        list['primary_color']['chipDOM'].style.backgroundColor = result['primary_color'];
+        list['primary_color']['codeDOM'].innerHTML = result['primary_color'];
+        list['primary_color']['previewDOM'].style.backgroundColor = result['primary_color'];
+        
+        list['light_primary_color']['chipDOM'].style.backgroundColor = result['light_primary_color'];
+        list['light_primary_color']['codeDOM'].innerHTML = result['light_primary_color'];
+        list['light_primary_color']['previewDOM'].style.color = result['light_primary_color'];
+        
+        list['dark_primary_color']['chipDOM'].style.backgroundColor = result['dark_primary_color'];
+        list['dark_primary_color']['codeDOM'].innerHTML = result['dark_primary_color'];
+        list['dark_primary_color']['previewDOM'].style.backgroundColor = result['dark_primary_color'];
+        
+        list['accent_color']['chipDOM'].style.backgroundColor = result['accent_color'];
+        list['accent_color']['codeDOM'].innerHTML = result['accent_color'];
+        list['accent_color']['previewDOM'].style.backgroundColor = result['accent_color'];
+        
+        list['primary_text']['chipDOM'].style.backgroundColor = result['primary_text'];
+        list['primary_text']['codeDOM'].innerHTML = result['primary_text'];
+        list['primary_text']['previewDOM'].style.color = result['primary_text'];
+        
+        list['secondary_text']['chipDOM'].style.backgroundColor = result['secondary_text'];
+        list['secondary_text']['codeDOM'].innerHTML = result['secondary_text'];
+        list['secondary_text']['previewDOM'].style.color = result['secondary_text'];
+        
+        list['disabled_text']['chipDOM'].style.backgroundColor = result['disabled_text'];
+        list['disabled_text']['codeDOM'].innerHTML = result['disabled_text'];
+        list['disabled_text']['previewDOM'].style.color = result['disabled_text'];
+        
+        list['divider_color']['chipDOM'].style.backgroundColor = result['divider_color'];
+        list['divider_color']['codeDOM'].innerHTML = result['divider_color'];
+        var cells = document.querySelectorAll('.screen-body-cell');
+        for (i = 0; i < cells.length; i++) {
+            cells[i].style.borderBottomColor = result['divider_color'];
+        }
+        
+        list['screen_body']['chipDOM'].style.backgroundColor = result['screen_body'];
+        list['screen_body']['codeDOM'].innerHTML = result['screen_body'];
+        list['screen_body']['previewDOM'].style.backgroundColor = result['screen_body'];
+    };
+    document.addEventListener('DOMContentLoaded', function(e) {
+        list = {
+            'primary_color': {
+                'baseDOM' : document.getElementById('palette-pc'),
+                'chipDOM' : document.getElementById('palette-pc').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-pc').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-toolbar')
+            },
+            'light_primary_color': {
+                'baseDOM' : document.getElementById('palette-lpc'),
+                'chipDOM' : document.getElementById('palette-lpc').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-lpc').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-toolbar-heading2')
+            },
+            'dark_primary_color': {
+                'baseDOM' : document.getElementById('palette-dpc'),
+                'chipDOM' : document.getElementById('palette-dpc').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-dpc').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-status')
+            },
+            'accent_color': {
+                'baseDOM' : document.getElementById('palette-ac'),
+                'chipDOM' : document.getElementById('palette-ac').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-ac').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-toolbar-button')
+            },
+            'text_icon': {
+                'baseDOM' : document.getElementById('palette-ti'),
+                'chipDOM' : document.getElementById('palette-ti').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-ti').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-toolbar')
+            },
+            'primary_text': {
+                'baseDOM' : document.getElementById('palette-pt'),
+                'chipDOM' : document.getElementById('palette-pt').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-pt').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-primary-text')
+            },
+            'secondary_text': {
+                'baseDOM' : document.getElementById('palette-st'),
+                'chipDOM' : document.getElementById('palette-st').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-st').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-secondary-text')
+            },
+            'disabled_text': {
+                'baseDOM' : document.getElementById('palette-dt'),
+                'chipDOM' : document.getElementById('palette-dt').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-dt').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-disabled-text')
+            },
+            'divider_color': {
+                'baseDOM' : document.getElementById('palette-dc'),
+                'chipDOM' : document.getElementById('palette-dc').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-dc').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-divider-color')
+            },
+            'screen_body': {
+                'baseDOM' : document.getElementById('palette-sb'),
+                'chipDOM' : document.getElementById('palette-sb').querySelector('.colorchip'),
+                'codeDOM' : document.getElementById('palette-sb').querySelector('.colorcode'),
+                'previewDOM' : document.getElementById('screen-body')
+            }
+        };
+        
+        var i;
+        var primaryColors = document.querySelector('.primary-colors-container').querySelectorAll('.colorsample');
+        for (i = 0; i < primaryColors.length; i++) {
+            primaryColors[i].addEventListener('click', function(ev) { checkPrimaryColor(this); }, false);
+        }
+        var accentColors = document.querySelector('.accent-colors-container').querySelectorAll('.colorsample');
+        for (i = 0; i < accentColors.length; i++) {
+            accentColors[i].addEventListener('click', function(ev) { checkAccentColor(this); }, false);
+        }
+        var themes = document.getElementsByName('theme');
+        for (i = 0; i < themes.length; i++) {
+            themes[i].addEventListener('change', function(ev) { checkTheme(); }, false);
+        }
+        var primaryTexts = document.getElementsByName('primary-text');
+        for (i = 0; i < primaryTexts.length; i++) {
+            primaryTexts[i].addEventListener('change', function(ev) { checkPrimaryText(); }, false);
+        }
+        
+        loadResult();
+        
+    }, false);
+})();
+		</script>
+		
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-64198406-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+		
+	</body>
+</html>
