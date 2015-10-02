@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width" id="viewport" />
 		<meta name="format-detection" content="telephone=no" />
-		<title>Material Color - feb19.jp</title>
+		<title>Material Color Generator - feb19.jp</title>
 		<meta name="author" content="Nobuhiro Takahashi" />
 		<meta name="copyright" content="Copyright (C) Nobuhiro Takahashi" />
 		<link rel="shortcut icon" href="/favicon.ico">
@@ -12,12 +12,12 @@
 		<link rel="apple-touch-icon" href="/icon-precomposed.png">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta property="og:title" content="Notes Quiz - feb19.jp">
+		<meta property="og:title" content="Material Color Generator - feb19.jp">
 		<meta property="og:type" content="product">
-		<meta property="og:description" content="楽譜が読めるようになるトレーニングアプリ">
-		<meta property="og:url" content="http://feb19.jp/apps/notes/">
-		<meta property="og:image" content="http://feb19.jp/apps/notes/images/ogp.png">
-		<meta property="og:site_name" content="Notes Quiz">
+		<meta property="og:description" content="Material Design Color Palette Generator Web Service">
+		<meta property="og:url" content="http://feb19.jp/apps/materialcolor/">
+		<meta property="og:image" content="http://feb19.jp/images/ogp.png">
+		<meta property="og:site_name" content="Material Color Generator">
 		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
 		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,13 +26,13 @@
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@feb19" />
-		<meta name="twitter:title" content="Notes Quiz - feb19.jp" />
-		<meta name="twitter:description" content="Notes Quiz - feb19.jp" />
-		<meta name="twitter:image" content="http://feb19.jp/apps/notes/images/ogp.png" />
-		<meta name="twitter:url" content="http://feb19.jp/apps/notes/" />
+		<meta name="twitter:title" content="Material Color Generator - feb19.jp" />
+		<meta name="twitter:description" content="Material Design Color Palette Generator Web Service.jp" />
+		<meta name="twitter:image" content="http://feb19.jp/images/ogp.png" />
+		<meta name="twitter:url" content="http://feb19.jp/apps/materialcolor/" />
 		
-		<meta name="keywords" content="ピアノ, 楽譜, 譜読み, 初見, 練習, アプリ, iPhone, 楽器, 五線譜, 音符, 無料">
-		<meta name="description" content="楽譜が読めるようになるトレーニングアプリ">
+		<meta name="keywords" content="UI Design, Android, CSS, Sass, Polymer, 色相環, 配色">
+		<meta name="description" content="Material Design Color Palette Generator Web Service">
 		
 		<style>
 		.primary-colors-container { width: 560px; height: 560px; position: relative; }
@@ -460,6 +460,46 @@
             border-bottom: 1px solid #DADADA;
             list-style: none;
     	}
+    	.tweetbutton {
+            float: right;
+            margin: 0 20px 0 0;
+    	}
+    	
+@media screen and (max-width:760px) {
+    .screen {
+        margin: 0 0 20px 0;
+    }
+    .colorchip { margin: 4px 0 0 0; }
+    .primary-colors-container { width: 100%; height: 300px; }
+    .accent-colors-container  { width: 100%; height: 180px; }
+	.material-colors { -webkit-transform-origin: 6px 0; transform-origin: 6px 0; position: absolute; top: 50%; left: 50%; }
+	.material-colors:nth-child(1)  { -webkit-transform: rotate(-90deg)  translateY(40px); transform: rotate(-90deg)  translateY(40px); }
+	.material-colors:nth-child(2)  { -webkit-transform: rotate(-70deg)  translateY(40px); transform: rotate(-70deg)  translateY(40px); }
+	.material-colors:nth-child(3)  { -webkit-transform: rotate(-50deg)  translateY(40px); transform: rotate(-50deg)  translateY(40px); }
+	.material-colors:nth-child(4)  { -webkit-transform: rotate(-30deg)  translateY(40px); transform: rotate(-30deg)  translateY(40px); }
+	.material-colors:nth-child(5)  { -webkit-transform: rotate(-10deg)  translateY(40px); transform: rotate(-10deg)  translateY(40px); }
+	.material-colors:nth-child(6)  { -webkit-transform: rotate(10deg)   translateY(40px); transform: rotate(10deg)   translateY(40px); }
+	.material-colors:nth-child(7)  { -webkit-transform: rotate(30deg)   translateY(40px); transform: rotate(30deg)   translateY(40px); }
+	.material-colors:nth-child(8)  { -webkit-transform: rotate(50deg)   translateY(40px); transform: rotate(50deg)   translateY(40px); }
+	.material-colors:nth-child(9)  { -webkit-transform: rotate(70deg)   translateY(40px); transform: rotate(70deg)   translateY(40px); }
+	.material-colors:nth-child(10) { -webkit-transform: rotate(90deg)   translateY(40px); transform: rotate(90deg)   translateY(40px); }
+	.material-colors:nth-child(11) { -webkit-transform: rotate(110deg)  translateY(40px); transform: rotate(110deg)  translateY(40px); }
+	.material-colors:nth-child(12) { -webkit-transform: rotate(130deg)  translateY(40px); transform: rotate(130deg)  translateY(40px); }
+	.material-colors:nth-child(13) { -webkit-transform: rotate(150deg)  translateY(40px); transform: rotate(150deg)  translateY(40px); }
+	.material-colors:nth-child(14) { -webkit-transform: rotate(170deg)  translateY(40px); transform: rotate(170deg)  translateY(40px); }
+	.material-colors:nth-child(15) { -webkit-transform: rotate(-170deg) translateY(40px); transform: rotate(-170deg) translateY(40px); }
+	.material-colors:nth-child(16) { -webkit-transform: rotate(-150deg) translateY(40px); transform: rotate(-150deg) translateY(40px); }
+	.material-colors:nth-child(17) { -webkit-transform: rotate(-130deg) translateY(40px); transform: rotate(-130deg) translateY(40px); }
+	.material-colors:nth-child(18) { -webkit-transform: rotate(-110deg) translateY(40px); transform: rotate(-110deg) translateY(40px); }
+	.material-colors .colorsample {
+    	width:  12px;
+    	height: 12px;
+    }
+	.tweetbutton {
+        float: right;
+        margin: 0 0 0 0;
+	}
+}
 		</style>
 	</head>
 	
@@ -568,10 +608,26 @@
     						<div class="colorlabel">Background</div>
     						<div class="colorcode">#FAFAFA</div>
 						</div>
+				
+    					<h2>
+        					<span>option</span>
+    					</h2>
+						<div class="button" id="download-css-colors">
+    						<i class="fa fa-cloud-download"></i> CSS
+						</div>
+						<div class="button" id="download-sass-colors">
+    						<i class="fa fa-cloud-download"></i> Sass
+						</div>
+						<div class="button" id="download-xml-colors">
+    						<i class="fa fa-cloud-download"></i> Android XML
+						</div>
+						<div class="button tweetbutton" id="tweet-colors">
+    						<i class="fa fa-twitter"></i> Tweet
+						</div>
 					</div>
 					
 					<div class="contentgrid">
-            			<h2><span>1. Themes</span></h2>
+            			<h2><span>1. Theme</span></h2>
             			<p>
                 			<input type="radio" name="theme" id="theme-light" value="light" checked> <label for="theme-light">Light</label>
             			</p>
@@ -904,6 +960,10 @@
             			<p>
                 			<input type="radio" name="primary-text" id="text-black" value="black"> <label for="text-black">Black</label>
             			</p>
+            			<h2><span>See Also:</span></h2>
+            			<p>
+                			<a href="https://www.google.com/design/spec/style/color.html" target="_blank">Color - Style - Google design guidelines</a>
+            			</p>
 					</div>
 				</section>
 			</div>
@@ -983,7 +1043,9 @@
         'first_color_hue': 16,
         'first_color_level': 500,
         'second_color_hue': 9,
-        'second_color_level': 200
+        'second_color_level': 200,
+        'theme': 0,
+        'text_color': 0
     };
     
     function hex2Dis(n) {
@@ -995,7 +1057,6 @@
     };
     function hexColor(rgbColor) {
         var rgb = rgbColor.match(/[0-9]+/g);
-        console.log(rgb);
         var hex = "#" + hex2Dis(parseInt(rgb[0], 10).toString(16)) + hex2Dis(parseInt(rgb[1], 10).toString(16)) + hex2Dis(parseInt(rgb[2], 10).toString(16));
         return hex.toUpperCase();
     };
@@ -1014,50 +1075,118 @@
         localStorage['mcg_first_color_level']   = result['first_color_level'];
         localStorage['mcg_second_color_hue']    = result['second_color_hue'];
         localStorage['mcg_second_color_level']  = result['second_color_level'];
+        localStorage['mcg_theme']               = result['theme'];
+        localStorage['mcg_text_color']          = result['text_color'];
     };
     function loadResult() {
         if (typeof localStorage['mcg_primary_color'] == 'undefined') {
+            
             saveResult();
         } else {
-            result['primary_color'] = localStorage['mcg_primary_color'];
-            result['light_primary_color'] = localStorage['mcg_light_primary_color'];
-            result['dark_primary_color'] = localStorage['mcg_dark_primary_color'];
-            result['accent_color'] = localStorage['mcg_accent_color'];
-            result['text_icon'] = localStorage['mcg_text_icon'];
-            result['primary_text'] = localStorage['mcg_primary_text'];
-            result['secondary_text'] = localStorage['mcg_secondary_text'];
-            result['disabled_text'] = localStorage['mcg_disabled_text'];
-            result['divider_color'] = localStorage['mcg_divider_color'];
-            result['screen_body'] = localStorage['mcg_screen_body'];
-            result['first_color_hue'] = localStorage['mcg_first_color_hue'];
-            result['first_color_level'] = localStorage['mcg_first_color_level'];
-            result['second_color_hue'] = localStorage['mcg_second_color_hue'];
-            result['second_color_level'] = localStorage['mcg_second_color_level'];
+            result['primary_color']         = localStorage['mcg_primary_color'];
+            result['light_primary_color']   = localStorage['mcg_light_primary_color'];
+            result['dark_primary_color']    = localStorage['mcg_dark_primary_color'];
+            result['accent_color']          = localStorage['mcg_accent_color'];
+            result['text_icon']             = localStorage['mcg_text_icon'];
+            result['primary_text']          = localStorage['mcg_primary_text'];
+            result['secondary_text']        = localStorage['mcg_secondary_text'];
+            result['disabled_text']         = localStorage['mcg_disabled_text'];
+            result['divider_color']         = localStorage['mcg_divider_color'];
+            result['screen_body']           = localStorage['mcg_screen_body'];
+            result['first_color_hue']       = localStorage['mcg_first_color_hue'];
+            result['first_color_level']     = localStorage['mcg_first_color_level'];
+            result['second_color_hue']      = localStorage['mcg_second_color_hue'];
+            result['second_color_level']    = localStorage['mcg_second_color_level'];
+            result['theme']                 = localStorage['mcg_theme'];
+            result['text_color']            = localStorage['mcg_text_color'];
         }
         updateResult();
         updateView();
     };
+    function getUrlVars() {
+        var vars = [], max = 0, hash = "", array = "";
+        var url = window.location.search;
+        hash  = url.slice(1).split('&');
+        max = hash.length;
+        for (var i = 0; i < max; i++) {
+            array = hash[i].split('=');
+            vars.push(array[0]);
+            vars[array[0]] = array[1];
+        }
+        return vars;
+    };
+    function checkQuery() {
+        var vars = getUrlVars();
+        if (vars.length > 0) {
+            var t = parseInt(vars['t'], 10);
+            if (t == 1) {
+                result['theme'] = 1;
+            } else {
+                result['theme'] = 0;
+            }
+            var c = parseInt(vars['c'], 10);
+            if (c == 1) {
+                result['text_color'] = 1;
+            } else {
+                result['text_color'] = 0;
+            }
+            var fc = parseInt(vars['fc'], 10);
+            var fl = parseInt(vars['fl'], 10);
+            if (fl >= 50 && fl <= 900 && fl % 50 == 0) {
+                result['first_color_level'] = fl;
+            }
+            if (fc >= 0 && fc < 20) {
+                result['first_color_hue'] = fc;
+            }
+            var sc = parseInt(vars['sc'], 10);
+            var sl = parseInt(vars['sl'], 10);
+            if (sl >= 100 && sl <= 700 && sl % 100 == 0) {
+                result['second_color_level'] = sl;
+            }
+            if (sc >= 0 && sc < 20) {
+                result['second_color_hue'] = sc;
+            }
+            
+            console.log(result['theme']);
+            console.log(result['text_color']);
+            console.log(result['first_color_hue']);
+            console.log(result['first_color_level']);
+            console.log(result['second_color_hue']);
+            console.log(result['second_color_level']);
+            
+            updateView();
+            
+        }
+    }
     function updateView() {
         var themes = document.getElementsByName('theme');
-        if (result['primary_text'] == '#212121') {
+        if (result['theme'] == 0) {
             themes[0].checked = true;
         } else {
             themes[1].checked = true;
         }
-        
         var texts = document.getElementsByName('primary-text');
-        if (result['text_icon'] == '#FFFFFF') {
+        if (result['text_color'] == 0) {
             texts[0].checked = true;
         } else {
             texts[1].checked = true;
         }
-        
-        console.log(result['first_color_hue']);
-        console.log('.primary-colors' + result['first_color_hue'] + ' .color' + result['first_color_level']);
+        var primaryColors = document.querySelector('.primary-colors-container').querySelectorAll('.colorsample');
+        for (i = 0; i < primaryColors.length; i++) {
+            primaryColors[i].removeClassName('selected');
+        }
+        var accentColors = document.querySelector('.accent-colors-container').querySelectorAll('.colorsample');
+        for (i = 0; i < accentColors.length; i++) {
+            accentColors[i].removeClassName('selected');
+        }
         var f = document.querySelector('.primary-colors' + result['first_color_hue'] + ' .color' + result['first_color_level']);
         var s = document.querySelector('.accent-colors' + result['second_color_hue'] + ' .colorA' + result['second_color_level']);
         f.addClassName('selected');
         s.addClassName('selected');
+        checkTheme();
+        checkPrimaryColor(f);
+        checkAccentColor(s);
+        checkPrimaryText();
     };
     function checkTheme() {
         var val = '';
@@ -1068,7 +1197,6 @@
                 val = themes[i].value;
             }
         }
-        console.log(val);
         
         if (val == 'light') {
             result['primary_text']   = '#212121';
@@ -1076,12 +1204,14 @@
             result['disabled_text']  = '#9B9B9B';
             result['divider_color']  = '#DBDBDB';
             result['screen_body']    = '#FAFAFA';
+            result['theme'] = 0;
         } else {
             result['primary_text']   = '#FFFFFF';
             result['secondary_text'] = '#BCBCBC';
             result['disabled_text']  = '#646464';
             result['divider_color']  = '#3C3C3C';
             result['screen_body']    = '#303030';
+            result['theme'] = 1;
         }
         updateResult();
         saveResult();
@@ -1094,15 +1224,12 @@
         sender.addClassName('selected');
         var level = parseInt(sender.className.match(/[0-9]+/g), 10);
         var value = parseInt(sender.parentNode.className.match(/[0-9]+/g), 10);
-        console.log(level);
-        console.log(value);
         result['first_color_hue'] = value;
         result['first_color_level'] = level;
         
         var lightSender = sender.parentNode.querySelector('.color' + (level <= 200 ? 50 : 100));
         var darkSender = sender.parentNode.querySelector('.color' + (level >= 700 ? 900 : (level >= 600) ? 800 : 700));
         
-        console.log(window.getComputedStyle(sender, null).getPropertyValue('background-color'));
         result['primary_color'] = hexColor(window.getComputedStyle(sender, null).getPropertyValue('background-color'));
         result['light_primary_color'] = hexColor(window.getComputedStyle(lightSender, null).getPropertyValue('background-color'));
         result['dark_primary_color'] = hexColor(window.getComputedStyle(darkSender, null).getPropertyValue('background-color'));
@@ -1117,8 +1244,6 @@
         sender.addClassName('selected');
         var level = parseInt(sender.className.match(/[0-9]+/g), 10);
         var value = parseInt(sender.parentNode.className.match(/[0-9]+/g), 10);
-        console.log(level);
-        console.log(value);
         result['second_color_hue'] = value;
         result['second_color_level'] = level;
         result['accent_color'] = hexColor(window.getComputedStyle(sender, null).getPropertyValue('background-color'));
@@ -1134,13 +1259,14 @@
                 val = primaryTexts[i].value;
             }
         }
-        if (val == 'white') { result['text_icon'] = '#FFFFFF'; }
-        else { result['text_icon'] = '#212121'; }
+        if (val == 'white') { result['text_icon'] = '#FFFFFF'; result['text_color'] = 0; }
+        else { result['text_icon'] = '#212121'; result['text_color'] = 1; }
         updateResult();
         saveResult();
     };
     function updateResult() {
         var i;
+        
         list['text_icon']['chipDOM'].style.backgroundColor = result['text_icon'];
         list['text_icon']['codeDOM'].innerHTML = result['text_icon'];
         list['text_icon']['previewDOM'].style.color = result['text_icon'];
@@ -1184,6 +1310,29 @@
         list['screen_body']['codeDOM'].innerHTML = result['screen_body'];
         list['screen_body']['previewDOM'].style.backgroundColor = result['screen_body'];
     };
+    
+    function fileSave(fname, content) {
+        window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
+        window.requestFileSystem(TEMPORARY, 1024*1024, function(fileSystem){
+            fileSystem.root.getFile(fname, { create: true, exclusive: false }, function(fileEntry) {
+                fileEntry.createWriter(function(fileWriter){
+                    var blob = new Blob([ content ], { "type" : "text/plain" });
+                    fileWriter.write(blob);
+                    fileWriter.onwriteend = function(e){
+                        var a = document.createElement('a');
+                        a.download = fname;
+                        a.href = fileEntry.toURL();
+                        a.click();
+                    };
+                    fileWriter.onerror = function(e){
+                    };
+                });
+            }, function(error){
+//                 console.log("error.code=" + error.code);
+            });
+        });
+    };
+    
     document.addEventListener('DOMContentLoaded', function(e) {
         list = {
             'primary_color': {
@@ -1267,6 +1416,72 @@
         }
         
         loadResult();
+        checkQuery();
+        
+        var downloadCSS  = document.getElementById('download-css-colors');
+        var downloadSass = document.getElementById('download-sass-colors');
+        var downloadXML  = document.getElementById('download-xml-colors');
+        var tweet        = document.getElementById('tweet-colors');
+        downloadCSS.addEventListener('click', function(ev) {
+            var d = Date.now()
+            fileSave('material-color-'+d.toString(10)+'.css', 
+'/* generated by http://feb19.jp/apps/materialcolor/ */ \n'+
+'.dark-primary-color    { background: '+result['dark_primary_color']+'; }\n' +
+'.primary-color         { background: '+result['primary_color']+'; }\n' +
+'.light-primary-color   { background: '+result['light_primary_color']+'; }\n' +
+'.text-primary-color    { color: '+result['text_icon']+'; }\n' +
+'.accent-color          { background: '+result['accent_color']+'; }\n' +
+'.primary-text-color    { color: '+result['primary_text']+'; }\n' +
+'.secondary-text-color  { color: '+result['secondary_text']+'; }\n' +
+'.divider-color         { border-color: '+result['divider_color']+'; }\n' +
+'.disabled-color        { color: '+result['disabled_text']+'; }\n' +
+'.background-color      { border-color: '+result['screen_body']+'; }');
+        }, false);
+        downloadSass.addEventListener('click', function(ev) {
+            var d = Date.now()
+            fileSave('material-color-'+d.toString(10)+'.sass', 
+'/* generated by http://feb19.jp/apps/materialcolor/ */ \n'+
+'$primary-color-dark:   '+result['dark_primary_color']+'\n' +
+'$primary-color:        '+result['primary_color']+'\n' +
+'$primary-color-light:  '+result['light_primary_color']+'\n' +
+'$text-primary-color:   '+result['text_icon']+'\n' +
+'$accent-color:         '+result['accent_color']+'\n' +
+'$primary-text-color:   '+result['primary_text']+'\n' +
+'$secondary-text-color: '+result['secondary_text']+'\n' +
+'$divider-color:        '+result['divider_color']+'\n' +
+'$disabled-color:       '+result['disabled_text']+'\n' +
+'$background-color:     '+result['screen_body']+'');
+        }, false);
+        downloadXML.addEventListener('click', function(ev) {
+            var d = Date.now()
+            fileSave('material-color-'+d.toString(10)+'.xml', 
+'<!-- generated by http://feb19.jp/apps/materialcolor/ -->\n'+
+'<?xml version="1.0" encoding="utf-8"?>\n' +
+'<resources>\n' +
+'  <color name="primary">'+result['primary_color']+'</color>\n' +
+'  <color name="primary_dark">'+result['dark_primary_color']+'</color>\n' +
+'  <color name="primary_light">'+result['light_primary_color']+'</color>\n' +
+'  <color name="accent">'+result['accent_color']+'</color>\n' +
+'  <color name="icons">'+result['text_icon']+'</color>\n' +
+'  <color name="primary_text">'+result['primary_text']+'</color>\n' +
+'  <color name="secondary_text">'+result['secondary_text']+'</color>\n' +
+'  <color name="divider">'+result['divider_color']+'</color>\n' +
+'  <color name="disabled_text">'+result['disabled_text']+'</color>\n' +
+'  <color name="background">'+result['screen_body']+'</color>\n' +
+'</resources>');
+        }, false);
+        tweet.addEventListener('click', function(ev) {
+            var uri = 'http://feb19.jp/apps/materialcolor/?t='+result['theme']+'&c='+result['text_color']+'&fc='+result['first_color_hue']+'&fl='+result['first_color_level']+'&sc='+result['second_color_hue']+'&sl='+result['second_color_level'];
+            var title = 'Material Color Generator #MaterialDesign'
+            window.open('http://twitter.com/share?count=horizontal&text='+encodeURIComponent(title)+'&url=' + encodeURIComponent(uri));
+        }, false);
+        
+        
+        console.log('%cエッチ！', 'background-color: '+result['light_primary_color']+'; color: black; font-size: 24px;');
+        console.log('%cスケッチ！', 'background-color: '+result['primary_color']+'; color: white; font-size: 24px;');
+        console.log('%cワンタッチ！', 'background-color: '+result['dark_primary_color']+'; color: white; font-size: 24px;');
+        
+        console.log('%cここ見るスケベなあなたは Dosukebe Developer', 'color: #646464; font-size: 9px; font-style: italic;');
         
     }, false);
 })();
