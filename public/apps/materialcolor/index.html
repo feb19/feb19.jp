@@ -16,7 +16,7 @@
 		<meta property="og:type" content="product">
 		<meta property="og:description" content="Material Design Color Palette Generator Web Service">
 		<meta property="og:url" content="http://feb19.jp/apps/materialcolor/">
-		<meta property="og:image" content="http://feb19.jp/images/ogp.png">
+		<meta property="og:image" content="http://feb19.jp/apps/materialcolor/images/ogp.png">
 		<meta property="og:site_name" content="Material Color Generator">
 		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
 		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
@@ -28,7 +28,7 @@
 		<meta name="twitter:site" content="@feb19" />
 		<meta name="twitter:title" content="Material Color Generator - feb19.jp" />
 		<meta name="twitter:description" content="Material Design Color Palette Generator Web Service.jp" />
-		<meta name="twitter:image" content="http://feb19.jp/images/ogp.png" />
+		<meta name="twitter:image" content="http://feb19.jp/apps/materialcolor/images/ogp.png" />
 		<meta name="twitter:url" content="http://feb19.jp/apps/materialcolor/" />
 		
 		<meta name="keywords" content="UI Design, Android, CSS, Sass, Polymer, 色相環, 配色">
@@ -1422,6 +1422,12 @@
         var downloadSass = document.getElementById('download-sass-colors');
         var downloadXML  = document.getElementById('download-xml-colors');
         var tweet        = document.getElementById('tweet-colors');
+        if (typeof window.TEMPORARY == "undefined") {
+            downloadCSS.style.display = "none";
+            downloadSass.style.display = "none";
+            downloadXML.style.display = "none";
+        }
+
         downloadCSS.addEventListener('click', function(ev) {
             var d = Date.now()
             fileSave('material-color-'+d.toString(10)+'.css', 
