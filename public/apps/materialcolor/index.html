@@ -14,9 +14,9 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta property="og:title" content="Material Color Generator - feb19.jp">
 		<meta property="og:type" content="product">
-		<meta property="og:description" content="Material Design Color Palette Generator Web Service">
+		<meta property="og:description" content="Material Design の配色を作成">
 		<meta property="og:url" content="http://feb19.jp/apps/materialcolor/">
-		<meta property="og:image" content="http://feb19.jp/apps/materialcolor/images/ogp.png">
+		<meta property="og:image" content="http://feb19.jp/apps/materialcolor/images/image.png">
 		<meta property="og:site_name" content="Material Color Generator">
 		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
 		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
@@ -24,11 +24,11 @@
         <link href='http://fonts.googleapis.com/css?family=EB+Garamond|Roboto' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/application.css">
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
-		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@feb19" />
 		<meta name="twitter:title" content="Material Color Generator - feb19.jp" />
-		<meta name="twitter:description" content="Material Design Color Palette Generator Web Service.jp" />
-		<meta name="twitter:image" content="http://feb19.jp/apps/materialcolor/images/ogp.png" />
+		<meta name="twitter:image" content="http://feb19.jp/apps/materialcolor/images/image.png" />
+		<meta name="twitter:description" content="Material Design の配色を作成" />
 		<meta name="twitter:url" content="http://feb19.jp/apps/materialcolor/" />
 		
 		<meta name="keywords" content="UI Design, Android, CSS, Sass, Polymer, 色相環, 配色">
@@ -612,17 +612,19 @@
     					<h2>
         					<span>option</span>
     					</h2>
-						<div class="button" id="download-css-colors">
-    						<i class="fa fa-cloud-download"></i> CSS
-						</div>
-						<div class="button" id="download-sass-colors">
-    						<i class="fa fa-cloud-download"></i> Sass
-						</div>
-						<div class="button" id="download-xml-colors">
-    						<i class="fa fa-cloud-download"></i> Android XML
-						</div>
-						<div class="button tweetbutton" id="tweet-colors">
-    						<i class="fa fa-twitter"></i> Tweet
+    					<div class="clearfix">
+    						<div class="button" id="download-css-colors">
+        						<i class="fa fa-cloud-download"></i> CSS
+    						</div>
+    						<div class="button" id="download-sass-colors">
+        						<i class="fa fa-cloud-download"></i> Sass
+    						</div>
+    						<div class="button" id="download-xml-colors">
+        						<i class="fa fa-cloud-download"></i> Android XML
+    						</div>
+    						<div class="button tweetbutton" id="tweet-colors">
+        						<i class="fa fa-twitter"></i> Tweet
+    						</div>
 						</div>
 					</div>
 					
@@ -964,6 +966,9 @@
             			<p>
                 			<a href="https://www.google.com/design/spec/style/color.html" target="_blank">Color - Style - Google design guidelines</a>
             			</p>
+            			<p>
+                			<a href="http://feb19.jp/blog/archives/000273.php" target="_blank">不真面目に Material Design の配色する／Material Color Generator 作りました - feb19.jp</a>
+            			</p>
 					</div>
 				</section>
 			</div>
@@ -1146,13 +1151,6 @@
             if (sc >= 0 && sc < 20) {
                 result['second_color_hue'] = sc;
             }
-            
-            console.log(result['theme']);
-            console.log(result['text_color']);
-            console.log(result['first_color_hue']);
-            console.log(result['first_color_level']);
-            console.log(result['second_color_hue']);
-            console.log(result['second_color_level']);
             
             updateView();
             
@@ -1478,7 +1476,7 @@
         }, false);
         tweet.addEventListener('click', function(ev) {
             var uri = 'http://feb19.jp/apps/materialcolor/?t='+result['theme']+'&c='+result['text_color']+'&fc='+result['first_color_hue']+'&fl='+result['first_color_level']+'&sc='+result['second_color_hue']+'&sl='+result['second_color_level'];
-            var title = 'Material Color Generator #MaterialDesign'
+            var title = 'Material Color Generator - feb19.jp #MaterialDesign'
             window.open('http://twitter.com/share?count=horizontal&text='+encodeURIComponent(title)+'&url=' + encodeURIComponent(uri));
         }, false);
         
