@@ -193,6 +193,25 @@ footer {
   .button:hover {
     background-color: #f2f2f2; }
 
+table {
+  width: 100%;
+  border: none;
+  border-spacing: 0;
+  border-top: solid 1px #E4E4E4;
+  border-collapse: collapse; }
+
+tr {
+  border-bottom: solid 1px #DCDCDC;
+  box-sizing: border-box;
+  background-color: #F7F7F7;
+  height: auto; }
+  tr:nth-child(2n) {
+    background-color: transparent; }
+
+td {
+  padding: 3px;
+  vertical-align: top; }
+
 @media screen and (max-width: 760px) {
   .gnav {
     position: relative;
@@ -274,4 +293,6 @@ footer {
         background-color: white;
         padding: 0 10px 0 0; }
     section.gridsystem {
-      display: block; } }
+      display: block; }
+  td {
+    font-size: 14px; } }
