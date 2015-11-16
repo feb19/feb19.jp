@@ -51,16 +51,26 @@ body {
 	}
 }
 a {
-	color: #494949;
+	color: #000000;
 	text-decoration: none;
 	&:hover {
 		text-decoration: underline;
 	}
 }
+.section p a {
+    color: #999999;
+}
 p {
 	font-size: 16px;
 	font-weight: normal;
 }
+strong {
+    background: linear-gradient(transparent 60%, #ffff66 60%);
+}
+em {
+    background: linear-gradient(transparent 60%, #d7f5ff 60%);
+}
+
 ul {
 	list-style: none;
 	padding: 0;
