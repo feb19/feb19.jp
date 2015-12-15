@@ -145,11 +145,19 @@ section {
   section .tags {
     text-align: right;
     margin: 10px 0 40px 0; }
+    section .tags li {
+      line-height: 1; }
   section h2 {
     font-size: 12px;
     font-weight: normal; }
   section h3 {
     font-size: 14px; }
+
+.entrydate {
+  float: left;
+  margin: 0 0 30px;
+  font-size: 14px;
+  line-height: 1; }
 
 pre {
   font-family: 'Inconsolata', monospace;
@@ -157,7 +165,8 @@ pre {
   line-height: 1.5;
   border: 1px solid #ccc;
   background-color: white;
-  padding: 10px; }
+  padding: 10px;
+  overflow-x: scroll; }
   pre li {
     font-size: 12px; }
 

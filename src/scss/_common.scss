@@ -173,6 +173,9 @@ section {
     .tags {
     	text-align: right;
     	margin: 10px 0 40px 0;
+    	li {
+        	line-height: 1;
+    	}
     }
 	h2 {
 		font-size: 12px;
@@ -182,6 +185,12 @@ section {
         font-size: 14px;
     }
 }
+.entrydate {
+    float: left;
+    margin: 0 0 30px;
+    font-size: 14px;
+    line-height: 1;
+}
 pre {
 	font-family: 'Inconsolata', monospace;
 	font-size:12px;
@@ -189,6 +198,8 @@ pre {
     border: 1px solid #ccc;
     background-color: white;
     padding: 10px;
+    overflow-x: scroll; 
+    
     li {
         font-size: 12px;
     }

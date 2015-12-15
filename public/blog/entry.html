@@ -67,6 +67,7 @@
 			<div class="content">
 				<section>
 					<h1><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></h1>
+					<p class="entrydate"><$MTEntryDate format="%x"$></p>
 					<ul class="tags">
 						<MTEntryCategories>
 						<li><a href="<$MTCategoryArchiveLink$>"><$MTCategoryLabel$></a></li>
@@ -77,8 +78,6 @@
 					<$MTEntryBody$>
 					<MTIfNonEmpty tag="EntryMore" convert_breaks="0"><$MTEntryMore$></MTIfNonEmpty>
 					
-					<p class="entrydate"><$MTEntryDate format="%x"$></p>
-	
 					<h2><span>Navigation</span></h2>
 					<p><MTEntryPrevious>prev: <a href="<$MTEntryPermalink$>"><$MTEntryTitle remove_html="1"$></a><br></MTEntryPrevious>
 					<MTEntryNext>next: <a href="<$MTEntryPermalink$>"><$MTEntryTitle remove_html="1"$></a></MTEntryNext></p>
