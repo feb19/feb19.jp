@@ -184,6 +184,11 @@ section {
 	h3 {
         font-size: 14px;
     }
+    blockquote {
+        margin: 1em 0 1em 0;
+        border-left: 1px solid black;
+        padding: 0 0 0 10px;
+    }
 }
 .entrydate {
     float: left;
@@ -316,7 +321,7 @@ section {
 		line-height: 36px;
 		margin: 0 0 40px 0;
 	}
-	p {
+	p, blockquote {
 		font-size: 14px;
 	}
 	img {
