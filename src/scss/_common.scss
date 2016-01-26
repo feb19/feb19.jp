@@ -127,6 +127,14 @@ header {
 		}
 	}
 }
+.content {
+    section {
+        li {
+            margin-left: 20px;
+            list-style: circle;
+        }
+    }
+}
 section {
 	margin: 40px 0 0 0;
 	&:last-child {
@@ -175,6 +183,8 @@ section {
     	margin: 10px 0 40px 0;
     	li {
         	line-height: 1;
+            list-style: none;
+            display: inline-block;
     	}
     }
 	h2 {

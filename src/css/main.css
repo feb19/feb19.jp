@@ -110,6 +110,10 @@ header {
     .breadcrumb li:first-child:before {
       display: none; }
 
+.content section li {
+  margin-left: 20px;
+  list-style: circle; }
+
 section {
   margin: 40px 0 0 0; }
   section:last-child {
@@ -146,7 +150,9 @@ section {
     text-align: right;
     margin: 10px 0 40px 0; }
     section .tags li {
-      line-height: 1; }
+      line-height: 1;
+      list-style: none;
+      display: inline-block; }
   section h2 {
     font-size: 12px;
     font-weight: normal; }
