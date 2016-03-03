@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=<$MTPublishCharset$>" />
-		<meta name="viewport" content="width=device-width" id="viewport" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" id="viewport" />
 		<meta name="format-detection" content="telephone=no" />
-		<title>Blog - feb19.jp</title>
+		<title><$MTArchiveTitle$> - feb19.jp</title>
 		<meta name="author" content="Nobuhiro Takahashi" />
 		<meta name="copyright" content="Copyright (C) Nobuhiro Takahashi" />
 		<link rel="shortcut icon" href="/favicon.ico">
@@ -13,27 +13,28 @@
 		<link rel="apple-touch-icon" href="/icon-precomposed.png">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta property="og:title" content="Blog - feb19.jp"/>
+		<meta property="og:title" content="<$MTArchiveTitle$> - feb19.jp"/>
 		<meta property="og:type" content="website"/>
-		<meta property="og:url" content="http://feb19.jp/blog"/>
+		<meta property="og:url" content="<$MTCategoryArchiveLink$>" />
 		<meta property="og:locale" content="ja_JP" />
 		<meta property="og:image" content="http://feb19.jp/feb19.png"/>
-		<meta property="og:description" content="nobuhiro takahashi - Designer / Engineer" />
+		<meta property="og:description" content="<$MTArchiveTitle$>" />
 		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
 		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
         <link href='http://fonts.googleapis.com/css?family=EB+Garamond|Inconsolata' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/application.css">
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
-		<link rel="alternate" type="application/atom+xml" title="Atom" href="<$MTBlogURL$>atom.xml" />
-		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<$MTBlogURL$>index.xml" />
-		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="<$MTBlogURL$>rsd.xml" />
+		<link rel="alternate" type="application/atom+xml" title="Atom" href="http://feb19.jp/blog/atom.xml" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feb19.jp/blog/index.xml" />
+		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://feb19.jp/blog/rsd.xml" />
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@feb19" />
-		<meta name="twitter:title" content="Blog - feb19.jp" />
-		<meta name="twitter:description" content="Blog - feb19.jp" />
+		<meta name="twitter:title" content="<$MTArchiveTitle$> - feb19.jp" />
+		<meta name="twitter:description" content="<$MTArchiveTitle$>" />
 		<meta name="twitter:image" content="http://feb19.jp/blog/feb19.png" />
-		<meta name="twitter:url" content="http://feb19.jp/blog/" />
+		<meta name="twitter:url" content="<$MTCategoryArchiveLink$>" />
 		<script type="text/javascript" src="http://feb19.jp/blog/js/swfobject.js"></script>
+		<link rel="start" href="<$MTBlogURL$>" title="Home" />
 	</head>
 	
 	<body>
@@ -56,13 +57,12 @@
 			<ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
 				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
 				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/blog" itemprop="url"><span itemprop="title">Blog</span></a></li>
+				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<$MTCategoryArchiveLink$>" itemprop="url"><span itemprop="title"><$MTArchiveTitle$></span></a></li>
 			</ul>
 			
 			<div class="content">
 				<MTEntries>
-				<$MTEntryTrackbackData$>
 				<section>
-					
 					<h1><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></h1>
 					<p class="entrydate"><$MTEntryDate format="%x"$></p>
 					<ul class="tags">
@@ -71,9 +71,10 @@
 						</MTEntryCategories> 
 						<MTEntryIfTagged><MTEntryTags><li><a href="<$MTTagSearchLink$>" rel="tag"><$MTTagName$></a></li></MTEntryTags></MTEntryIfTagged>
 					</ul>
-					
+						
 					<$MTEntryBody$>
-					<MTIfNonEmpty tag="EntryMore" convert_breaks="0"><p class="entry-more-link"><a href="<$MTEntryPermalink$>">続きを読む "<$MTEntryTitle$>" &raquo;</a></p></MTIfNonEmpty>
+<!-- 					<$MTEntryExcerpt$> -->
+					
 				</section>
 				</MTEntries>
 				

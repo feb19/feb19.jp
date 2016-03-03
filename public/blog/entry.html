@@ -67,6 +67,7 @@
 			<div class="content">
 				<section>
 					<h1><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></h1>
+					<p class="entrydate"><$MTEntryDate format="%x"$></p>
 					<ul class="tags">
 						<MTEntryCategories>
 						<li><a href="<$MTCategoryArchiveLink$>"><$MTCategoryLabel$></a></li>
@@ -77,8 +78,6 @@
 					<$MTEntryBody$>
 					<MTIfNonEmpty tag="EntryMore" convert_breaks="0"><$MTEntryMore$></MTIfNonEmpty>
 					
-					<p class="entrydate"><$MTEntryDate format="%x"$></p>
-	
 					<h2><span>Navigation</span></h2>
 					<p><MTEntryPrevious>prev: <a href="<$MTEntryPermalink$>"><$MTEntryTitle remove_html="1"$></a><br></MTEntryPrevious>
 					<MTEntryNext>next: <a href="<$MTEntryPermalink$>"><$MTEntryTitle remove_html="1"$></a></MTEntryNext></p>
@@ -88,8 +87,8 @@
 					<h2><span>Recently Entries</span></h2>
 					<ul>
 						<MTEntries lastn="15">
-						<li><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a><br>
-							<$MTEntryExcerpt$></li>
+						<li><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a><!--<br>
+							<$MTEntryExcerpt$>--></li>
 						</MTEntries>
 					</ul>
 				</section>
@@ -109,6 +108,7 @@
 				<div class="grid">
 					<h2>Works</h2>
 					<ul>
+						<li><a href="https://repertoryapp.com">Repertory</a></li>
 						<li><a href="http://moshapp.me">Mosh!</a></li>
 						<li><a href="http://freepianoscore.com/">Free Piano Score</a></li>
 						<li><a href="http://feb19.jp/apps/notes/">Notes Quiz</a></li>

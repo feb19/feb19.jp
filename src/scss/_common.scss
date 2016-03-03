@@ -51,16 +51,26 @@ body {
 	}
 }
 a {
-	color: #494949;
+	color: #000000;
 	text-decoration: none;
 	&:hover {
 		text-decoration: underline;
 	}
 }
+section p a {
+    color: #999999;
+}
 p {
 	font-size: 16px;
 	font-weight: normal;
 }
+strong {
+    background: linear-gradient(transparent 60%, #ffff66 60%);
+}
+em {
+    background: linear-gradient(transparent 60%, #d7f5ff 60%);
+}
+
 ul {
 	list-style: none;
 	padding: 0;
@@ -117,6 +127,14 @@ header {
 		}
 	}
 }
+.content {
+    section {
+        li {
+            margin-left: 20px;
+            list-style: circle;
+        }
+    }
+}
 section {
 	margin: 40px 0 0 0;
 	&:last-child {
@@ -163,6 +181,11 @@ section {
     .tags {
     	text-align: right;
     	margin: 10px 0 40px 0;
+    	li {
+        	line-height: 1;
+            list-style: none;
+            display: inline-block;
+    	}
     }
 	h2 {
 		font-size: 12px;
@@ -171,6 +194,17 @@ section {
 	h3 {
         font-size: 14px;
     }
+    blockquote {
+        margin: 1em 0 1em 0;
+        border-left: 1px solid black;
+        padding: 0 0 0 10px;
+    }
+}
+.entrydate {
+    float: left;
+    margin: 0 0 30px;
+    font-size: 14px;
+    line-height: 1;
 }
 pre {
 	font-family: 'Inconsolata', monospace;
@@ -179,6 +213,8 @@ pre {
     border: 1px solid #ccc;
     background-color: white;
     padding: 10px;
+    overflow-x: scroll; 
+    
     li {
         font-size: 12px;
     }
@@ -295,7 +331,7 @@ section {
 		line-height: 36px;
 		margin: 0 0 40px 0;
 	}
-	p {
+	p, blockquote {
 		font-size: 14px;
 	}
 	img {
@@ -366,6 +402,25 @@ section {
 		display: block;
 		
 	}
+    .iframe-container {
+        position: relative;
+        width: 100%;
+        padding: 56.2% 0 0;
+        border: 1px solid #2D2D2D;
+        border-radius: 3px;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        iframe {
+            margin: 0 auto;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+    }
 }
 td {
     font-size: 14px;
