@@ -2,7 +2,7 @@
 <html lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width" id="viewport" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" id="viewport" />
 		<meta name="format-detection" content="telephone=no" />
 		<title>feb19.jp - Nobuhiro Takahashi [ Designer / Engineer ]</title>
 		<meta name="author" content="Nobuhiro Takahashi" />
@@ -10,6 +10,7 @@
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/icon-precomposed.png">
+		<meta name="apple-mobile-web-app-title" content="feb19.jp">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta property="og:title" content="feb19.jp"/>
@@ -20,7 +21,7 @@
 		<meta property="og:description" content="nobuhiro takahashi - Designer / Engineer" />
 		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
 		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
-        <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/application.css">
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<meta name="twitter:card" content="summary" />
@@ -34,349 +35,6 @@
 	<body>
 		<div id="container"></div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.js"></script>
-		<script src="js/Detector.js"></script>
-		<script src="js/stats.min.js"></script>
-		<script src="js/shaders/HorizontalBlurShader.js"></script>
-	
-        <script>
-            
-            
-			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-			
-			
-
-			var SCREEN_WIDTH = window.innerWidth,
-				SCREEN_HEIGHT = window.innerHeight,
-
-			r = 450,
-
-			mouseX = 0, mouseY = 0,
-
-			windowHalfX = window.innerWidth / 2,
-			windowHalfY = window.innerHeight / 2,
-
-			camera, scene, renderer;
-
-			init();
-			animate();
-
-			function init() {
-
-				var container;
-
-				container = document.getElementById('container');
-				
-				camera = new THREE.PerspectiveCamera( 80, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 3000 );
-				camera.position.z = 1000;
-
-				scene = new THREE.Scene();
-
-				var i, line, vertex1, vertex2, material, p,
-					parameters = [ [ 0.25, 0xefefef, 0.75, 1 ], [ 0.5, 0xefefef, 1, 1 ], [ 0.75, 0xefefef, 0.75, 1 ], [ 1, 0xcccccc, 0.5, 1 ], [ 1.25, 0xccccc, 0.8, 1 ],
-							       [ 3.0, 0xaaaaaa, 0.75, 2 ], [ 3.5, 0xffffff, 0.5, 1 ], [ 4.5, 0xffffff, 0.25, 1 ], [ 5.5, 0xffffff, 0.125, 1 ] ];
-
-				var geometry = createGeometry();
-
-				for( i = 0; i < parameters.length; ++ i ) {
-
-					p = parameters[ i ];
-
-					material = new THREE.LineBasicMaterial( { color: p[ 1 ], opacity: p[ 2 ], linewidth: p[ 3 ] } );
-
-					line = new THREE.LineSegments( geometry, material );
-					line.scale.x = line.scale.y = line.scale.z = p[ 0 ];
-					line.originalScale = p[ 0 ];
-					line.rotation.y = Math.random() * Math.PI;
-					line.updateMatrix();
-					scene.add( line );
-
-				}
-
-				renderer = new THREE.WebGLRenderer( { antialias: false } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
-				renderer.setClearColor( 0xffffff );
-				container.appendChild( renderer.domElement );
-
-				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-
-				//
-
-				window.addEventListener( 'resize', onWindowResize, false );
-
-				// test geometry swapability
-/*
-				setInterval( function () {
-
-					var geometry = createGeometry();
-
-					scene.traverse( function ( object ) {
-
-						if ( object instanceof THREE.Line ) {
-
-							object.geometry.dispose();
-							object.geometry = geometry;
-
-						}
-
-					} );
-
-				}, 1000 );
-*/
-			}
-
-			function createGeometry() {
-
-				var geometry = new THREE.Geometry();
-
-				for ( i = 0; i < 1500; i ++ ) {
-
-					var vertex1 = new THREE.Vector3();
-					vertex1.x = Math.random() * 2 - 1;
-					vertex1.y = Math.random() * 2 - 1;
-					vertex1.z = Math.random() * 2 - 1;
-					vertex1.normalize();
-					vertex1.multiplyScalar( r );
-
-					vertex2 = vertex1.clone();
-					vertex2.multiplyScalar( Math.random() * 0.09 + 1 );
-
-					geometry.vertices.push( vertex1 );
-					geometry.vertices.push( vertex2 );
-
-				}
-
-				return geometry;
-
-			}
-
-			function onWindowResize() {
-
-				windowHalfX = window.innerWidth / 2;
-				windowHalfY = window.innerHeight / 2;
-
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-
-				renderer.setSize( window.innerWidth, window.innerHeight );
-
-			}
-
-			function onDocumentMouseMove( event ) {
-
-				mouseX = event.clientX - windowHalfX;
-				mouseY = event.clientY - windowHalfY;
-
-			}
-
-			function onDocumentTouchStart( event ) {
-
-				if ( event.touches.length > 1 ) {
-
-					event.preventDefault();
-
-					mouseX = event.touches[ 0 ].pageX - windowHalfX;
-					mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-				}
-
-			}
-
-			function onDocumentTouchMove( event ) {
-
-				if ( event.touches.length == 1 ) {
-
-					event.preventDefault();
-
-					mouseX = event.touches[ 0 ].pageX - windowHalfX;
-					mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-				}
-
-			}
-
-			//
-
-			function animate() {
-
-				requestAnimationFrame( animate );
-
-				render();
-
-			}
-
-			function render() {
-
-				camera.position.y += ( - mouseY + 200 - camera.position.y ) * .05;
-				camera.lookAt( scene.position );
-
-				renderer.render( scene, camera );
-
-				var time = Date.now() * 0.0001;
-
-				for ( var i = 0; i < scene.children.length; i ++ ) {
-
-					var object = scene.children[ i ];
-
-					if ( object instanceof THREE.Line ) {
-
-						object.rotation.y = time * ( i < 4 ? ( i + 1 ) : - ( i + 1 ) );
-
-						if ( i < 5 ) object.scale.x = object.scale.y = object.scale.z = object.originalScale * (i/5+1) * (1 + 0.5 * Math.sin( 7*time ) );
-
-					}
-
-				}
-
-			}
-
-
-		</script>
-<!--
-		<div id="container"></div>
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js"></script>
-		<script src="js/Projector.js"></script>
-		<script src="js/CanvasRenderer.js"></script>
-		<script src="js/stats.min.js"></script>
-
-		<script>
-
-			var container, stats;
-			var camera, scene, renderer;
-			var group;
-			var mouseX = 0, mouseY = 0;
-
-			var windowHalfX = window.innerWidth / 2;
-			var windowHalfY = window.innerHeight / 2;
-
-			init();
-			animate();
-
-			function init() {
-
-				container = document.getElementById( 'container' );
-
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera.position.z = 500;
-
-				scene = new THREE.Scene();
-
-				group = new THREE.Group();
-				scene.add( group );
-
-				// earth
-
-				var loader = new THREE.TextureLoader();
-				loader.load( 'textures/land_ocean_ice_cloud_2048.jpg', function ( texture ) {
-
-					var geometry = new THREE.SphereGeometry( 200, 20, 20 );
-
-					var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
-					var mesh = new THREE.Mesh( geometry, material );
-					group.add( mesh );
-
-				} );
-
-				// shadow
-
-				var canvas = document.createElement( 'canvas' );
-				canvas.width = 128;
-				canvas.height = 128;
-
-				var context = canvas.getContext( '2d' );
-				var gradient = context.createRadialGradient(
-					canvas.width / 2,
-					canvas.height / 2,
-					0,
-					canvas.width / 2,
-					canvas.height / 2,
-					canvas.width / 2
-				);
-				gradient.addColorStop( 0.1, 'rgba(210,210,210,1)' );
-				gradient.addColorStop( 1, 'rgba(255,255,255,1)' );
-
-				context.fillStyle = gradient;
-				context.fillRect( 0, 0, canvas.width, canvas.height );
-
-				var texture = new THREE.Texture( canvas );
-				texture.needsUpdate = true;
-
-				var geometry = new THREE.PlaneBufferGeometry( 300, 300, 3, 3 );
-				var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
-
-				var mesh = new THREE.Mesh( geometry, material );
-				mesh.position.y = - 250;
-				mesh.rotation.x = - Math.PI / 2;
-				group.add( mesh );
-
-				renderer = new THREE.CanvasRenderer();
-				renderer.setClearColor( 0xffffff );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				container.appendChild( renderer.domElement );
-
-				stats = new Stats();
-				stats.domElement.style.position = 'absolute';
-				stats.domElement.style.top = '0px';
-				container.appendChild( stats.domElement );
-
-				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-
-				//
-
-				window.addEventListener( 'resize', onWindowResize, false );
-
-			}
-
-			function onWindowResize() {
-
-				windowHalfX = window.innerWidth / 2;
-				windowHalfY = window.innerHeight / 2;
-
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-
-				renderer.setSize( window.innerWidth, window.innerHeight );
-
-			}
-
-			function onDocumentMouseMove( event ) {
-
-				mouseX = ( event.clientX - windowHalfX );
-				mouseY = ( event.clientY - windowHalfY );
-
-			}
-
-			//
-
-			function animate() {
-
-				requestAnimationFrame( animate );
-
-				render();
-				stats.update();
-
-			}
-
-			function render() {
-
-				camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-				camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
-				camera.lookAt( scene.position );
-
-				group.rotation.y -= 0.005;
-
-				renderer.render( scene, camera );
-
-			}
-
-
-		</script>
-		-->
 		<div class="wrapper">
 			<header>
 				<h1><a href="/">feb19.jp</a></h1>
@@ -396,6 +54,7 @@
 			
 			<footer>
 				<div class="grid">
+<!--
 					<h2>Menu</h2>
 					<ul>
 						<li><a href="/about">About</a></li>
@@ -404,13 +63,15 @@
 						<li><a href="/apps">Apps</a></li>
 						<li><a href="http://meditation-records.com">Music</a></li>
 					</ul>
+-->
 				</div>
 				<div class="grid">
 					<h2>Recently Works</h2>
 					<ul>
+						<li><a href="http://feb19.jp/apps/tuner">Tuner</a></li>
 						<li><a href="https://repertoryapp.com">Repertory</a></li>
 						<li><a href="http://moshapp.me">Mosh!</a></li>
-						<li><a href="http://freepianoscore.com/">Free Piano Score</a></li>
+<!-- 						<li><a href="http://freepianoscore.com/">Free Piano Score</a></li> -->
 						<li><a href="http://feb19.jp/apps/notes/">Notes Quiz</a></li>
 						<li><a href="http://nobuhirotakahashi.com/trackname/">TrackName for iTunes</a></li>
 						<li><a href="http://feb19.jp/pp/">points-pointz</a></li>
@@ -432,5 +93,12 @@
 				</div>
 			</footer>
 		</div>
+		
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.js"></script>
+		<script src="js/Detector.js"></script>
+		<script src="js/stats.min.js"></script>
+		<script src="js/Sphere.js"></script>
+		
 	</body>
 </html>
