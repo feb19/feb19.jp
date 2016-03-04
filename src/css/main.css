@@ -11,6 +11,8 @@ body {
   width: 100%;
   margin: 0;
   height: 100%;
+  line-height: 2;
+  letter-spacing: 0.5px;
   padding: 30px;
   color: black;
   box-sizing: border-box; }
@@ -88,7 +90,6 @@ header {
   margin: 0 0 40px 0;
   font-size: 10px;
   letter-spacing: .5px;
-  line-height: 15px;
   list-style: none; }
   .breadcrumb:after {
     content: ".";
@@ -113,6 +114,10 @@ header {
 .content section li {
   margin-left: 20px;
   list-style: circle; }
+
+.content section pre ol li {
+  margin-left: 0;
+  list-style: decimal; }
 
 section {
   margin: 40px 0 0 0; }
@@ -146,13 +151,20 @@ section {
     font-weight: normal;
     margin: 0 0 40px 0;
     line-height: 74px; }
+  section.entry p {
+    font-size: 20px; }
+  section.entry blockquote, section.entry li {
+    font-size: 16px; }
+  section.entry .entrydate {
+    font-size: 14px; }
   section .tags {
     text-align: right;
     margin: 10px 0 40px 0; }
     section .tags li {
       line-height: 1;
       list-style: none;
-      display: inline-block; }
+      display: inline-block;
+      font-size: 12px; }
   section h2 {
     font-size: 12px;
     font-weight: normal; }
@@ -162,12 +174,11 @@ section {
     margin: 1em 0 1em 0;
     border-left: 1px solid black;
     padding: 0 0 0 10px; }
-
-.entrydate {
-  float: left;
-  margin: 0 0 30px;
-  font-size: 14px;
-  line-height: 1; }
+  section p.entrydate {
+    float: left;
+    margin: 0 0 30px;
+    font-size: 14px;
+    line-height: 1; }
 
 pre {
   font-family: 'Inconsolata', monospace;
@@ -196,6 +207,10 @@ footer {
   bottom: 0;
   width: 100%;
   height: 220px; }
+  footer li {
+    display: inline-block;
+    padding: 0 10px 0 0;
+    font-size: 12px; }
   footer h2 {
     font-size: 12px;
     font-weight: normal; }
@@ -254,12 +269,12 @@ td {
   footer {
     position: relative;
     display: block;
-    border-top: 1px dashed black;
+    border-top: 1px dotted black;
     padding: 40px 0 0 0;
     height: auto; }
     footer .grid {
-      width: 50%;
-      float: left; }
+      width: auto;
+      float: none; }
     footer:after {
       content: ".";
       /* 新しいコンテンツ */
@@ -268,8 +283,6 @@ td {
       height: 0;
       visibility: hidden;
       /* 非表示に */ }
-  .breadcrumb {
-    line-height: 24px; }
   section {
     padding-bottom: 0; }
     section:last-child {
@@ -279,6 +292,10 @@ td {
       line-height: 36px;
       margin: 0 0 40px 0; }
     section p, section blockquote {
+      font-size: 14px; }
+    section.entry p, section.entry blockquote, section.entry li {
+      font-size: 14px; }
+    section.entry .entrydate {
       font-size: 14px; }
     section img {
       max-width: 100%;
