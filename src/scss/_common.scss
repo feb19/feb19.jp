@@ -146,7 +146,7 @@ header {
     }
 }
 section {
-	margin: 40px 0 0 0;
+	margin: 0 0 120px 0;
 	&:last-child {
 		padding-bottom: 250px;
 	}
@@ -349,6 +349,7 @@ footer {
 }
 section {
 	padding-bottom: 0;
+    margin: 0 0 40px 0;
 	&:last-child {
 		padding-bottom: 0;
 	}
