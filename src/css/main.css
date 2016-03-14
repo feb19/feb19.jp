@@ -20,8 +20,7 @@ body {
 #container {
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: -1; }
+  left: 0; }
 
 .clearfix:after {
   content: ".";
@@ -49,6 +48,33 @@ body {
     margin: 0 20px 0 0; }
     .gnav li:last-child {
       margin: 0; }
+
+.btn-fullscreen {
+  display: block;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  color: black;
+  border-radius: 48px;
+  text-align: center;
+  line-height: 48px;
+  border: 1px solid black;
+  font-size: 24px; }
+
+:-ms-fullscreen .btn-fullscreen {
+  display: none; }
+
+:-moz-full-screen .btn-fullscreen {
+  display: none; }
+
+:-webkit-full-screen .btn-fullscreen {
+  display: none; }
+
+:fullscreen .btn-fullscreen {
+  display: none; }
 
 a {
   color: #000000;
@@ -256,6 +282,8 @@ td {
   vertical-align: top; }
 
 @media screen and (max-width: 760px) {
+  .btn-fullscreen {
+    display: none; }
   .gnav {
     position: relative;
     padding: 20px 0 40px 0; }
