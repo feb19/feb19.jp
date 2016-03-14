@@ -1,6 +1,6 @@
 (function() {
 function clickHandler(event) {
-  var elem = document.body;
+  var elem = document.documentElement;
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.msRequestFullscreen) {
@@ -12,6 +12,7 @@ function clickHandler(event) {
   }
 };
 document.addEventListener('DOMContentLoaded', function() {
+  document.documentElement.allowFullscreen = true;
   var btn = document.createElement('div');
   btn.className = 'btn-fullscreen';
   btn.innerHTML = '<i class="fa fa-expand"></i>';
