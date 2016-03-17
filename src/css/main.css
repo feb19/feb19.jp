@@ -152,7 +152,8 @@ header {
 section {
   margin: 0 0 120px 0; }
   section:last-child {
-    padding-bottom: 250px; }
+    padding-bottom: 250px;
+    margin: 0; }
   section.gridsystem {
     display: -webkit-flex;
     display: flex; }
