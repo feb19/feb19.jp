@@ -142,7 +142,8 @@ header {
 
 .content section li {
   margin-left: 20px;
-  list-style: circle; }
+  list-style: circle;
+  padding-right: 20px; }
 
 .content section pre ol li {
   margin-left: 0;
@@ -231,11 +232,10 @@ pre {
 footer {
   display: -webkit-flex;
   display: flex;
-  margin: 40px 0 0 0;
+  margin: 40px 0 40px 0;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 220px; }
+  width: 100%; }
   footer li {
     display: inline-block;
     padding: 0 10px 0 0;
