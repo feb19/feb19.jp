@@ -20,8 +20,7 @@ body {
 #container {
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: -1; }
+  left: 0; }
 
 .clearfix:after {
   content: ".";
@@ -49,6 +48,36 @@ body {
     margin: 0 20px 0 0; }
     .gnav li:last-child {
       margin: 0; }
+
+.btn-fullscreen {
+  display: block;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 32px;
+  /* border: 1px solid #000; */
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer; }
+  .btn-fullscreen:hover {
+    opacity: 0.6; }
+
+:-ms-fullscreen .btn-fullscreen {
+  display: none; }
+
+:-moz-full-screen .btn-fullscreen {
+  display: none; }
+
+:-webkit-full-screen .btn-fullscreen {
+  display: none; }
+
+:fullscreen .btn-fullscreen {
+  display: none; }
 
 a {
   color: #000000;
@@ -118,7 +147,8 @@ header {
 
 .content section li {
   margin-left: 20px;
-  list-style: circle; }
+  list-style: circle;
+  padding-right: 20px; }
 
 .content section pre ol li {
   margin-left: 0;
@@ -127,7 +157,8 @@ header {
 section {
   margin: 0 0 120px 0; }
   section:last-child {
-    padding-bottom: 250px; }
+    padding-bottom: 250px;
+    margin: 0; }
   section.gridsystem {
     display: -webkit-flex;
     display: flex; }
@@ -207,11 +238,10 @@ pre {
 footer {
   display: -webkit-flex;
   display: flex;
-  margin: 40px 0 0 0;
+  margin: 40px 0 40px 0;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 220px; }
+  width: 100%; }
   footer li {
     display: inline-block;
     padding: 0 10px 0 0;
@@ -261,6 +291,8 @@ td {
   vertical-align: top; }
 
 @media screen and (max-width: 760px) {
+  .btn-fullscreen {
+    display: none; }
   .gnav {
     position: relative;
     padding: 20px 0 40px 0; }
