@@ -53,18 +53,13 @@
 				<li><a href="http://meditation-records.com">Music</a></li>
 			</ul>
 			
-			<ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
-				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/blog" itemprop="url"><span itemprop="title">Blog</span></a></li>
-			</ul>
-			
 			<div class="content">
 				<MTEntries>
 				<$MTEntryTrackbackData$>
 				<section>
 					
 					<h1><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></h1>
-					<p class="entrydate"><$MTEntryDate format="%x"$></p>
+					<p class="entrydate"><$MTEntryDate format="%Y.%b.%d"$></p>
 					<ul class="tags">
 						<MTEntryCategories>
 						<li><a href="<$MTCategoryArchiveLink$>"><$MTCategoryLabel$></a></li>
@@ -85,6 +80,13 @@
 							<$MTEntryExcerpt$>--></li>
 						</MTEntries>
 					</ul>
+				</section>
+				
+				<section>
+    			<ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+    				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
+    				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/blog" itemprop="url"><span itemprop="title">Blog</span></a></li>
+    			</ul>
 				</section>
 			</div>
 			
@@ -132,6 +134,5 @@
 _uacct = "UA-820553-3";
 urchinTracker();
 </script>
-		<script src="/js/application.js"></script>
 	</body>
 </html>

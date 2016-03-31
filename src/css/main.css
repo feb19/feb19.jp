@@ -13,7 +13,7 @@ body {
   height: 100%;
   line-height: 2;
   letter-spacing: 0.5px;
-  padding: 30px;
+  padding: 0;
   color: black;
   box-sizing: border-box; }
 
@@ -35,12 +35,15 @@ body {
   width: 940px;
   margin: 0 auto;
   position: relative;
-  min-height: 100%; }
+  min-height: 100%;
+  padding: 120px 0 120px 0;
+  box-sizing: border-box; }
 
 .gnav {
   position: absolute;
-  top: 0;
-  right: 0; }
+  top: 120px;
+  right: 0;
+  margin: 0; }
   .gnav li {
     display: inline-block;
     float: left;
@@ -107,7 +110,7 @@ li {
   font-weight: normal; }
 
 header {
-  margin: 90px 0 120px; }
+  margin: 0 0 120px; }
   header h1 {
     font-size: 20px;
     font-weight: 400;
@@ -154,6 +157,10 @@ header {
   margin-left: 0;
   list-style: decimal; }
 
+.content section .breadcrumb li {
+  margin-left: 0;
+  padding-right: 0; }
+
 section {
   margin: 0 0 120px 0; }
   section:last-child {
@@ -192,15 +199,17 @@ section {
   section.entry blockquote, section.entry li {
     font-size: 16px; }
   section.entry .entrydate {
+    float: left;
     font-size: 14px; }
   section .tags {
     text-align: right;
-    margin: 10px 0 40px 0; }
+    margin: 0 0 40px; }
     section .tags li {
-      line-height: 1;
       list-style: none;
       display: inline-block;
-      font-size: 12px; }
+      font-size: 12px;
+      margin: 0;
+      padding-right: 16px; }
   section h2 {
     font-size: 12px;
     font-weight: normal; }
@@ -213,8 +222,7 @@ section {
   section p.entrydate {
     float: left;
     margin: 0 0 30px;
-    font-size: 14px;
-    line-height: 1; }
+    font-size: 14px; }
 
 pre {
   font-family: 'Inconsolata', monospace;
@@ -291,18 +299,24 @@ td {
   vertical-align: top; }
 
 @media screen and (max-width: 760px) {
+  body {
+    padding: 20px; }
   .btn-fullscreen {
     display: none; }
   .gnav {
     position: relative;
-    padding: 20px 0 40px 0; }
+    top: 0;
+    padding: 0 0 30px 0; }
+    .gnav li {
+      margin: 0 16px 0 0; }
   .gnav, footer {
     position: relative;
     display: block; }
   header {
-    margin: 0 0 20px; }
+    margin: 0 0 30px; }
   .wrapper {
-    width: 100%; }
+    width: 100%;
+    padding: 0; }
   footer {
     position: relative;
     display: block;
@@ -329,6 +343,8 @@ td {
       font-size: 28px;
       line-height: 36px;
       margin: 0 0 40px 0; }
+    section:first-child h1 {
+      padding: 30px 0 0 0; }
     section p, section blockquote {
       font-size: 14px; }
     section.entry p, section.entry blockquote, section.entry li {
