@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" id="viewport" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>Text to Speech Tester - feb19.jp</title>
+		<meta name="author" content="Nobuhiro Takahashi" />
+		<meta name="copyright" content="Copyright (C) Nobuhiro Takahashi" />
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/icon-precomposed.png">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
+		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
+        <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/css/application.css">
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		
+		<meta property="og:title" content="Text to Speech Tester - feb19.jp"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://feb19.jp/apps/texttospeech/"/>
+		<meta property="og:locale" content="ja_JP" />
+		<meta property="og:image" content="http://feb19.jp/feb19.png"/>
+		<meta property="og:description" content="Text to Speech Tester - feb19.jp" />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@feb19" />
+		<meta name="twitter:title" content="feb19.jp" />
+		<meta name="twitter:description" content="Text to Speech Tester - feb19.jp" />
+		<meta name="twitter:image" content="http://feb19.jp/feb19.png" />
+		<meta name="twitter:url" content="http://feb19.jp/apps/texttospeech/" />
+		
+        <link rel="canonical" href="http://feb19.jp/apps/texttospeech/">
+		<style>
+    		input#input {
+        		-webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+        		font-family: "EB Garamond", A1MinchoStd-Bold, Shuuei5Std-Light, "游明朝体", "Yu Mincho", YuMin-Medium, YuMincho, serif;
+        		font-size: 48px;
+        		margin: 0;
+                border-radius: 0;
+                box-sizing: border-box;
+                padding: 0;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                width: 100%;
+        		outline: none;
+    		}
+    		input#submit, input#tweet {
+        		-webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+        		background-color: white;
+                border: 1px solid black;
+                border-radius: 0;
+                font-size: 14px;
+        		font-family: "EB Garamond", A1MinchoStd-Bold, Shuuei5Std-Light, "游明朝体", "Yu Mincho", YuMin-Medium, YuMincho, serif;
+                padding: 5px 20px;
+                margin: 20px 0 0 0;
+                cursor: pointer;
+            }
+            input#submit {
+                font-weight: bold;
+    		}
+    		select {
+                max-width: 100%;
+        		font-family: "EB Garamond", A1MinchoStd-Bold, Shuuei5Std-Light, "游明朝体", "Yu Mincho", YuMin-Medium, YuMincho, serif;
+        		-webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                padding: 5px 10px;
+                margin: 0;
+                outline: none;
+                border-top: 0;
+                border-right: 0;
+                border-left: 0;
+                border-radius: 0;
+                font-size: 15px;
+                cursor: pointer;
+    		}
+    		input[type="range"] {
+        		-webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                height: 1px;
+                background-color: black;
+    		}
+    		input[type="range"]::-webkit-slider-thumb {
+        		-webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background-color: black;
+                text-align:center;
+                width: 12px;
+                height: 12px;
+/*                 border: 1px solid transparent; */
+                border-radius:12px;
+                cursor:pointer;
+                -moz-box-sizing:border-box;
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+    		}
+/*
+            input[type="range"]::-webkit-slider-thumb:before {
+            	content:"";
+            	display:inline-block;
+            	background-color: white;
+            	width: 10px;
+            	height: 10px;
+            	border: 1px solid transparent;
+            	border-radius:10px;
+            	margin: -2px auto 0;
+            	-moz-box-sizing:border-box;
+            	-webkit-box-sizing:border-box;
+            	box-sizing:border-box;
+            }
+*/
+    		input[type="range"]:focus {
+        		outline: none;
+    		}
+    		input[type=radio], input[type=checkbox] {
+              display: none;
+            }
+            .radio, .checkbox {
+              box-sizing: border-box;
+              position: relative;
+              display: inline-block;
+              margin: 0 10px 5px 0;
+              padding: 0px 8px 0px 20px;
+              vertical-align: middle;
+              cursor: pointer;
+            }
+            .radio:after, .checkbox:after {
+              position: absolute;
+              top: 50%;
+              left: 5px;
+              display: block;
+              margin-top: -6px;
+              width: 10px;
+              height: 10px;
+              border: 1px solid black;
+              border-radius: 10px;
+              content: '';
+            }
+            
+            .radio:before {
+              position: absolute;
+              top: 50%;
+              left: 7px;
+              display: block;
+              margin-top: -4px;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background-color: black;
+              content: '';
+              opacity: 0;
+            }
+            input[type=radio]:checked + .radio:before {
+              opacity: 1;
+            }
+            
+            .checkbox:before {
+              -webkit-transition: opacity 0.2s linear;
+              transition: opacity 0.2s linear;
+              position: absolute;
+              top: 50%;
+              left: 21px;
+              display: block;
+              margin-top: -7px;
+              width: 5px;
+              height: 9px;
+              border-right: 3px solid #53b300;
+              border-bottom: 3px solid #53b300;
+              content: '';
+              opacity: 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+            input[type=checkbox]:checked + .checkbox:before {
+              opacity: 1;
+            }
+        </style>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1><a href="/">feb19.jp</a></h1>
+				<h2>
+					Nobuhiro Takahashi<br>
+					Designer / Engineer
+				</h2>
+			</header>
+			<ul class="gnav">
+				<li><a href="/about">About</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="http://snippets.feb19.jp">Snippets</a></li>
+				<li><a href="/apps">Apps</a></li>
+				<li><a href="http://meditation-records.com">Music</a></li>
+			</ul>
+			
+			<div class="content">
+                <section>
+    				<p>
+    					<input type="text" value="" id="input" placeholder="input text here.">
+    					<input type="submit" value="speech" id="submit">
+    				</p>
+    				<p>
+                        <span>Voice:</span>
+    					<select name="name" id="voice">
+                        </select>
+                        <br>
+                        <span>Rate:</span>
+                        <input type="range" min="0.1" max="10.0" step="0.1" id="rate" value="1.0">
+                        <span id="label-rate">1.0</span>
+                        <br>
+                        <span>Pitch:</span>
+                        <input type="radio" value="0" name="pitch" id="pitch0" checked><label class="radio" for="pitch0">0</label>
+                        <input type="radio" value="1" name="pitch" id="pitch1"><label class="radio" for="pitch1">1</label>
+                        <input type="radio" value="2" name="pitch" id="pitch2"><label class="radio" for="pitch2">2</label>
+                        <br>
+                        <br>
+    					<input type="button" value="tweet" id="tweet">
+<!--
+                        <br>
+                        <span>Lang:</span>
+    					<select name="name" id="lang">
+                            <option value="0">en-US</option>
+                        </select>
+-->
+    				</p>
+				</section>
+				
+				<section>
+    			<ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+    				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
+    				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/apps" itemprop="url"><span itemprop="title">Apps</span></a></li>
+    				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Text to Speech Tester</span></li>
+    			</ul>
+				</section>
+			</div>
+			
+			<footer>
+				<div class="grid">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="/about">About</a></li>
+						<li><a href="/blog">Blog</a></li>
+						<li><a href="http://snippets.feb19.jp">Snippets</a></li>
+						<li><a href="/apps">Apps</a></li>
+						<li><a href="http://meditation-records.com">Music</a></li>
+					</ul>
+				</div>
+				<div class="grid">
+					<h2>Works</h2>
+					<ul>
+						<li><a href="http://feb19.jp/apps/tuner">Tuner</a></li>
+						<li><a href="https://repertoryapp.com">Repertory</a></li>
+						<li><a href="http://moshapp.me">Mosh!</a></li>
+						<li><a href="http://freepianoscore.com/">Free Piano Score</a></li>
+						<li><a href="http://feb19.jp/apps/notes/">Notes Quiz</a></li>
+						<li><a href="http://nobuhirotakahashi.com/trackname/">TrackName for iTunes</a></li>
+						<li><a href="http://feb19.jp/pp/">points-pointz</a></li>
+						<li><a href="http://meditation-records.com/meditation">Meditation</a></li>
+					</ul>
+				</div>
+				<div class="grid">
+					<h2>SNS</h2>
+					<ul>
+						<li><a href="https://twitter.com/feb19" target="_blank">Twitter</a></li>
+						<li><a href="https://github.com/feb19/" target="_blank">GitHub</a></li>
+						<li><a href="https://instagram.com/feb19/" target="_blank">Instagram</a></li>
+						<li><a href="https://jp.pinterest.com/feb19nt/" target="_blank">Pinterest</a></li>
+						<li><a href="http://qiita.com/feb19" target="_blank">Qiita</a></li>
+						<li><a href="https://vine.co/feb19" target="_blank">Vine</a></li>
+						<li><a href="https://itunes.apple.com/jp/artist/nobuhiro-takahashi/id433066240" target="_blank">iTunes</a></li>
+						<li><a href="https://soundcloud.com/nobuhiro-takahashi" target="_blank">Soundcloud</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+		
+		<script>
+    		(function() {
+        		var voice, rate, rateLabel, input;
+        		var pitch0, pitch1, pitch2, submit, voices;
+        		var interval;
+        		function speech() {
+                    if (typeof input.value == 'undefined' || input.value == '') {
+                        return;
+                    }
+                    
+            		var voiceURI;
+            		var msg = new SpeechSynthesisUtterance();
+            		msg.voiceURI = window.speechSynthesis.getVoices()[voice.selectedIndex].voiceURI;
+                    msg.volume = 1; // 0 to 1
+                    msg.rate = rate.value; // 0.1 to 10
+                    msg.pitch = pitch0.checked ? 0 : pitch1.checked ? 1 : 2; //0 to 2
+                    msg.text = input.value;
+                    msg.lang = window.speechSynthesis.getVoices()[voice.selectedIndex].lang;
+                    window.speechSynthesis.speak(msg);
+        		};
+        		var loaded = false;
+    		    voices = window.speechSynthesis.getVoices();
+        		document.addEventListener('DOMContentLoaded', function(e) {
+            		rate = document.getElementById('rate');
+            		rateLabel = document.getElementById('label-rate');
+            		rate.addEventListener('input', function(ev) {
+                		rateLabel.innerHTML = rate.value;
+            		}, false);
+            		
+            		voice = document.getElementById('voice');
+            		
+            		interval = setInterval(function() {
+                		init();
+            		}, 1000);
+            		
+            		pitch0 = document.getElementById('pitch0');
+            		pitch1 = document.getElementById('pitch1');
+            		pitch2 = document.getElementById('pitch2');
+            		submit = document.getElementById('submit');
+            		tweet = document.getElementById('tweet');
+            		
+            		input = document.getElementById('input');
+            		input.addEventListener('keyup', function(ev) {
+                		if (ev.keyCode === 13) {
+                    		speech();
+                		}
+            		}, false);
+            		
+            		submit.addEventListener('click', function(ev) {
+                		speech();
+            		});
+            		
+                    tweet.addEventListener('click', function(ev) {
+                        var uri = 'http://feb19.jp/apps/texttospeech/?t=' + encodeURIComponent(input.value) + '&v=' + window.speechSynthesis.getVoices()[voice.selectedIndex].name + '&r=' + rate.value + '&p=' + (pitch0.checked ? 0 : pitch1.checked ? 1 : 2);
+                        var title = encodeURIComponent(input.value);
+                        window.open('http://twitter.com/share?count=horizontal&text=🔈'+title+'&url=' + encodeURIComponent(uri) + '&hashtags=text_to_speech');
+                    }, false);
+                    
+        		}, false);
+        		
+    		function init() {
+        		if (!loaded) {
+            		if (window.speechSynthesis.getVoices().length > 0) {
+                		loaded = true;
+                		clearInterval(interval);
+            		}
+        		}
+        		if (loaded) {
+            		for (var i = 0; i < window.speechSynthesis.getVoices().length; i++) {
+                		var option = document.createElement('option');
+                		option.value = window.speechSynthesis.getVoices()[i].voiceURI;
+                		option.label = window.speechSynthesis.getVoices()[i].name + ' (' + window.speechSynthesis.getVoices()[i].voiceURI +')' + ' [' + window.speechSynthesis.getVoices()[i].lang + ']';
+                		voice.appendChild(option)
+            		}
+                    checkQuery();
+                    speech();
+                }
+    		}
+            function getUrlVars() {
+                var vars = [], max = 0, hash = "", array = "";
+                var url = window.location.search;
+                hash  = url.slice(1).split('&');
+                max = hash.length;
+                for (var i = 0; i < max; i++) {
+                    array = hash[i].split('=');
+                    vars.push(array[0]);
+                    vars[array[0]] = array[1];
+                }
+                return vars;
+            };
+            function checkQuery() {
+                var vars = getUrlVars();
+                if (vars.length > 0) {
+                    var t = vars['t'];
+                    if (typeof t !== 'undefined' && t !== '') {
+                        input.value = decodeURIComponent(t);
+                    }
+                    var r = vars['r'];
+                    if (typeof r !== 'undefined' && r !== '') {
+                        rate.value = parseFloat(r);
+                		rateLabel.innerHTML = r;
+                    }
+                    var p = vars['p'];
+                    if (typeof p !== 'undefined' && p !== '') {
+                        if (p == 0) { pitch0.checked = true; }
+                        if (p == 1) { pitch1.checked = true; }
+                        if (p == 2) { pitch2.checked = true; }
+                    }
+                    var v = vars['v'];
+                    if (typeof v !== 'undefined' && v !== '') {
+                		for (var i = 0; i < window.speechSynthesis.getVoices().length; i++) {
+                    		if (window.speechSynthesis.getVoices()[i].name == v) {
+                        		voice.selectedIndex = i;
+                        		break;
+                    		}
+                		}
+                    }
+                }
+            }
+            console.log('%cエッチ！', 'background-color: red; color: black; font-size: 24px;');
+            console.log('%cスケッチ！', 'background-color: black; color: white; font-size: 24px;');
+            console.log('%cワンタッチ！', 'background-color: red; color: yellow; font-size: 24px;');
+            console.log('%cここ見るスケベなあなたは Dosukebe Developer', 'color: #646464; font-size: 9px; font-style: italic;');
+            
+    		})();
+            
+		</script>
+		
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-64198406-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+	</body>
+</html>
