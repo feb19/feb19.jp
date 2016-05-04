@@ -34,12 +34,12 @@ body {
 	margin: 0 auto;
 	position: relative;
 	min-height: 100%;
-  padding: 120px 0 120px 0;
+  padding: 40px 0;
   box-sizing: border-box;
 }
 .gnav {
 	position: absolute;
-  top: 120px;
+  top: 50px;
   right: 0;
   margin: 0;
   
@@ -120,7 +120,7 @@ li {
 header {
   //margin: 0 0 40px 0;
 //   margin: 90px 0 120px;
-  margin: 0 0 120px;
+  margin: 0 0 40px;
     
 	h1 {
     font-size: 20px;
