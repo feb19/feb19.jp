@@ -65,6 +65,25 @@
             margin: 20px 0 0 0;
             cursor: pointer;
         }
+        .tabs { 
+            margin: 1em 0;
+        }
+        .tab {
+            padding: 5px 10px;
+            box-sizing: border-box;
+            display: inline-block;
+            line-height: 1;
+            color: #999;
+            cursor: pointer;
+        }
+        .tab:hover {
+            color: #666;
+        }
+        .tab.selected {
+            border-bottom: 2px solid black;
+            color: black;
+            cursor: default;
+        }
         .file-read-error {
             color: red;
             display: none;
@@ -85,6 +104,7 @@
         .result-image img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; max-width: 100%; max-height: 100%; }
         .result-rgb, .result-hsb { line-height: 24px; font-size: 14px; text-align: center; }
         .result-color { height: 30px; margin: 5px 0 0 0; }
+        .result-canvas { display: none; }
         
         @media screen and (max-width:760px) {
             .pc-only { display: none; }
@@ -139,6 +159,10 @@
                         </p>
                         
                         <h2><span>Result</span></h2>
+                        <div class="tabs clearfix">
+                            <div class="tab selected" data-tab-name="palette">Palette</div>
+                            <div class="tab" data-tab-name="chart">Chart</div>
+                        </div>
                         <div class="results clearfix">
                             <div class="result-content">
                                 <div class="result-image"><img src="photo-1447958374760-1ce70cf11ee3.jpg"></div>
@@ -165,6 +189,9 @@
                                 <div class="result-hsb">hsv(<span class="colorcode">203,58,56</span>)</div>
                             </div>
                             
+                        </div>
+                        <div class="result-canvas">
+                            <canvas id="color-wheel" width="640" height="640"></canvas>
                         </div>
                         <input type="button" value="clear" id="clear">
                         <p><small>Sample Photos by
@@ -246,9 +273,13 @@
         <script>
 (function() {
     
-    var dropArea, results;
+    var dropArea, results, resultCanvas, canvas, tabs, selecting = 'palette';
     function init() {
         if (checkFileApi()) {
+            resultCanvas = document.querySelector('.result-canvas');
+            canvas = document.getElementById('color-wheel');
+            createColorWheel(canvas);
+            
             clear = document.getElementById('clear');
             clear.addEventListener('click', clearHandler, false);
             results = document.querySelector('.results');
@@ -261,20 +292,43 @@
             dropArea.addEventListener('dragover', dragoverHandler, false);
             dropArea.addEventListener('drop', dropHandler, false);
             dropArea.addEventListener('dragleave', dragleaveHandler, false);
+            
+            tabs = document.querySelectorAll('.tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].addEventListener('click', tabClickHandler, false);
+            }
+            
         } else {
             var error = document.querySelector('.file-read-error');
             error.style.display = 'block';
         }
     }
-
+    
     function checkFileApi() {
         return window.File && window.FileReader && window.FileList && window.Blob
+    }
+    
+    function tabClickHandler(e) {
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].removeClassName('selected');
+        }
+        e.currentTarget.addClassName('selected');
+        if (e.currentTarget.dataset.tabName === 'palette') {
+            selecting = 'palette';
+            resultCanvas.style.display = 'none';
+            results.style.display = 'block';
+        } else {
+            selecting = 'chart';
+            results.style.display = 'none';
+            resultCanvas.style.display = 'block';
+        }
     }
     
     function clearHandler(e) {
         while(results.childNodes[0]) {
             results.removeChild(results.childNodes[0]);
         }
+        createColorWheel(canvas);
     }
     
     function dragoverHandler(e) {
@@ -320,8 +374,10 @@
 //             var w = this.naturalWidth;
 //             var h = this.naturalHeight;
             var rgb = getAverageRGB(this);
+            console.log(rgb);
             var hsv = rgb2hsv(rgb);
             createResult(dataURL, toColorHex(rgb), hsv)
+            addImage2Canvas(this, hsv);
         }
         var src = document.createAttribute('src');
         src.value = dataURL;
@@ -368,10 +424,12 @@
         length = data.data.length;
         
         while ( (i += blockSize * 4) < length ) {
-            ++count;
-            rgb.r += data.data[i];
-            rgb.g += data.data[i+1];
-            rgb.b += data.data[i+2];
+            if (data.data[i+3] > 0) {
+                ++count;
+                rgb.r += data.data[i];
+                rgb.g += data.data[i+1];
+                rgb.b += data.data[i+2];
+            }
         }
         
         // ~~ used to floor values
@@ -381,7 +439,8 @@
         
         return rgb;
     }
-    function toHex(num) { return num.toString(16).length > 0 ? num.toString(16) : '0'+num.toString(16) }
+    
+    function toHex(num) { return num == 0 ? '00' : num.toString(16).length > 0 ? num.toString(16) : '0'+num.toString(16) }
     function toColorHex(rgb) { return '#' + toHex(rgb.r) + toHex(rgb.g) + toHex(rgb.b); }
     function rgb2hsv(rgb) {
         var rr, gg, bb,
@@ -422,6 +481,79 @@
             v: Math.round(v * 100)
         };
     }
+    
+    // http://ariya.blogspot.jp/2011/02/color-wheel-on-canvas.html
+    function createColorWheel(canvas) {
+        var contentgrid = document.querySelector('.contentgrid');
+        canvas.width = contentgrid.clientWidth;
+        canvas.height = contentgrid.clientWidth;
+        var context = canvas.getContext('2d'),
+            width = canvas.width,
+            height = canvas.width,
+            cx = width / 2,
+            cy = height / 2,
+            radius = width  / 2.3,
+            imageData,
+            pixels,
+            hue, sat, value,
+            i = 0, x, y, rx, ry, d,
+            f, g, p, u, v, w, rgb;
+        
+        context.clearRect(0,0,width,height);
+        imageData = context.createImageData(width, height);
+        pixels = imageData.data;
+     
+        for (y = 0; y < height; y = y + 1) {
+            for (x = 0; x < width; x = x + 1, i = i + 4) {
+                rx = x - cx;
+                ry = y - cy;
+                d = rx * rx + ry * ry;
+                if (d < radius * radius) {
+                    hue = 6 * (Math.atan2(ry, rx) + Math.PI) / (2 * Math.PI);
+                    sat = Math.sqrt(d) / radius;
+                    g = Math.floor(hue);
+                    f = hue - g;
+                    u = 255 * (1 - sat);
+                    v = 255 * (1 - sat * f);
+                    w = 255 * (1 - sat * (1 - f));
+                    pixels[i] = [255, v, u, u, w, 255, 255][g];
+                    pixels[i + 1] = [w, 255, 255, v, u, u, w][g];
+                    pixels[i + 2] = [u, u, w, 255, 255, v, u][g];
+                    pixels[i + 3] = 255;
+                }
+            }
+        }
+        context.putImageData(imageData, 0, 0);
+    }
+    
+    function addImage2Canvas(image, hsv) {
+        var size = 60;
+        var imageWidth = image.naturalWidth || image.offsetWidth || image.width;
+        var imageHeight = image.naturalHeight || image.offsetHeight || image.height;
+        var sw = size / imageWidth;
+        var sh = size / imageHeight;
+        var s = (sw > sh) ? sh : sw;
+        var iw = imageWidth*s;
+        var ih = imageHeight*s;
+        
+        var context = canvas.getContext('2d');
+        var width = canvas.width,
+            height = canvas.height,
+            radius = width / 2.3,
+            cx = width / 2,
+            cy = height / 2;
+        var r = (hsv.s/100*radius*3/4);
+        var angle = ((hsv.h - 180))/180*Math.PI;
+        var p = rotatePoint(r+radius/4, 0, angle);
+        
+        context.drawImage(image, p.x+cx-iw/2, p.y+cy-ih/2, iw, ih);
+    }
+    
+    function rotatePoint(x,y,angle) {
+        var newX = x * Math.cos(angle) - y * Math.sin(angle);
+        var newY = x * Math.sin(angle) + y * Math.cos(angle);
+        return {x:newX, y:newY};
+    };
     
     document.addEventListener('DOMContentLoaded', function(e) {
         init();
