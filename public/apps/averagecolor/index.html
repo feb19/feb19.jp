@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" id="viewport" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>the Average Color of Image Files - feb19.jp</title>
+        <meta name="author" content="Nobuhiro Takahashi" />
+        <meta name="copyright" content="Copyright (C) Nobuhiro Takahashi" />
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/icon-precomposed.png">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta property="og:title" content="the Average Color of Image Files - feb19.jp">
+        <meta property="og:type" content="product">
+        <meta property="og:description" content="画像ファイルの平均色">
+        <meta property="og:url" content="http://feb19.jp/apps/averagecolor/">
+        <meta property="og:image" content="http://feb19.jp/feb19.png">
+        <meta property="og:site_name" content="the Average Color of Image Files">
+        <meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
+        <meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/application.css?v=3">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@feb19" />
+		<meta name="twitter:title" content="the Average Color of Image Files - feb19.jp" />
+		<meta name="twitter:description" content="画像ファイルの平均色" />
+		<meta name="twitter:image" content="http://feb19.jp/feb19.png" />
+		<meta name="twitter:url" content="http://feb19.jp/apps/averagecolor/" />
+        
+        <meta name="keywords" content="UI Design, average color, color schema, colors, 色相環, 配色, 抽出, 平均色">
+        <meta name="description" content="画像ファイルの平均色">
+        
+        <style>
+        input#input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-family: "EB Garamond", A1MinchoStd-Bold, Shuuei5Std-Light, "游明朝体", "Yu Mincho", YuMin-Medium, YuMincho, serif;
+            font-size: 48px;
+            margin: 0;
+            border-radius: 0;
+            box-sizing: border-box;
+            padding: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            width: 100%;
+            outline: none;
+        }
+        input#clear, input#tweet {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 0;
+            font-size: 14px;
+            font-family: "EB Garamond", A1MinchoStd-Bold, Shuuei5Std-Light, "游明朝体", "Yu Mincho", YuMin-Medium, YuMincho, serif;
+            padding: 5px 20px;
+            margin: 20px 0 0 0;
+            cursor: pointer;
+        }
+        .tabs { 
+            margin: 1em 0;
+        }
+        .tab {
+            padding: 5px 10px;
+            box-sizing: border-box;
+            display: inline-block;
+            line-height: 1;
+            color: #999;
+            cursor: pointer;
+        }
+        .tab:hover {
+            color: #666;
+        }
+        .tab.selected {
+            border-bottom: 2px solid black;
+            color: black;
+            cursor: default;
+        }
+        .file-read-error {
+            color: red;
+            display: none;
+        }
+        .tweetbutton {
+            float: right;
+            margin: 0 20px 0 0;
+        }
+        .drop-area {
+            border: 3px dashed #ccc;
+            padding: 40px;
+            text-align: center;
+        }
+        .drop-area.dragging { background-color: #eee; }
+        .result-content { width: 24%; float: left; margin: 0 1.3% 3% 0; min-height: 220px; }
+        .result-content:nth-child(4n) { margin: 0 0 3% 0; }
+        .result-image { position: relative; width: 100%; padding: 100% 0 0 0; }
+        .result-image img { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; max-width: 100%; max-height: 100%; }
+        .result-rgb, .result-hsb { line-height: 24px; font-size: 14px; text-align: center; }
+        .result-color { height: 30px; margin: 5px 0 0 0; }
+        .result-canvas { display: none; }
+        
+        @media screen and (max-width:760px) {
+            .pc-only { display: none; }
+            .drop-area { display: none; }
+            .tweetbutton {
+                float: right;
+                margin: 0 0 0 0;
+            }
+            .result-content { width: 49%; margin: 0 2% 3% 0; }
+            .result-content:nth-child(4n) { margin: 0 0 3% 0; }
+            .result-content:nth-child(2n) { margin: 0 0 3% 0; }
+        }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1><a href="/">feb19.jp</a></h1>
+                <h2>
+                    Nobuhiro Takahashi<br>
+                    Designer / Engineer
+                </h2>
+            </header>
+            <ul class="gnav">
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="http://snippets.feb19.jp">Snippets</a></li>
+                <li><a href="/apps">Apps</a></li>
+                <li><a href="http://meditation-records.com">Music</a></li>
+            </ul>
+            
+            <div class="content">
+                <section class="gridsystem">
+                    <div class="titlegrid">
+                        <h1>the Average Color of<br> Image Files</h1>
+                        <p>画像ファイルの平均色</p>
+                    </div>
+                    
+                    <div class="contentgrid">
+                        <p class="file-read-error">
+                            This browser is unavailable<br>
+                            お使いのブラウザではご利用いただけません
+                        </p>
+                        <p> 
+                            <div class="drop-area">
+                                Drop your images here.<br>
+                                画像をここにドロップ
+                            </div>
+                            <span class="pc-only">or</span>
+                            <input type="file" id="file-image" accept="image/*" multiple="multiple">
+                        </p>
+                        
+                        <h2><span>Result</span></h2>
+                        <div class="tabs clearfix">
+                            <div class="tab selected" data-tab-name="palette">Palette</div>
+                            <div class="tab" data-tab-name="chart">Chart</div>
+                        </div>
+                        <div class="results clearfix">
+                            <div class="result-content">
+                                <div class="result-image"><img src="photo-1447958374760-1ce70cf11ee3.jpg"></div>
+                                <div class="result-color" style="background-color: #425a39;"></div>
+                                <div class="result-rgb"><span class="colorcode">#425a39</span></div>
+                                <div class="result-hsb">hsv(<span class="colorcode">329,14,62</span>)</div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-image"><img src="photo-1445295029071-5151176738d0.jpg"></div>
+                                <div class="result-color" style="background-color: #9f8894;"></div>
+                                <div class="result-rgb"><span class="colorcode">#9f8894</span></div>
+                                <div class="result-hsb">hsv(<span class="colorcode">25,21,75</span>)</div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-image"><img src="photo-1421749810611-438cc492b581.jpg"></div>
+                                <div class="result-color" style="background-color: #bfa796;"></div>
+                                <div class="result-rgb"><span class="colorcode">#bfa796</span></div>
+                                <div class="result-hsb">hsv(<span class="colorcode">25,21,75</span>)</div>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-image"><img src="photo-1452723312111-3a7d0db0e024.jpg"></div>
+                                <div class="result-color" style="background-color: #3d7090;"></div>
+                                <div class="result-rgb"><span class="colorcode">#3d7090</span></div>
+                                <div class="result-hsb">hsv(<span class="colorcode">203,58,56</span>)</div>
+                            </div>
+                            
+                        </div>
+                        <div class="result-canvas">
+                            <canvas id="color-wheel" width="640" height="640"></canvas>
+                        </div>
+                        <input type="button" value="clear" id="clear">
+                        <p><small>Sample Photos by
+                            <a href="https://unsplash.com/photos/VB-w_3dnyvI" target="_blank">Andrew Coelho</a>, 
+                            <a href="https://unsplash.com/photos/N6STB5KbRUU" target="_blank">Léa Dubedout</a>, 
+                            <a href="https://unsplash.com/photos/12rzbJhQ89E" target="_blank">Neil Thomas</a> and 
+                            <a href="https://unsplash.com/photos/yEOCA6oiVqg" target="_blank">Tim Marshall</a>
+                        </small></p>
+                    </div>
+                </section>
+                <section>
+                <ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
+                    <li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/apps" itemprop="url"><span itemprop="title">Apps</span></a></li>
+                    <li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">the Average Color of Image Files</span></li>
+                </ul>
+                </section>
+            </div>
+            
+            <footer>
+                <div class="grid">
+                    <h2>Menu</h2>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="http://snippets.feb19.jp">Snippets</a></li>
+                        <li><a href="/apps">Apps</a></li>
+                        <li><a href="http://meditation-records.com">Music</a></li>
+                    </ul>
+                </div>
+                <div class="grid">
+                    <h2>Works</h2>
+                    <ul>
+                        <li><a href="https://repertoryapp.com">Repertory</a></li>
+                        <li><a href="http://moshapp.me">Mosh!</a></li>
+                        <li><a href="http://freepianoscore.com/">Free Piano Score</a></li>
+                        <li><a href="http://feb19.jp/apps/notes/">Notes Quiz</a></li>
+                        <li><a href="http://nobuhirotakahashi.com/trackname/">TrackName for iTunes</a></li>
+                        <li><a href="http://feb19.jp/pp/">points-pointz</a></li>
+                        <li><a href="http://meditation-records.com/meditation">Meditation</a></li>
+                    </ul>
+                </div>
+                <div class="grid">
+                    <h2>SNS</h2>
+                    <ul>
+                        <li><a href="https://twitter.com/feb19" target="_blank">Twitter</a></li>
+                        <li><a href="https://github.com/feb19/" target="_blank">GitHub</a></li>
+                        <li><a href="https://instagram.com/feb19/" target="_blank">Instagram</a></li>
+                        <li><a href="https://jp.pinterest.com/feb19nt/" target="_blank">Pinterest</a></li>
+                        <li><a href="http://qiita.com/feb19" target="_blank">Qiita</a></li>
+                        <li><a href="https://vine.co/feb19" target="_blank">Vine</a></li>
+                        <li><a href="https://itunes.apple.com/jp/artist/nobuhiro-takahashi/id433066240" target="_blank">iTunes</a></li>
+                        <li><a href="https://soundcloud.com/nobuhiro-takahashi" target="_blank">Soundcloud</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        <script>
+        Element.prototype.hasClassName = function(a) {
+            return RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)").test(this.className);
+        };
+        Element.prototype.addClassName = function(a) {
+            if (this.hasClassName(a)) {
+                return false;
+            } else {
+                this.className = [this.className, a].join(" ");
+                return true;
+            }
+        };
+        Element.prototype.removeClassName = function(a) {
+            if (this.hasClassName(a)) {
+                this.className = this.className.replace(RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)", "g"), " ");
+                return true;
+            } else {
+                return false;
+            }
+        };
+        </script>
+        <script>
+(function() {
+    
+    var dropArea, results, resultCanvas, canvas, tabs, selecting = 'palette';
+    function init() {
+        if (checkFileApi()) {
+            resultCanvas = document.querySelector('.result-canvas');
+            canvas = document.getElementById('color-wheel');
+            createColorWheel(canvas);
+            
+            clear = document.getElementById('clear');
+            clear.addEventListener('click', clearHandler, false);
+            results = document.querySelector('.results');
+            
+            //ファイル選択
+            var file = document.getElementById('file-image');
+            file.addEventListener('change', fileChangeHandler, false);
+    
+            dropArea = document.querySelector('.drop-area');
+            dropArea.addEventListener('dragover', dragoverHandler, false);
+            dropArea.addEventListener('drop', dropHandler, false);
+            dropArea.addEventListener('dragleave', dragleaveHandler, false);
+            
+            tabs = document.querySelectorAll('.tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].addEventListener('click', tabClickHandler, false);
+            }
+            
+        } else {
+            var error = document.querySelector('.file-read-error');
+            error.style.display = 'block';
+        }
+    }
+    
+    function checkFileApi() {
+        return window.File && window.FileReader && window.FileList && window.Blob
+    }
+    
+    function tabClickHandler(e) {
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].removeClassName('selected');
+        }
+        e.currentTarget.addClassName('selected');
+        if (e.currentTarget.dataset.tabName === 'palette') {
+            selecting = 'palette';
+            resultCanvas.style.display = 'none';
+            results.style.display = 'block';
+        } else {
+            selecting = 'chart';
+            results.style.display = 'none';
+            resultCanvas.style.display = 'block';
+        }
+    }
+    
+    function clearHandler(e) {
+        while(results.childNodes[0]) {
+            results.removeChild(results.childNodes[0]);
+        }
+        createColorWheel(canvas);
+    }
+    
+    function dragoverHandler(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'copy';
+        dropArea.addClassName('dragging');
+    }
+    
+    function dragleaveHandler(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        dropArea.removeClassName('dragging');
+    }
+  
+    function dropHandler(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        dropArea.removeClassName('dragging');
+        
+        readFiles(e.dataTransfer.files);
+    }
+    
+    function fileChangeHandler(e) {
+        readFiles(e.target.files);
+    }
+    
+    function readFiles(files) {
+        for (var i = 0; i < files.length; i++) {
+            console.log(files[i]);
+            var reader = new FileReader();
+            reader.onload = function() {
+                readImage(this);
+            };
+            reader.readAsDataURL(files[i]);
+        }
+    }
+
+    function readImage(reader) {
+        var dataURL = reader.result;
+        var img = new Image();
+        img.onload = function(e) {
+//             var w = this.naturalWidth;
+//             var h = this.naturalHeight;
+            var rgb = getAverageRGB(this);
+            console.log(rgb);
+            var hsv = rgb2hsv(rgb);
+            createResult(dataURL, toColorHex(rgb), hsv)
+            addImage2Canvas(this, hsv);
+        }
+        var src = document.createAttribute('src');
+        src.value = dataURL;
+        img.setAttributeNode(src);
+    }
+    
+    function createResult(dataURL, rgbHex, hsv) {
+        var result = document.createElement('div');
+        result.className = 'result-content';
+        result.innerHTML = '<div class="result-image"><img src="'+dataURL+'"></div>'+
+            '<div class="result-color" style="background-color: '+rgbHex+'"></div>' +
+            '<div class="result-rgb"><span class="colorcode">'+rgbHex+'</span></div>' +
+            '<div class="result-hsb">hsv(<span class="colorcode">'+hsv.h+','+hsv.s+','+hsv.v+'</span>)</div>';
+        results.insertBefore(result, results.childNodes[0]);
+    }
+
+    function getAverageRGB(imgEl) {
+        var blockSize = 5, // only visit every 5 pixels
+            defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
+            canvas = document.createElement('canvas'),
+            context = canvas.getContext && canvas.getContext('2d'),
+            data, width, height,
+            i = -4,
+            length,
+            rgb = {r:0,g:0,b:0},
+            count = 0;
+            
+        if (!context) {
+            return defaultRGB;
+        }
+        
+        height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
+        width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
+        
+        context.drawImage(imgEl, 0, 0);
+        
+        try {
+            data = context.getImageData(0, 0, width, height);
+        } catch(e) {
+            /* security error, img on diff domain */alert('invalid image file.');
+            return defaultRGB;
+        }
+        
+        length = data.data.length;
+        
+        while ( (i += blockSize * 4) < length ) {
+            if (data.data[i+3] > 0 && !(data.data[i] == 255 && data.data[i+1] == 255 && data.data[i+2] == 255)) {
+                ++count;
+                rgb.r += data.data[i];
+                rgb.g += data.data[i+1];
+                rgb.b += data.data[i+2];
+            }
+        }
+        
+        // ~~ used to floor values
+        rgb.r = ~~(rgb.r/count);
+        rgb.g = ~~(rgb.g/count);
+        rgb.b = ~~(rgb.b/count);
+        
+        return rgb;
+    }
+    
+    function toHex(num) { return num == 0 ? '00' : num.toString(16).length > 1 ? num.toString(16) : '0'+num.toString(16) }
+    function toColorHex(rgb) { return '#' + toHex(rgb.r) + toHex(rgb.g) + toHex(rgb.b); }
+    function rgb2hsv(rgb) {
+        var rr, gg, bb,
+            r = rgb.r / 255,
+            g = rgb.g / 255,
+            b = rgb.b / 255,
+            h, s,
+            v = Math.max(r, g, b),
+            diff = v - Math.min(r, g, b),
+            diffc = function(c){
+                return (v - c) / 6 / diff + 1 / 2;
+            };
+    
+        if (diff == 0) {
+            h = s = 0;
+        } else {
+            s = diff / v;
+            rr = diffc(r);
+            gg = diffc(g);
+            bb = diffc(b);
+    
+            if (r === v) {
+                h = bb - gg;
+            } else if (g === v) {
+                h = (1 / 3) + rr - bb;
+            } else if (b === v) {
+                h = (2 / 3) + gg - rr;
+            }
+            if (h < 0) {
+                h += 1;
+            } else if (h > 1) {
+                h -= 1;
+            }
+        }
+        return {
+            h: Math.round(h * 360),
+            s: Math.round(s * 100),
+            v: Math.round(v * 100)
+        };
+    }
+    
+    // http://ariya.blogspot.jp/2011/02/color-wheel-on-canvas.html
+    function createColorWheel(canvas) {
+        var contentgrid = document.querySelector('.contentgrid');
+        canvas.width = contentgrid.clientWidth;
+        canvas.height = contentgrid.clientWidth;
+        var context = canvas.getContext('2d'),
+            width = canvas.width,
+            height = canvas.width,
+            cx = width / 2,
+            cy = height / 2,
+            radius = width  / 2.3,
+            imageData,
+            pixels,
+            hue, sat, value,
+            i = 0, x, y, rx, ry, d,
+            f, g, p, u, v, w, rgb;
+        
+        context.clearRect(0,0,width,height);
+        imageData = context.createImageData(width, height);
+        pixels = imageData.data;
+     
+        for (y = 0; y < height; y = y + 1) {
+            for (x = 0; x < width; x = x + 1, i = i + 4) {
+                rx = x - cx;
+                ry = y - cy;
+                d = rx * rx + ry * ry;
+                if (d < radius * radius) {
+                    hue = 6 * (Math.atan2(ry, rx) + Math.PI) / (2 * Math.PI);
+                    sat = Math.sqrt(d) / radius;
+                    g = Math.floor(hue);
+                    f = hue - g;
+                    u = 255 * (1 - sat);
+                    v = 255 * (1 - sat * f);
+                    w = 255 * (1 - sat * (1 - f));
+                    pixels[i] = [255, v, u, u, w, 255, 255][g];
+                    pixels[i + 1] = [w, 255, 255, v, u, u, w][g];
+                    pixels[i + 2] = [u, u, w, 255, 255, v, u][g];
+                    pixels[i + 3] = 255;
+                }
+            }
+        }
+        context.putImageData(imageData, 0, 0);
+    }
+    
+    function addImage2Canvas(image, hsv) {
+        var size = 60;
+        var imageWidth = image.naturalWidth || image.offsetWidth || image.width;
+        var imageHeight = image.naturalHeight || image.offsetHeight || image.height;
+        var sw = size / imageWidth;
+        var sh = size / imageHeight;
+        var s = (sw > sh) ? sh : sw;
+        var iw = imageWidth*s;
+        var ih = imageHeight*s;
+        
+        var context = canvas.getContext('2d');
+        var width = canvas.width,
+            height = canvas.height,
+            radius = width / 2.3,
+            cx = width / 2,
+            cy = height / 2;
+        var r = (hsv.s/100*radius*3/4);
+        var angle = ((hsv.h - 180))/180*Math.PI;
+        var p = rotatePoint(r+radius/4, 0, angle);
+        
+        context.drawImage(image, p.x+cx-iw/2, p.y+cy-ih/2, iw, ih);
+    }
+    
+    function rotatePoint(x,y,angle) {
+        var newX = x * Math.cos(angle) - y * Math.sin(angle);
+        var newY = x * Math.sin(angle) + y * Math.cos(angle);
+        return {x:newX, y:newY};
+    };
+    
+    document.addEventListener('DOMContentLoaded', function(e) {
+        init();
+        
+        console.log('%cエッチ！', 'background-color: red; color: black; font-size: 24px;');
+        console.log('%cスケッチ！', 'background-color: black; color: white; font-size: 24px;');
+        console.log('%cワンタッチ！', 'background-color: red; color: yellow; font-size: 24px;');
+        console.log('%cここ見るスケベなあなたは Dosukebe Developer', 'color: #646464; font-size: 9px; font-style: italic;');
+        
+    }, false);
+})();
+        </script>
+        
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-64198406-1', 'auto');
+        ga('send', 'pageview');
+        
+        </script>
+        
+    </body>
+</html>
