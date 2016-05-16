@@ -307,7 +307,7 @@
                     window.speechSynthesis.speak(msg);
         		};
         		var loaded = false;
-    		    voices = window.speechSynthesis.getVoices();
+//     		    voices = window.speechSynthesis.getVoices();
         		document.addEventListener('DOMContentLoaded', function(e) {
             		rate = document.getElementById('rate');
             		rateLabel = document.getElementById('label-rate');
@@ -319,7 +319,7 @@
             		
             		interval = setInterval(function() {
                 		init();
-            		}, 1000);
+            		}, 200);
             		
             		pitch0 = document.getElementById('pitch0');
             		pitch1 = document.getElementById('pitch1');
@@ -345,25 +345,34 @@
                     }, false);
                     
         		}, false);
-        		
-    		function init() {
-        		if (!loaded) {
-            		if (window.speechSynthesis.getVoices().length > 0) {
-                		loaded = true;
-                		clearInterval(interval);
-            		}
+/*
+        		window.speechSynthesis.onvoiceschanged = function() {
+              if (window.speechSynthesis.getVoices().length > 0) {
+                loaded = true;
+                
+              }
         		}
-        		if (loaded) {
+*/
+        		
+            function init() {
+              if (!loaded) {
+             		if (typeof window.speechSynthesis != 'undefined' && window.speechSynthesis.getVoices().length > 0) {
+                  loaded = true;
+                  clearInterval(interval);
+            		}
+        	    }
+              if (loaded) {
+                clearInterval(interval);
             		for (var i = 0; i < window.speechSynthesis.getVoices().length; i++) {
                 		var option = document.createElement('option');
                 		option.value = window.speechSynthesis.getVoices()[i].voiceURI;
                 		option.label = window.speechSynthesis.getVoices()[i].name + ' (' + window.speechSynthesis.getVoices()[i].voiceURI +')' + ' [' + window.speechSynthesis.getVoices()[i].lang + ']';
                 		voice.appendChild(option)
             		}
-                    checkQuery();
-                    speech();
-                }
-    		}
+                checkQuery();
+                speech();
+              }
+            }
             function getUrlVars() {
                 var vars = [], max = 0, hash = "", array = "";
                 var url = window.location.search;
