@@ -1,0 +1,131 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" id="viewport" />
+<meta name="format-detection" content="telephone=no" />
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<style>
+body { margin: 0; padding: 0; font-family: 'EB Garamond'; text-align: center; }
+h1 { margin: 2rem 0; font-size: 1rem; }
+h2,h3 { margin: 1rem 0 0 0; font-size: 1rem; }
+p { margin: 0 0 4rem 0; font-size: 0.9rem; }
+canvas { display: block; margin: 1rem auto; max-width: 300px; cursor: pointer; }
+</style>
+<h1>feb19.jp</h1>
+<canvas width="300" height="300"></canvas>
+<h2>Random Font Clock</h2>
+<p>Obejctive-C, ScreenSaver</p>
+<canvas width="300" height="300"></canvas>
+<h2>Random Font Clock</h2>
+<p>Obejctive-C, ScreenSaver</p>
+
+<script>
+(function() {
+var feb19 = {};
+var Config = {
+    datas: [
+        {'image': 'apps/screensavers/randomfontclock.png'},
+        {'image': 'apps/screensavers/stackingdotsclock.jpg'}
+    ]
+};
+function Pixel(x, y) {
+    this.x = x;
+    this.y = y;
+}
+Pixel.prototype.draw = function(context) {
+    context.drawRect(this.x,this.y,1,1);
+}
+function ImageLoader(callback) {
+    this.datas = Config.datas;
+    this.images = [];
+    this.callback = callback;
+    this.loadCount = 0;
+    this.load();
+}
+ImageLoader.prototype.load = function() {
+    var image = new Image();
+    var that = this;
+    image.onload = function() {
+        that.images[that.loadCount] = this;
+        that.loadCount++;
+        if (that.loadCount > that.datas.length - 1) {
+            if (typeof that.callback !== 'undefined') { that.callback() };
+        } else {
+            that.load();
+        }
+    }
+    image.src = this.datas[this.loadCount]['image'];
+};
+function CV(canvas, image) {
+    this.canvas = canvas;
+    this.image = image;
+    this.context = canvas.getContext('2d');
+    this.width = canvas.width;
+    this.height = canvas.height;
+    this.isFit = false;
+    this.rotates = [];
+    this.speeds = [];
+    this.spacing = 4;
+    
+    for (var i = 1; i <= this.width/2; i++) {
+        this.rotates[i] = Math.random() * Math.PI;
+        this.speeds[i] = Math.random() *0.05;
+    }
+    var that = this;
+    this.canvas.addEventListener('mouseover', function(e) {
+        that.fit();
+    }, false);
+    this.canvas.addEventListener('mouseout', function(e) {
+        that.free();
+    }, false);
+}
+CV.prototype.draw = function() {
+    this.context.clearRect(0,0,this.width,this.height);
+    
+    for (var i = this.width/2-1; i > 0; i-=this.spacing) {
+        this.context.save(); 
+        
+            this.context.beginPath();
+            this.context.arc(this.width/2, this.height/2, i, 0, Math.PI * 2, false);
+            this.context.clip();
+            
+            this.context.translate(this.width/2, this.height/2); 
+            this.context.rotate(this.rotates[i]);
+            this.context.drawImage(this.image, -this.width/2, -this.height/2, this.width, this.height);
+            
+            if (this.isFit) {
+                this.rotates[i] += (Math.PI*2 - this.rotates[i]) * 0.1;
+            } else {
+                this.rotates[i] += this.speeds[i];
+                this.rotates[i] %= Math.PI*2;
+            }
+        
+        this.context.restore();
+        
+    }
+    
+// 	requestAnimationFrame(this.draw());
+};
+CV.prototype.fit = function() {
+    this.isFit = true;
+};
+CV.prototype.free = function() {
+    this.isFit = false;
+};
+function loadEnd() {
+    feb19.canvases = document.getElementsByTagName('canvas');
+    feb19.cvs = [];
+    console.log(feb19.imageLoader.images);
+    for (var i = 0; i < feb19.canvases.length; i++) {
+        feb19.cvs[i] = new CV(feb19.canvases[i], feb19.imageLoader.images[i]);
+    }
+    setInterval(function () {
+        for (var i = 0; i < feb19.canvases.length; i++) {
+            feb19.cvs[i].draw();
+        }
+    }, 1000/60);
+}
+document.addEventListener('DOMContentLoaded', function(e) {
+    feb19.imageLoader = new ImageLoader(loadEnd);
+}, false);
+
+})();
+</script>

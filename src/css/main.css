@@ -289,6 +289,11 @@ section .entry-list-item ul.tags {
     section .entry-list-item ul.tags li:last-child {
       padding-right: 0; }
 
+code {
+  font-family: 'Inconsolata', monospace;
+  font-size: 12px;
+  line-height: 1.5; }
+
 pre {
   font-family: 'Inconsolata', monospace;
   font-size: 12px;
