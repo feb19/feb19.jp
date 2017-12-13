@@ -11,7 +11,7 @@ body {
     margin: 0;
     height: 100%;
     line-height: 2;
-    letter-spacing: 0.5px;	
+    letter-spacing: 0.5px;
     padding: 0;
     color: black;
     box-sizing: border-box;
@@ -42,13 +42,13 @@ body {
   top: 50px;
   right: 0;
   margin: 0;
-  
+
 	li {
 		display: inline-block;
 		float: left;
 		text-align: right;
 		margin: 0 20px 0 0;
-		
+
 		&:last-child {
 			margin: 0;
 		}
@@ -111,7 +111,7 @@ em {
 ul {
 	list-style: none;
 	padding: 0;
-	
+
 }
 li {
 	font-size: 14px;
@@ -121,7 +121,7 @@ header {
   //margin: 0 0 40px 0;
 //   margin: 90px 0 120px;
   margin: 0 0 40px;
-    
+
 	h1 {
     font-size: 20px;
     font-weight: 400;
@@ -135,7 +135,7 @@ header {
     line-height: 12px;
     margin: 0px 0 0 0px;
 	}
-	
+
 }
 .breadcrumb {
   margin: 0 0 40px 0;
@@ -149,13 +149,13 @@ header {
         clear: both;
         height: 0;
         visibility: hidden; /* 非表示に */
-    
+
     }
 	li {
 		padding: 0 0 0 0;
 		display: block;
 		float: left;
-		
+
 		&:before {
 			content: " » ";
 			float: left;
@@ -173,13 +173,13 @@ header {
 }
 .content {
     section {
-        
+
         li {
             margin-left: 20px;
             list-style: circle;
             padding-right: 20px;
         }
-        
+
         pre {
             ol {
                 li {
@@ -202,7 +202,7 @@ section {
 		padding-bottom: 120px;
         margin: 0;
 	}
-	
+
 	&.gridsystem {
 		display: -webkit-flex;
 		display: flex;
@@ -218,14 +218,14 @@ section {
 	.snippets-container {
     	h2 {
         	font-size:20px;
-        	
+
     	}
     	.snippets-grid {
         	display: block;
         	float: left;
         	width: 25%;
     	}
-    	
+
     	&:after {
             content: ".";  /* 新しいコンテンツ */
             display: block;
@@ -284,13 +284,52 @@ section {
 //         line-height: 1;
     }
 }
+.entry-share {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+	text-align: center;
+
+	a {
+		padding: 12px 0;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+		color: white;
+		font-size: 12px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 12px;
+		width: 100%;
+
+		img {
+			width: 16px;
+	    height: 16px;
+	    vertical-align: middle;
+	    padding: 0 4px 0 0;
+	    color: white;
+			position: relative;
+	    top: -1px;
+		}
+
+		&.entry-tw {
+			background: #00aced;
+		}
+		&.entry-fb {
+			background: #3b5998;
+		}
+		&.entry-hb {
+			background: #00A5DE;
+		}
+	}
+}
 .entry-list-item {
     width: 280px;
     position: relative;
     float: left;
     margin: 0 50px 50px 0;
     height: 580px;
-    
+
     &:nth-child(3n) {
         margin: 0 0 50px 0;
     }
@@ -375,8 +414,8 @@ pre {
     border: 1px solid #ccc;
     background-color: white;
     padding: 10px;
-    overflow-x: scroll; 
-    
+    overflow-x: scroll;
+
     li {
         font-size: 12px;
     }
@@ -448,4 +487,3 @@ td {
     padding: 3px;
     vertical-align: top;
 }
-

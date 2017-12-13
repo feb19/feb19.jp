@@ -224,6 +224,37 @@ section {
     margin: 0 0 30px;
     font-size: 14px; }
 
+.entry-share {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  text-align: center; }
+  .entry-share a {
+    padding: 12px 0;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 12px;
+    width: 100%; }
+    .entry-share a img {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      padding: 0 4px 0 0;
+      color: white;
+      position: relative;
+      top: -1px; }
+    .entry-share a.entry-tw {
+      background: #00aced; }
+    .entry-share a.entry-fb {
+      background: #3b5998; }
+    .entry-share a.entry-hb {
+      background: #00A5DE; }
+
 .entry-list-item {
   width: 280px;
   position: relative;
