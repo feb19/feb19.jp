@@ -30,7 +30,7 @@
 		<meta name="twitter:image" content="http://feb19.jp/feb19.png" />
 		<meta name="twitter:url" content="http://feb19.jp/apps/" />
 	</head>
-
+	
 	<body>
 		<div class="wrapper">
 			<header>
@@ -47,50 +47,66 @@
 				<li><a href="/apps">Apps</a></li>
 				<li><a href="http://meditation-records.com">Music</a></li>
 			</ul>
-
+			
 			<div class="content">
 				<section>
-					<h2><span>iOS</span></h2>
-					<ul>
-						<li><a href="/apps/notes/">Notes Quiz - 楽譜読みトレーニング</a></li>
-						<li><a href="/apps/tuner/">Tuner - クロマチックチューナー</a></li>
-					</ul>
-					<h2><span>OSX</span></h2>
-					<ul>
-						<li><a href="http://nobuhirotakahashi.com/trackname/">Track Name for iTunes</a></li>
-					</ul>
-					<h2><span>Web</span></h2>
-					<ul>
-						<li><a href="/apps/midisnow/">MIDI Snow - MIDI キーボードで、画面に雪を降らせられます</a></li>
-						<li><a href="/apps/averagecolor/">the Average Color of Image Files - 画像ファイルの平均色</a></li>
-						<li><a href="/apps/texttospeech/">Text to Speech Tester - 合成音声テスター</a></li>
-						<li><a href="/apps/materialcolor/">Material Color Generator - Google の配色ジェネレータ</a></li>
-						<li><a href="http://freepianoscore.com/">Free Piano Score</li>
-						<li><a href="http://todays-rock.com/">Today's Rock - ROCKおみくじ</a></li>
-						<li><a href="/polyphonic_synthesizer/">Polyphonic Synthesizer</a></li>
-					</ul>
-					<h2><span>Plugins for Sketch</span></h2>
-					<ul>
-						<li><a href="/blog/archives/000281.php">Font Size Checker - iOS/Android のデザインガイドラインのフォントサイズでチェックする Sketch プラグイン</a></li>
-					</ul>
-					<h2><span>Screen Savers</span></h2>
-					<ul>
-						<li><a href="/apps/screensavers/randomfontclock.html">Random Font Clock - Mac に入ったフォントがランダムで表示される時計</a></li>
-						<li><a href="/apps/screensavers/stackingdotsclock.html">Stacking Dots Clock - ドットが積み上がる時計</a></li>
-					</ul>
-					<h2><span>Installation</span></h2>
-					<ul>
-  					<li><a href="/blog/archives/000275.php">月夜に奏でる春と秋 at REFLECTION - 音に反応し光が煌めく演出</a></li>
-  					<li><a href="/blog/archives/000272.php">ren-dan - プロジェクションマッピングによるピアノの演奏ガイド</a></li>
-  					<li><a href="/blog/archives/000266.php">Synthetic Acoustic - Leap Motion による空間仮想ミキサー</a></li>
-  					<li><a href="/apps/nagashisomen">Internet Nagashi Somen - IoT 流しそうめん装置</a></li>
-  					<li><a href="https://www.behance.net/gallery/25828975/Shadowscape">Shadowscape - 影を作るとその中に風景が見える演出</a></li>
-  					<li><a href="/d4/">D4 DIMENSIONS - ネット同期マルチモーションドローイングアプリ</a></li>
-					</ul>
-					<h2><span>Software Module</span></h2>
-					<ul>
-  					<li><a href="/blog/archives/000265.php">Snowscape - node package module</a></li>
-					</ul>
+  				<h1>Ranking: EyeApps / Denying</h1>
+  				<?php
+
+//DBに接続
+$heteml_hostname = "mysql20.heteml.jp";
+$heteml_username = "_feb19";
+$heteml_password = "dw32ff4a";
+$heteml_dbname = "_feb19";
+$db_connect = mysql_connect($heteml_hostname, $heteml_username, $heteml_password);
+mysql_select_db($heteml_dbname, $db_connect);
+
+//一ヵ月前の日付
+$lastmonth = date("Y-m-d H:i:s",strtotime("-1 month"));
+
+//一週間前の日付
+$lastweek = date('Y-m-d H:i:s', strtotime('-1 Week'));
+
+//一日前の日付
+$yesterday = date("Y-m-d H:i:s",strtotime("-1 day"));
+
+//DBからデータを10件一日以内のスコア順で呼び出す
+$sql1 = "select * from eitan1 order by score desc limit 0, 10";
+$resource1 = mysql_query($sql1);
+
+
+echo "<table>";
+
+//Flashで読み取れるJSON形式に変換
+// echo 'daily=';
+$i = 0;
+while ( $row = mysql_fetch_assoc($resource1) )
+{
+echo "<tr>";
+  echo "<td>".($i+1)."</td>";
+	if($i == 0)
+	{
+		echo "<td>".$row['name']."</td><td>".$row['score']."</td>";
+		//echo '{"date": '.$row['date'].', "name": '.$row['name'].', "score": '.$row['score'].', "wrong": '.$row['wrong'].', "correct": '.$row['correct'].', "clear": '.$row['clear'].'}';
+	}
+	else
+	{
+		echo "<td>".$row['name']."</td><td>".$row['score']."</td>";
+		//echo ', {"date": '.$row['date'].', "name": '.$row['name'].', "score": '.$row['score'].', "wrong": '.$row['wrong'].', "correct": '.$row['correct'].', "clear": '.$row['clear'].'}';
+	}
+	
+	$i++;
+echo "</tr>";
+}
+
+echo "</table>";
+
+
+mysql_close($db_connect);
+
+
+
+?>
 				</section>
 				<section>
     			<ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -99,7 +115,7 @@
     			</ul>
 				</section>
 			</div>
-
+			
 			<footer>
 				<div class="grid">
 					<h2>Menu</h2>

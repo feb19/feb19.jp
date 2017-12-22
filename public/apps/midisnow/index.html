@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width" id="viewport" />
 		<meta name="format-detection" content="telephone=no" />
-		<title>Apps - feb19.jp</title>
+		<title>MIDI Snow - feb19.jp</title>
 		<meta name="author" content="Nobuhiro Takahashi" />
 		<meta name="copyright" content="Copyright (C) Nobuhiro Takahashi" />
 		<link rel="shortcut icon" href="/favicon.ico">
@@ -14,21 +14,21 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta property="og:title" content="Apps - feb19.jp"/>
 		<meta property="og:type" content="website"/>
-		<meta property="og:url" content="http://feb19.jp/apps/"/>
+		<meta property="og:url" content="http://feb19.jp/nagashisomen/"/>
 		<meta property="og:locale" content="ja_JP" />
 		<meta property="og:image" content="http://feb19.jp/feb19.png"/>
-		<meta property="og:description" content="Apps - feb19.jp" />
+		<meta property="og:description" content="Internet Nagashi Somen - feb19.jp" />
 		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
 		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
-        <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/application.css">
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@feb19" />
-		<meta name="twitter:title" content="Apps - feb19.jp" />
+		<meta name="twitter:title" content="Internet Nagashi Somen - feb19.jp" />
 		<meta name="twitter:description" content="feb19.jp" />
 		<meta name="twitter:image" content="http://feb19.jp/feb19.png" />
-		<meta name="twitter:url" content="http://feb19.jp/apps/" />
+		<meta name="twitter:url" content="http://feb19.jp/apps/midisnow/" />
 	</head>
 
 	<body>
@@ -50,52 +50,15 @@
 
 			<div class="content">
 				<section>
-					<h2><span>iOS</span></h2>
-					<ul>
-						<li><a href="/apps/notes/">Notes Quiz - 楽譜読みトレーニング</a></li>
-						<li><a href="/apps/tuner/">Tuner - クロマチックチューナー</a></li>
-					</ul>
-					<h2><span>OSX</span></h2>
-					<ul>
-						<li><a href="http://nobuhirotakahashi.com/trackname/">Track Name for iTunes</a></li>
-					</ul>
-					<h2><span>Web</span></h2>
-					<ul>
-						<li><a href="/apps/midisnow/">MIDI Snow - MIDI キーボードで、画面に雪を降らせられます</a></li>
-						<li><a href="/apps/averagecolor/">the Average Color of Image Files - 画像ファイルの平均色</a></li>
-						<li><a href="/apps/texttospeech/">Text to Speech Tester - 合成音声テスター</a></li>
-						<li><a href="/apps/materialcolor/">Material Color Generator - Google の配色ジェネレータ</a></li>
-						<li><a href="http://freepianoscore.com/">Free Piano Score</li>
-						<li><a href="http://todays-rock.com/">Today's Rock - ROCKおみくじ</a></li>
-						<li><a href="/polyphonic_synthesizer/">Polyphonic Synthesizer</a></li>
-					</ul>
-					<h2><span>Plugins for Sketch</span></h2>
-					<ul>
-						<li><a href="/blog/archives/000281.php">Font Size Checker - iOS/Android のデザインガイドラインのフォントサイズでチェックする Sketch プラグイン</a></li>
-					</ul>
-					<h2><span>Screen Savers</span></h2>
-					<ul>
-						<li><a href="/apps/screensavers/randomfontclock.html">Random Font Clock - Mac に入ったフォントがランダムで表示される時計</a></li>
-						<li><a href="/apps/screensavers/stackingdotsclock.html">Stacking Dots Clock - ドットが積み上がる時計</a></li>
-					</ul>
-					<h2><span>Installation</span></h2>
-					<ul>
-  					<li><a href="/blog/archives/000275.php">月夜に奏でる春と秋 at REFLECTION - 音に反応し光が煌めく演出</a></li>
-  					<li><a href="/blog/archives/000272.php">ren-dan - プロジェクションマッピングによるピアノの演奏ガイド</a></li>
-  					<li><a href="/blog/archives/000266.php">Synthetic Acoustic - Leap Motion による空間仮想ミキサー</a></li>
-  					<li><a href="/apps/nagashisomen">Internet Nagashi Somen - IoT 流しそうめん装置</a></li>
-  					<li><a href="https://www.behance.net/gallery/25828975/Shadowscape">Shadowscape - 影を作るとその中に風景が見える演出</a></li>
-  					<li><a href="/d4/">D4 DIMENSIONS - ネット同期マルチモーションドローイングアプリ</a></li>
-					</ul>
-					<h2><span>Software Module</span></h2>
-					<ul>
-  					<li><a href="/blog/archives/000265.php">Snowscape - node package module</a></li>
-					</ul>
+  				<h1>MIDI Snow</h1>
+  				<p>パソコンにつないだ MIDI キーボードなどで、雪を降らせることができます。(画面をクリックでランダムに降らせます)</p>
+  				<div id="app-container" style="width: 100%; height: 520px;"></div>
 				</section>
 				<section>
     			<ul class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
     				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" itemprop="url"><span itemprop="title"><i class="fa fa-home"></i></span></a></li>
-    				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/apps" itemprop="url"><span itemprop="title">Apps</span></a></li>
+    				<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/apps" itemprop="url"><span itemprop="title">Apps</span></a></li>
+    				<li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/apps" itemprop="url"><span itemprop="title">MIDI Snow</span></a></li>
     			</ul>
 				</section>
 			</div>
@@ -138,6 +101,7 @@
 					</ul>
 				</div>
 			</footer>
+      <script src="./script.js" type="text/javascript"></script>
 		</div>
 	</body>
 </html>
