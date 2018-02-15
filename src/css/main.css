@@ -18,7 +18,7 @@ body {
   box-sizing: border-box; }
 
 #container {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0; }
 
@@ -399,6 +399,21 @@ td {
   padding: 3px;
   vertical-align: top; }
 
+.toppage .top-header-wrapper {
+  height: 100vh;
+  position: relative; }
+
+.toppage .top-header {
+  position: absolute;
+  bottom: 40px;
+  width: 100%; }
+
+.toppage .entry-list-item {
+  height: 450px; }
+
+.toppage .gnav {
+  top: 30px; }
+
 @media screen and (max-width: 760px) {
   body {
     padding: 20px; }
@@ -536,4 +551,8 @@ td {
     position: inherit;
     bottom: auto;
     width: auto;
-    right: auto; } }
+    right: auto; }
+  .toppage .entry-list-item {
+    height: auto; }
+  .toppage .gnav {
+    top: auto; } }

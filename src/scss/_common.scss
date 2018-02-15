@@ -2,32 +2,32 @@ html {
 	height: 100%;
 }
 body {
-    font-family: "EB Garamond", "A1MinchoStd-Bold", "Shuuei5Std-Light", "游明朝体", "Yu Mincho", "YuMin-Medium", YuMincho, serif;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-    width: 100%;
-    margin: 0;
-    height: 100%;
-    line-height: 2;
-    letter-spacing: 0.5px;
-    padding: 0;
-    color: black;
-    box-sizing: border-box;
+  font-family: "EB Garamond", "A1MinchoStd-Bold", "Shuuei5Std-Light", "游明朝体", "Yu Mincho", "YuMin-Medium", YuMincho, serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  line-height: 2;
+  letter-spacing: 0.5px;
+  padding: 0;
+  color: black;
+  box-sizing: border-box;
 }
 #container {
-	position: fixed;
-    top: 0;
-    left: 0;
-//    z-index: -1;
+	position: absolute;
+  top: 0;
+  left: 0;
+//  z-index: -1;
 }
 .clearfix:after {
-    content: ".";  /* 新しいコンテンツ */
-    display: block;
-    clear: both;
-    height: 0;
-    visibility: hidden; /* 非表示に */
+  content: ".";  /* 新しいコンテンツ */
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden; /* 非表示に */
 }
 .wrapper {
 	width: 940px;
@@ -55,37 +55,37 @@ body {
 	}
 }
 .btn-fullscreen {
-    display: block;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
+  display: block;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
 
-    width: 32px;
-    height: 32px;
-    color: #fff;
-    border-radius: 6px;
-    text-align: center;
-    line-height: 32px;
-    /* border: 1px solid #000; */
-    font-size: 16px;
-    background-color: rgba(0, 0, 0, .5);
-    cursor: pointer;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 32px;
+  /* border: 1px solid #000; */
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, .5);
+  cursor: pointer;
 
-    &:hover {
-        opacity: 0.6;
-    }
+  &:hover {
+    opacity: 0.6;
+  }
 }
 :-ms-fullscreen .btn-fullscreen {
-    display: none;
+  display: none;
 }
 :-moz-full-screen .btn-fullscreen {
-    display: none;
+  display: none;
 }
 :-webkit-full-screen .btn-fullscreen {
-    display: none;
+  display: none;
 }
 :fullscreen .btn-fullscreen {
-    display: none;
+  display: none;
 }
 a {
 	color: #000000;
@@ -95,17 +95,17 @@ a {
 	}
 }
 section p a {
-    color: #999999;
+  color: #999999;
 }
 p {
 	font-size: 16px;
 	font-weight: normal;
 }
 strong {
-    background: linear-gradient(transparent 60%, #ffff66 60%);
+  background: linear-gradient(transparent 60%, #ffff66 60%);
 }
 em {
-    background: linear-gradient(transparent 60%, #d7f5ff 60%);
+  background: linear-gradient(transparent 60%, #d7f5ff 60%);
 }
 
 ul {
@@ -123,17 +123,17 @@ header {
   margin: 0 0 40px;
 
 	h1 {
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0 0 0 0;
-    line-height: 1.5em;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 0 0;
+  line-height: 1.5em;
 	}
 	h2 {
-    font-size: 10px;
-    font-weight: 400;
-    padding: 0 0 0 0;
-    line-height: 12px;
-    margin: 0px 0 0 0px;
+  font-size: 10px;
+  font-weight: 400;
+  padding: 0 0 0 0;
+  line-height: 12px;
+  margin: 0px 0 0 0px;
 	}
 
 }
@@ -141,16 +141,16 @@ header {
   margin: 0 0 40px 0;
   font-size: 10px;
   letter-spacing: .5px;
-//     line-height: 15px;
-    list-style: none;
-    &:after {
-        content: ".";  /* 新しいコンテンツ */
-        display: block;
-        clear: both;
-        height: 0;
-        visibility: hidden; /* 非表示に */
+//   line-height: 15px;
+  list-style: none;
+  &:after {
+    content: ".";  /* 新しいコンテンツ */
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden; /* 非表示に */
 
-    }
+  }
 	li {
 		padding: 0 0 0 0;
 		display: block;
@@ -172,35 +172,35 @@ header {
 	}
 }
 .content {
-    section {
+  section {
 
-        li {
-            margin-left: 20px;
-            list-style: circle;
-            padding-right: 20px;
-        }
-
-        pre {
-            ol {
-                li {
-                    margin-left: 0;
-                    list-style: decimal;
-                }
-            }
-        }
-        .breadcrumb {
-          li {
-            margin-left: 0;
-            padding-right: 0;
-          }
-        }
+    li {
+      margin-left: 20px;
+      list-style: circle;
+      padding-right: 20px;
     }
+
+    pre {
+      ol {
+        li {
+          margin-left: 0;
+          list-style: decimal;
+        }
+      }
+    }
+    .breadcrumb {
+      li {
+      margin-left: 0;
+      padding-right: 0;
+      }
+    }
+  }
 }
 section {
 	margin: 0 0 120px 0;
 	&:last-child {
 		padding-bottom: 120px;
-        margin: 0;
+    margin: 0;
 	}
 
 	&.gridsystem {
@@ -216,73 +216,73 @@ section {
 		}
 	}
 	.snippets-container {
-    	h2 {
-        	font-size:20px;
+  	h2 {
+    	font-size:20px;
 
-    	}
-    	.snippets-grid {
-        	display: block;
-        	float: left;
-        	width: 25%;
-    	}
+  	}
+  	.snippets-grid {
+    	display: block;
+    	float: left;
+    	width: 25%;
+  	}
 
-    	&:after {
-            content: ".";  /* 新しいコンテンツ */
-            display: block;
-            clear: both;
-            height: 0;
-            visibility: hidden; /* 非表示に */
-    	}
+  	&:after {
+      content: ".";  /* 新しいコンテンツ */
+      display: block;
+      clear: both;
+      height: 0;
+      visibility: hidden; /* 非表示に */
+  	}
 	}
 	h1 {
 		font-size: 48px;
 		font-weight: normal;
-	    margin: 0 0 40px 0;
-	    line-height: 74px;
+	  margin: 0 0 40px 0;
+	  line-height: 74px;
 	}
 	&.entry {
-    	p {
-            font-size: 20px;
-    	}
-    	blockquote, li {
-            font-size: 16px;
-    	}
-        .entrydate {
-              float: left;
-            font-size: 14px;
-        }
-	}
-    .tags {
-    	text-align: right;
-//     	margin: 10px 0 40px 0;
-    	margin: 0 0 40px;
-    	li {
-//         	line-height: 1;
-            list-style: none;
-            display: inline-block;
-            font-size: 12px;
-                margin: 0;
-    padding-right: 16px;
-    	}
+  	p {
+      font-size: 20px;
+  	}
+  	blockquote, li {
+      font-size: 16px;
+  	}
+    .entrydate {
+        float: left;
+      font-size: 14px;
     }
+	}
+  .tags {
+  	text-align: right;
+//   	margin: 10px 0 40px 0;
+  	margin: 0 0 40px;
+  	li {
+//     	line-height: 1;
+      list-style: none;
+      display: inline-block;
+      font-size: 12px;
+        margin: 0;
+  padding-right: 16px;
+  	}
+  }
 	h2 {
 		font-size: 12px;
 		font-weight: normal;
 	}
 	h3 {
-        font-size: 14px;
-    }
-    blockquote {
-        margin: 1em 0 1em 0;
-        border-left: 1px solid black;
-        padding: 0 0 0 10px;
-    }
-    p.entrydate {
-        float: left;
-        margin: 0 0 30px;
-        font-size: 14px;
-//         line-height: 1;
-    }
+    font-size: 14px;
+  }
+  blockquote {
+    margin: 1em 0 1em 0;
+    border-left: 1px solid black;
+    padding: 0 0 0 10px;
+  }
+  p.entrydate {
+    float: left;
+    margin: 0 0 30px;
+    font-size: 14px;
+//     line-height: 1;
+  }
 }
 .entry-share {
   display: -webkit-flex;
@@ -293,8 +293,8 @@ section {
 
 	a {
 		padding: 12px 0;
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
 		color: white;
 		font-size: 12px;
 		font-weight: bold;
@@ -304,12 +304,12 @@ section {
 
 		img {
 			width: 16px;
-	    height: 16px;
-	    vertical-align: middle;
-	    padding: 0 4px 0 0;
-	    color: white;
+	  height: 16px;
+	  vertical-align: middle;
+	  padding: 0 4px 0 0;
+	  color: white;
 			position: relative;
-	    top: -1px;
+	  top: -1px;
 		}
 
 		&.entry-tw {
@@ -324,83 +324,83 @@ section {
 	}
 }
 .entry-list-item {
-    width: 280px;
-    position: relative;
-    float: left;
-    margin: 0 50px 50px 0;
-    height: 580px;
+  width: 280px;
+  position: relative;
+  float: left;
+  margin: 0 50px 50px 0;
+  height: 580px;
 
-    &:nth-child(3n) {
-        margin: 0 0 50px 0;
-    }
-    h1 {
-        font-size: 26px;
-        line-height: 1.4;
-        margin: 0 0 10px 0;
-    }
+  &:nth-child(3n) {
+    margin: 0 0 50px 0;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+  }
 
 }
 .entry-list-item-image {
-    margin: 0;
-    line-height: 1;
-    background-color: #eaeaea;
-    background-size: cover;
-    height: 270px;
-    background-position: 50% 50%;
+  margin: 0;
+  line-height: 1;
+  background-color: #eaeaea;
+  background-size: cover;
+  height: 270px;
+  background-position: 50% 50%;
 }
 .entry-list-item-content {
-    max-height: 250px;
-    overflow: hidden;
-    margin: 20px 0 20px 0;
-    position: relative;
+  max-height: 250px;
+  overflow: hidden;
+  margin: 20px 0 20px 0;
+  position: relative;
 }
 .entry-list-item-excerpt {
-    font-size: 12px;
-    margin: 0;
-    line-height: 1.7;
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.7;
 }
 .entry-list-item-grad {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* margin: 0 0 20px 0; */
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%);
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* margin: 0 0 20px 0; */
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%);
 }
 section {
-    .entry-list-item {
-        p {
-            &.entrydate {
-                font-size: 10px;
-                margin: 0;
-                position: absolute;
-                bottom: 0;
-            }
-        }
-        ul {
-            &.tags {
-                margin: 0;
-                font-size: 10px;
-                overflow: hidden;
-                position: absolute;
-                bottom: 0;
-                width: 150px;
-                right: 0;
-                li {
-                    padding-right: 8px;
-                    &:last-child {
-                        padding-right: 0;
-                    }
-                }
-            }
-        }
+  .entry-list-item {
+    p {
+      &.entrydate {
+        font-size: 10px;
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+      }
     }
+    ul {
+      &.tags {
+        margin: 0;
+        font-size: 10px;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        width: 150px;
+        right: 0;
+        li {
+          padding-right: 8px;
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
 }
 code {
   font-family: 'Inconsolata', monospace;
@@ -410,36 +410,36 @@ code {
 pre {
 	font-family: 'Inconsolata', monospace;
 	font-size:12px;
-    line-height: 1.5;
-    border: 1px solid #ccc;
-    background-color: white;
-    padding: 10px;
-    overflow-x: scroll;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  overflow-x: scroll;
 
-    li {
-        font-size: 12px;
-    }
+  li {
+    font-size: 12px;
+  }
 }
 .accordionicon {
-    display: none;
-    float: right;
-    margin: -5px 0 0 0;
-    padding: 0 0 0 10px;
-    i {
-        font-size: 12px;
-    }
+  display: none;
+  float: right;
+  margin: -5px 0 0 0;
+  padding: 0 0 0 10px;
+  i {
+    font-size: 12px;
+  }
 }
 footer {
 	display: -webkit-flex;
 	display: flex;
-    margin: 40px 0 40px 0;
-    position:absolute;
+  margin: 40px 0 40px 0;
+  position:absolute;
 	bottom:0;
 	width: 100%;
 	li {
-    	display: inline-block;
-    	padding: 0 10px 0 0;
-    	font-size: 12px;
+  	display: inline-block;
+  	padding: 0 10px 0 0;
+  	font-size: 12px;
 	}
 	h2 {
 		font-size: 12px;
@@ -452,38 +452,60 @@ footer {
 }
 #post-2 .entry-header { display: none; }
 #social-container > div {
-    float: left;
-    display: inline-block;
-    padding: 0 10px 0 0;
+  float: left;
+  display: inline-block;
+  padding: 0 10px 0 0;
 }
 .button {
-    border: 1px solid #000;
-    padding: 5px;
-    font-size: 12px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    &:hover {
-        background-color: #f2f2f2;
-    }
+  border: 1px solid #000;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  &:hover {
+    background-color: #f2f2f2;
+  }
 }
 table {
-    width: 100%;
-    border: none;
-    border-spacing: 0;
-    border-top: solid 1px #E4E4E4;
-    border-collapse: collapse;
+  width: 100%;
+  border: none;
+  border-spacing: 0;
+  border-top: solid 1px #E4E4E4;
+  border-collapse: collapse;
 }
 tr {
-    border-bottom: solid 1px #DCDCDC;
-    box-sizing: border-box;
-    background-color: #F7F7F7;
-    height: auto;
-    &:nth-child(2n) {
-        background-color: transparent;
-    }
+  border-bottom: solid 1px #DCDCDC;
+  box-sizing: border-box;
+  background-color: #F7F7F7;
+  height: auto;
+  &:nth-child(2n) {
+    background-color: transparent;
+  }
 }
 td {
-    padding: 3px;
-    vertical-align: top;
+  padding: 3px;
+  vertical-align: top;
+}
+
+
+
+.toppage {
+	.top-header-wrapper {
+		height: 100vh;
+		position: relative;
+	}
+	.top-header {
+		position: absolute;
+		bottom: 40px;
+		width: 100%;
+	}
+	header {
+	}
+	.entry-list-item {
+		height: 450px;
+	}
+	.gnav {
+		top: 30px;
+	}
 }

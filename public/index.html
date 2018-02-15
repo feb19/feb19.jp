@@ -22,7 +22,7 @@
 		<meta name="verify-v1" content="vD8IgU8S0N+As+Pkh2lzge1hEWTNMxDIwTtHI/jWPp0=" />
 		<meta name="google-site-verification" content="VQvL2RssCVXjvmYtya-haG8L3Pt21ipSGAuRsosRjMs" />
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="/css/application.css">
+		<link rel="stylesheet" href="/css/application.css?v=6">
 		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@feb19" />
@@ -31,52 +31,105 @@
 		<meta name="twitter:image" content="http://feb19.jp/feb19.png" />
 		<meta name="twitter:url" content="http://feb19.jp/" />
 	</head>
-	
-	<body>
+
+	<body class="toppage">
 		<div id="container"></div>
 
 		<div class="wrapper">
-			<header>
-				<h1><a href="/">feb19.jp</a></h1>
-				<h2>
-					Nobuhiro Takahashi<br>
-					Designer / Engineer
-				</h2>
-			</header>
-			<ul class="gnav">
-				<li><a href="/about">About</a></li>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="http://snippets.feb19.jp">Snippets</a></li>
-				<li><a href="/apps">Apps</a></li>
-				<li><a href="http://meditation-records.com">Music</a></li>
-			</ul>
-			
-			
-			<footer>
-				<div class="grid">
-<!--
-					<h2>Menu</h2>
-					<ul>
+			<div class="top-header-wrapper">
+				<div class="top-header">
+					<header>
+						<h1><a href="/">feb19.jp</a></h1>
+						<h2>
+							Nobuhiro Takahashi<br>
+							Designer / Engineer
+						</h2>
+					</header>
+					<ul class="gnav">
 						<li><a href="/about">About</a></li>
 						<li><a href="/blog">Blog</a></li>
 						<li><a href="http://snippets.feb19.jp">Snippets</a></li>
 						<li><a href="/apps">Apps</a></li>
 						<li><a href="http://meditation-records.com">Music</a></li>
 					</ul>
--->
 				</div>
+			</div>
+			<div class="content">
+				<section class="clearfix">
+
+					<div class="entry-list-item">
+      			<a href="http://persona.feb19.net/">
+              <div class="entry-list-item-image" style="background-image: url(/images/apps/persona/thumbnail.png)"></div>
+      			</a>
+  					<div class="entry-list-item-content">
+      				<h1><a href="http://persona.feb19.net/">君はペルソナ。β</a></h1>
+      				<div class="entry-list-item-excerpt">ペルソナシートをオンライン上で作成できるWebサービスです。作成したペルソナは現在は全てパブリックになります。順次アップデートをして、機能や使い勝手を改善していきます。</div>
+  					</div>
+  					<p class="entrydate">2017</p>
+  					<ul class="tags">
+  						<li><a href="/apps">Web</a></li>
+  					</ul>
+					</div>
+
+					<div class="entry-list-item">
+      			<a href="/apps/notes/">
+              <div class="entry-list-item-image" style="background-image: url(/apps/notes/images/doremi.PNG)"></div>
+      			</a>
+  					<div class="entry-list-item-content">
+      				<h1><a href="/apps/notes/">Notes Quiz</a></h1>
+      				<div class="entry-list-item-excerpt">楽譜が読めるようになる音符クイズアプリ<br>音域/調/ト音記号限定など、難易度を自由に設定できる譜読みアプリです。初見演奏が苦手な方が、楽譜を読むのが高速になる練習ができます。</div>
+  					</div>
+  					<p class="entrydate">2015</p>
+  					<ul class="tags">
+  						<li><a href="/apps">iOS</a></li>
+  					</ul>
+					</div>
+
+					<div class="entry-list-item">
+        		<a href="http://feb19.jp/blog/archives/000284.php">
+              <div class="entry-list-item-image" style="background-image: url(/apps/screensavers/randomfontclock.png)"></div>
+        		</a>
+    				<div class="entry-list-item-content">
+        			<h1><a href="http://feb19.jp/blog/archives/000284.php">Random Font Clock</a></h1>
+        			<div class="entry-list-item-excerpt">ランダムでフォントが表示される macOS 用のスクリーンセーバーです。</div>
+    				</div>
+    				<p class="entrydate">2016</p>
+    				<ul class="tags">
+    					<li><a href="/apps">macOS</a></li>
+    				</ul>
+					</div>
+
+					<div class="entry-list-item">
+    				<a href="/apps/averagecolor/">
+              <div class="entry-list-item-image" style="background-image: url(/apps/averagecolor/image.png)"></div>
+    				</a>
+  					<div class="entry-list-item-content">
+    					<h1><a href="/apps/averagecolor/">the Average Color of Image Files</a></h1>
+    					<div class="entry-list-item-excerpt">画像ファイルごとの平均色が取り出せるウェブアプリです。色相環マッピングもあるので、カラートレンド比較にもご利用いただけます。</div>
+  					</div>
+  					<p class="entrydate">2016</p>
+  					<ul class="tags">
+  						<li><a href="/apps">web</a></li>
+  					</ul>
+					</div>
+
+				</section>
+			</div>
+
+
+			<footer>
 				<div class="grid">
-					<h2>Recently Works</h2>
+					<!-- <h2>Recently Works</h2>
 					<ul>
 						<li><a href="http://feb19.jp/apps/tuner">Tuner</a></li>
 						<li><a href="https://repertoryapp.com">Repertory</a></li>
 						<li><a href="http://moshapp.me">Mosh!</a></li>
-<!-- 						<li><a href="http://freepianoscore.com/">Free Piano Score</a></li> -->
+						<li><a href="http://freepianoscore.com/">Free Piano Score</a></li>
 						<li><a href="http://feb19.jp/apps/notes/">Notes Quiz</a></li>
 						<li><a href="http://nobuhirotakahashi.com/trackname/">TrackName for iTunes</a></li>
 						<li><a href="http://feb19.jp/pp/">points-pointz</a></li>
 						<li><a href="http://meditation-records.com/meditation">Meditation</a></li>
-					</ul>
+					</ul> -->
 				</div>
 				<div class="grid">
 					<h2>SNS</h2>
@@ -93,13 +146,13 @@
 				</div>
 			</footer>
 		</div>
-		
-		
+
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r72/three.js"></script>
 		<script src="js/Detector.js"></script>
 		<script src="js/stats.min.js"></script>
 		<script src="js/Sphere.js"></script>
 		<script src="js/application.js"></script>
-		
+
 	</body>
 </html>
